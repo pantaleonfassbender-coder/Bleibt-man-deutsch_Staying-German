@@ -20,7 +20,7 @@ Ein zweisprachiger Quellenapparat: deutsche Gemeinden in Amerika, 1683–1923. N
 
 **Nur Gemeinfreies.** Drucke vor 1929, Akten des Kongresses, Urteile des Obersten Gerichtshofs (Werke der US-Regierung) und Zeitungen aus Chronicling America. Moderne Darstellungen werden genannt, nicht abgedruckt. Das n-Wort ist in den Quellen als „n—“ gekürzt; sonst bleibt die Sprache der Quellen stehen und wird in den Anmerkungen eingeordnet.
 
-**Begleitspiel:** *Mit englischer Zunge – English on the Tongue*, ein freies Spiel über neun Generationen.
+**Begleitspiel:** *Mit englischer Zunge – English on the Tongue*, ein freies Spiel über neun Generationen: https://mit-englischer-zunge.netlify.app/ und https://leofassb.itch.io/mit-englischer-zunge (dort auch das Lesebuch).
 
 ## Aufbau
 
