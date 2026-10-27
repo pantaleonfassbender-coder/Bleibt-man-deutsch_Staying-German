@@ -1,0 +1,37 @@
+{
+  "upload_type": "dataset",
+  "title": "Bleibt man deutsch? – Staying German? Deutsche Gemeinden in Amerika 1683–1923. Ein zweisprachiger Quellenapparat",
+  "creators": [
+    {
+      "name": "Fassbender, Pantaleon",
+      "orcid": "0000-0002-6683-3617"
+    }
+  ],
+  "description": "<p>Ein zweisprachiger digitaler Quellenapparat zu deutschen Gemeinden in Amerika 1683–1923. Die Leitfrage: Bleibt man deutsch? Neun Stationen, an denen eine Gemeinde entschied, wie viel Deutsch sie behält: Germantown nach englischem Recht und der Protest gegen den Menschenhandel vom 18. April 1688; die Wahlen und die englischen Freischulen der 1750er Jahre (William Smith, Conrad Weiser, Franklin, Christoph Sauer); die Petition aus Augusta County 1794 und die Muhlenberg-Legende, an den Annals of Congress widerlegt (13. Januar 1795: ein Verfahrensantrag, 41 zu 42, ohne Bezug auf Deutsch); der Sprachstreit in St. Michaelis und Zion, Philadelphia, mit dem Strafprozess von 1816; die deutsche Stadt Hermann in Missouri und die Charter ihrer deutschen Schule 1849; die Plattform von San Antonio 1854; das Bennett-Gesetz in Wisconsin 1889–1891; die Gemeinden im Krieg 1917–1918 (New Ulm, Davenport, Iowa); und Meyer v. Nebraska, 262 U.S. 390 (1923).</p><p>Stufe 1: neun Module mit 156 Einheiten, jedes Original (deutsch oder englisch) neben einer Arbeitsübersetzung, jeder Auszug am Seitenbild eines gemeinfreien Drucks gelesen. Dazu Richtigstellungen verbreiteter Legenden, amtliche Zahlenreihen (Einwanderung, Zensus, Muttersprache, Presse) und 19 gemeinfreie Bildtafeln. Begleitspiel: <em>Mit englischer Zunge – English on the Tongue</em>.</p><p><em>English:</em> A bilingual source apparatus on German communities in America, 1683–1923: nine stations at which a community decided how much German to keep, from Germantown in 1683 to Meyer v. Nebraska in 1923; nine modules, 156 units, each original beside a working translation, every excerpt read against the page image of a public-domain print; legends corrected, official series, 19 public-domain plates.</p><p>Lizenzen: Code MIT; redaktionelle Texte CC BY 4.0; Editionen und Übersetzungen CC0 1.0 — siehe LICENSES.md. Live: https://bleibt-man-deutsch.netlify.app/</p>",
+  "license": "MIT",
+  "language": "deu",
+  "keywords": [
+    "Deutschamerikaner",
+    "German Americans",
+    "Germantown",
+    "Pastorius",
+    "Muhlenberg-Legende",
+    "Muhlenberg legend",
+    "Bennett Law",
+    "Meyer v. Nebraska",
+    "Sprachpolitik",
+    "language policy",
+    "Einwanderung",
+    "immigration",
+    "Quellenedition",
+    "Digital Humanities"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://bleibt-man-deutsch.netlify.app/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ],
+  "version": "1.0.0"
+}

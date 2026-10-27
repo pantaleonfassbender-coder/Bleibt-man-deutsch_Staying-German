@@ -1,0 +1,424 @@
+{
+ "id": "hermann1837",
+ "nr": 6,
+ "zeit": "1836–1849",
+ "ort": "Philadelphia und Hermann, Missouri",
+ "ort_en": "Philadelphia and Hermann, Missouri",
+ "titel": "Eine deutsche Stadt mit Englisch als Fach",
+ "titel_en": "A German town with English as a subject",
+ "frage": "Soll die neue Stadt eine rein deutsche Schule haben, oder eine deutsche Schule mit Englisch als Fach, und wer bezahlt sie, wenn der Staat nur die englische Distriktschule trägt?",
+ "frage_en": "Should the new town have a purely German school, or a German school with English as a subject, and who pays for it when the state supports only the English district school?",
+ "lede": "1836 gründeten Neueinwanderer in Philadelphia die Deutsche Ansiedlungs-Gesellschaft, weil sie in den amerikanisierten Pennsylvania-Deutschen die Zukunft ihrer Kinder sahen. Die Kolonie sollte „characteristically German“ sein; zugleich plante schon der Ausschussbericht Unterricht in der englischen Sprache und eine zweisprachige Bibliothek. 1837 kaufte der Agent Bayer Land am Missouri, die Stadt erhielt den Namen Hermann, und 1839 ging das Vermögen an den Stadtrat. Die Trustees prüften den ersten Lehrer im Deutschen und Englischen und ließen beide Sprachen lesen und schreiben. Als 1842 eine öffentliche Distriktschule entstand, hielten die Bürger die deutsche Schule mit eigenem Land und Fonds daneben; am 10. März 1849 erhielt sie vom Staat eine Charter, nach der sie „forever remain a German school“ sein sollte.",
+ "lede_en": "In 1836 recent immigrants in Philadelphia founded the German Settlement Society, because in the Americanized Pennsylvania Germans they saw the future of their own children. The colony was to be “characteristically German”; yet the committee report already planned instruction in the English language and a bilingual library. In 1837 the agent Bayer bought land on the Missouri, the town was named Hermann, and in 1839 the property passed to the town council. The trustees examined the first teacher in German and English and had both languages read and written. When a public district school was set up in 1842, the citizens kept the German school beside it with its own land and fund; on 10 March 1849 the state granted it a charter under which it was to “forever remain a German school”.",
+ "hinweis": "Einzige Quelle ist W. G. Bek 1907, der deutsche Dokumente im Wortlaut abdruckt; diese Stellen stehen deutsch, Beks eigener Text englisch. Gelesen am Seitenbild von IA germansettlement00bekw (Abruf als page/n<Blatt>_w1400.jpg). Blattzählung: S. 1–11 = n22–n32 (Seite + 21); wegen eingebundener Tafeln verschiebt sich die Zählung, daher steht das Blatt bei jeder Einheit (z. B. S. 46 = n75, S. 47 = n78, S. 101 = n134, S. 120 = n153, S. 129 = n168, S. 138 = n177). Bek benutzt für deutsche Zitate „…“ und ,,…“; vereinheitlicht zu „…“. Die Stadtprotokolle zitiert Bek nur englisch, weil die deutsche Fassung verloren war (S. 129). Ausgelassen: die Teilnehmerlisten, die Verfassungsurkunde vom 27.8.1836 (S. 11–16) außer der Erwähnung, die Streitigkeiten um Bayer und Jarvis.",
+ "hinweis_en": "The only source is W. G. Bek 1907, who prints German documents verbatim; those passages are given in German, Bek's own text in English. Read against the page images of IA germansettlement00bekw (fetched as page/n<leaf>_w1400.jpg). Leaf numbering: pp. 1–11 = n22–n32 (page + 21); inserted plates shift the count, so the leaf is given for each unit (e.g. p. 46 = n75, p. 47 = n78, p. 101 = n134, p. 120 = n153, p. 129 = n168, p. 138 = n177). Bek uses “…” and ,,…” for German quotations; normalized to „…“. Bek quotes the town minutes only in English because the German version was lost (p. 129). Omitted: the membership lists, the constitution of 27 Aug. 1836 (pp. 11–16) except for mention, the disputes over Bayer and Jarvis.",
+ "quellen": [
+  {
+   "key": "bek1907",
+   "zitat": "William G. Bek, The German Settlement Society of Philadelphia and its Colony, Hermann, Missouri. Philadelphia: Americana Germanica Press, 1907 (Americana Germanica, New Series, 5).",
+   "url": "https://archive.org/details/germansettlement00bekw",
+   "sprache": "en/de"
+  }
+ ],
+ "sections": [
+  {
+   "id": "plan",
+   "titel": "Der Plan in Philadelphia (1836)",
+   "titel_en": "The plan in Philadelphia (1836)",
+   "blurb": "Warum Neuankömmlinge eine deutsche Stadt wollten und was sie dafür vorsahen, Englisch eingeschlossen.",
+   "blurb_en": "Why newcomers wanted a German town and what they provided for it, English included.",
+   "units": [
+    {
+     "n": 1,
+     "quelle": "bek1907",
+     "pg": "S. 1–2",
+     "bild": "IA germansettlement00bekw, Blatt n22–n23",
+     "titel": "Gründung: eine Kolonie „characteristically German“",
+     "titel_en": "Founding: a colony “characteristically German”",
+     "lang": "en",
+     "de": "Ihre Gründer stammten nicht aus dem alten Stamm der Deutschen, die im siebzehnten und achtzehnten Jahrhundert gekommen waren. Sie waren größtenteils Neuankömmlinge, die noch an „Deutschland, Deutschland über alles“ glaubten. […] Die Gesellschaft wurde am 27. August 1836 in Philadelphia förmlich als „Deutsche Ansiedlungs-Gesellschaft zu Philadelphia“ gegründet. Ihr erklärter Zweck war, jene Pläne auszuführen, die die ausländischen Gesellschaften nicht hatten fördern können, nämlich die Gründung einer Kolonie in irgendeinem Teil der Vereinigten Staaten, vorzugsweise im „Fernen Westen“, einer Kolonie, die in jeder Einzelheit kennzeichnend deutsch sein sollte. Die Förderer hatten mehrere Gründe. Sie waren von ihrer neuen Umgebung begeistert genug und schätzten deren Möglichkeiten, aber sie vermissten so schmerzlich jene Dinge, die dem gebürtigen Deutschen so teuer sind. Sie glaubten, in teilweiser Absonderung könnten sie sowohl die Vorteile Amerikas als auch die Freuden des Vaterlandes genießen. Ihre Stammesverwandten, die sie hier vorfanden, sahen sie seltsam verändert, sehr amerikanisiert, und die Sprache, die einige von diesen sprachen, war dem Neuankömmling fast so unverständlich wie das Englische selbst. Sie erkannten, dass sie in ihren amerikanisierten Verwandten die Zukunft ihrer eigenen Kinder sahen, sollten sie in derselben Umgebung bleiben. Um dies zu vermeiden und um sich selbst zu mäßigen Kosten eine Heimat zu schaffen, sowie um einen löblichen Versuch zu fördern, das Deutsche lebendig zu erhalten, beschlossen sie die Gründung der Gesellschaft. Sie glaubten, da sie mit amerikanischen Gesetzen, Sitten und Verhältnissen einigermaßen vertraut seien, könnten sie erreichen, was anderen nicht gelungen war.",
+     "en": "Its founders were not of the old stock of Germans who had come during the seventeenth and eighteenth centuries. They were, for the most part, newcomers who still believed in “Deutschland, Deutschland über alles.” […] It was formally organized at Philadelphia, August 27, 1836, as the “Deutsche Ansiedlungs-Gesellschaft zu Philadelphia.” Its avowed purpose was to carry out those plans which the foreign societies had failed to promote, namely, the establishment of a colony in some portion of the United States, preferably in the “Far West,” a colony which should be characteristically German in every particular. The promoters were prompted by several reasons. They were enthusiastic enough about their new surroundings and appreciative of its possibilities, but they missed so keenly those things so dear to the native German. They believed that in partial isolation they could enjoy both the advantages of America and the pleasures of the Fatherland. Their kinsmen, whom they found here, they saw strangely changed, very much Americanized, and the language which some of the latter spoke was almost as unintelligible to the newcomer as the English itself. They realized that in their Americanized kinsmen they saw the future of their own children, should they remain in the same environments. To avoid this, and to find homes for themselves, at moderate cost, as well as to encourage the promotion of a laudable attempt to keep alive things German, they resolved upon the organization. They believed that, being somewhat familiar with American laws, customs and conditions, they could accomplish what others had failed to bring about.",
+     "note": "Das ist Beks Deutung von 1907, nicht ein Wortlaut der Gesellschaft. Das Liedzitat „Deutschland über alles“ (Hoffmann von Fallersleben, 1841) ist für 1836 anachronistisch; Bek benutzt es als Etikett. Mit den „Kinsmen“ sind die Pennsylvania-Deutschen gemeint, deren Mundart den Neuankömmlingen fremd war.",
+     "note_en": "This is Bek's interpretation of 1907, not wording of the society. The song quotation “Deutschland über alles” (Hoffmann von Fallersleben, 1841) is anachronistic for 1836; Bek uses it as a label. The “kinsmen” are the Pennsylvania Germans, whose dialect was strange to the newcomers."
+    },
+    {
+     "n": 2,
+     "quelle": "bek1907",
+     "pg": "S. 3–4",
+     "bild": "IA germansettlement00bekw, Blatt n24–n25",
+     "titel": "Der Aufruf in der Alten und Neuen Welt, 7. Mai 1836",
+     "titel_en": "The call in the Alte und Neue Welt, 7 May 1836",
+     "lang": "de",
+     "de": "„Schon seit einiger Zeit haben sich in mehreren Orten der Vereinigten Staaten Gesellschaften gebildet, um sich über die Gründung einer deutschen Stadt, welche der Mittelpunkt einer deutschen Ansiedlung in einer der westlichen Gegenden dieses Landes seyn soll, zu berathen. Eine solche Niederlassung, im Falle dieselbe von edelgesinnten, verständigen und fleissigen Menschen geschähe, würde gewiss für deutsche Sprache und Sitten, deutsche Kunst und Wissenschaft ein grosser Gewinn seyn, und würde Tausenden, welche gern das alte Vaterland verlassen wollten, wenn sie nur im fremden Lande dem schönen, gemüthlichen, deutschen Volksleben nicht entsagen müssten, einen willkommenen Zufluchtsort, eine neue Heimath darbieten. Es ist daher der Wunsch mehrerer Einwohner dieser Stadt, auch eine solche Gesellschaft zu errichten und dieselbe, wo möglich, mit den Andern zu einem grossen Ganzen zu verbinden. Es wird zu diesem Endzweck Samstag, den 21. Mai, Abends um 8 Uhr, in der „Northern Exchange in der dritten Strasse der nördlichen Freiheiten der Commissioners Hall gegenüber“, eine Versammlung gehalten werden, wozu nicht allein Solche, welche geneigt sind, sich nach dem fernen Westen zu begeben, sondern Alle, welche die Aufrechthaltung und Verbreitung deutschen Volksthums wünschen freundlich eingeladen sind. Es wäre zu wünschen, dass sich Einige zu einer dem Gegenstand angemessenen Rede vorbereiten möchten.“ (Signed) „Ein Deutscher.“",
+     "en": "“For some time now societies have formed in several places in the United States to deliberate on the founding of a German town, which is to be the centre of a German settlement in one of the western regions of this country. Such a settlement, provided it were made by high-minded, sensible and industrious people, would certainly be a great gain for German language and customs, German art and learning, and would offer a welcome refuge, a new home, to thousands who would gladly leave the old fatherland if only they did not have to renounce the beautiful, warm-hearted German life of the people in a foreign land. It is therefore the wish of several inhabitants of this city to establish such a society as well and, where possible, to join it with the others into one great whole. To this end a meeting will be held on Saturday, the 21st of May, at 8 o'clock in the evening, in the ‘Northern Exchange in Third Street of the Northern Liberties, opposite the Commissioners Hall’, to which not only those inclined to go to the Far West, but all who wish the maintenance and spread of German national character [Volksthum] are cordially invited. It would be desirable that some prepare a speech suited to the subject.” (Signed) “Ein Deutscher” [A German].",
+     "note": "Bek zitiert die Nummer vom 7.5.1836 nach der Akte, die damals H. A. Rattermann in Cincinnati besaß (S. 3). Ein Digitalisat der Zeitung ist nicht gefunden. Die Versammlung vom 21. Mai fiel aus, weil der Saal doppelt vergeben war; die nächste war am 3. Juni (S. 4).",
+     "note_en": "Bek quotes the issue of 7 May 1836 from the file then owned by H. A. Rattermann in Cincinnati (p. 3). No digitized copy of the paper has been found. The meeting of 21 May did not take place because the hall had been let twice; the next was on 3 June (p. 4)."
+    },
+    {
+     "n": 3,
+     "quelle": "bek1907",
+     "pg": "S. 8–9",
+     "bild": "IA germansettlement00bekw, Blatt n29–n30",
+     "titel": "Der Ausschussbericht: Englischunterricht und zweisprachige Bibliothek",
+     "titel_en": "The committee report: English instruction and a bilingual library",
+     "lang": "de",
+     "de": "The report is prefaced thus: „Brüder nenne ich Euch alle die Ihr hier versammelt seyd, alle, welche sich der deutschen Zunge bedienen, möchte ich zu einem Familienbunde vereinigt sehn.“ […] „8.) Wenn die Gesellschaft gross genug ist, so werden nach einiger Zeit ein oder mehrere tüchtige, mit soliden Kentnissen ausgerüsteten Schullehrer angestellt, welche zugleich für die Erwachsenen, die Theil am Unterricht nehmen wollen, bestimmt, und auch zweckmässigen Unterricht in der englischen Sprache ertheilen. Musik zur Ausbildung musikalischer Talente, und Gesangübungen für alle jungen Personen möchten mit solchem Unterricht hauptsächlich verbunden werden. 9.) Eine gesellschaftliche Bibliothek ausgewählter, nützlicher Schriften in teutscher und englischer Sprache möge ein wesentlicher Gegenstand der Berathung werden.“ Thus the committee outlined the plan of procedure and offered suggestions that should induce others to become interested in the scheme.",
+     "en": "The report is prefaced thus: “Brothers I call you all who are assembled here; all who use the German tongue I would like to see united in a family league.” […] “8.) When the society is large enough, after some time one or more capable schoolteachers equipped with solid knowledge will be engaged, who are at the same time meant for the adults who wish to take part in the instruction, and who also give suitable instruction in the English language. Music for the training of musical talents, and singing exercises for all young persons, should chiefly be joined with such instruction. 9.) A society library of selected, useful writings in the German and English languages should become an essential subject of deliberation.” Thus the committee outlined the plan of procedure and offered suggestions that should induce others to become interested in the scheme.",
+     "note": "Es sind Vorschläge des Ausschusses für Wege und Mittel (Committee on Ways and Means), nach Bek angeregt von Dr. Wilhelm Schmoele, keine Paragraphen der Satzung. Die Punkte 5 bis 7 lässt Bek aus (S. 9). Die Grammatik „mit soliden Kentnissen ausgerüsteten“ steht so im Druck.",
+     "note_en": "These are proposals of the Committee on Ways and Means, prompted according to Bek by Dr. William Schmoele, not articles of the statutes. Bek omits points 5 to 7 (p. 9). The grammar of “mit soliden Kentnissen ausgerüsteten” is as printed."
+    },
+    {
+     "n": 4,
+     "quelle": "bek1907",
+     "pg": "S. 10",
+     "bild": "IA germansettlement00bekw, Blatt n31",
+     "titel": "Die ersten Statuten (August 1836)",
+     "titel_en": "The first statutes (August 1836)",
+     "lang": "de",
+     "de": "Statuten der deutschen Ansiedlungs-Gesellschaft. Da wir es für sehr vortheilhaft für uns, unsere Freunde, und die Deutschen im Allgemeinen halten, dass in irgend einem passenden Theile der Vereinigten Staaten, wo möglich Pennsylvanien, eine deutsche Ansiedlung angelegt werde, in welcher einer grossen Anzahl Deutscher Gelegenheit gegeben wird ihren Fleiss und ihre Kentnisse auf einer ihnen vortheilhaften und angenehmen Weise in Thätigkeit und Anwendung zu bringen: so haben wir uns zu einer Gesellschaft vereinigt, deren Zweck ist alle Erkundigungen einzuziehen, Untersuchungen anzustellen und Vorbereitungen zu treffen, welche zur Ansiedlung nothwendig und nützlich sind. I. Name. Der Name der Gesellschaft soll sein „Deutsche Ansiedlungs-Gesellschaft.“ II. Mitglieder. Jedermann kann Mitglied dieser Gesellschaft werden, welcher Interesse für die beabsichtigte deutsche Ansiedlung hegt, er mag dahin auswandern wollen oder nicht. III. Beiträge. Jedes Mitglied zahlt einen Beitrag von $3.00 in die Kasse der Gesellschaft, um die zur Ausführung ihres Planes nothwendigen Ausgaben zu bestreiten. Diese 3 Thaler und alle etwaigen anderen autorisierten Ausgaben der Glieder dieser Gesellschaft sollen denselben bei der späteren wirklichen Anlegung der Ansiedlung als Abschlagszahlung für ihre Landantheile zu gute geschrieben werden.",
+     "en": "Statutes of the German Settlement Society. Since we hold it very advantageous for ourselves, our friends, and the Germans in general that in some suitable part of the United States, if possible Pennsylvania, a German settlement be laid out, in which a large number of Germans are given the opportunity to put their industry and their knowledge into activity and use in a manner advantageous and agreeable to them: we have therefore united in a society whose purpose is to gather all information, to make investigations and to take preparations that are necessary and useful for settlement. I. Name. The name of the society shall be “Deutsche Ansiedlungs-Gesellschaft.” II. Members. Anyone may become a member of this society who takes an interest in the intended German settlement, whether he wishes to emigrate there or not. III. Contributions. Each member pays a contribution of $3.00 into the treasury of the society to meet the expenses necessary for carrying out its plan. These 3 dollars and any other authorized expenses of the members of this society shall be credited to them, at the later actual laying out of the settlement, as a payment on account of their shares of land.",
+     "note": "Entwurf vom 9. August 1836; das Datum der Annahme ist nach Bek unbestimmt (S. 10). Die endgültige „Verfassungsurkunde“ vom 27. August 1836 (S. 11–16) regelt Aktien, Ämter und Kasse und enthält keine Sprachbestimmung. Noch wird Pennsylvanien als Ziel genannt.",
+     "note_en": "Draft of 9 August 1836; according to Bek the date of its adoption is undetermined (p. 10). The final constitution of 27 August 1836 (pp. 11–16) regulates shares, offices and treasury and contains no language provision. Pennsylvania is still named as the goal."
+    }
+   ]
+  },
+  {
+   "id": "ort",
+   "titel": "Ort und Name (1837)",
+   "titel_en": "Site and name (1837)",
+   "blurb": "Die Wahl eines Sklavenstaats am Fluss, der Name Hermann und ein Agent, der beide Sprachen beherrschen muss.",
+   "blurb_en": "The choice of a slave state on a river, the name Hermann and an agent who must master both languages.",
+   "units": [
+    {
+     "n": 5,
+     "quelle": "bek1907",
+     "pg": "S. 36–37",
+     "bild": "IA germansettlement00bekw, Blatt n59–n60",
+     "titel": "Warum Missouri? Ein Sklavenstaat am Fluss",
+     "titel_en": "Why Missouri? A slave state on a river",
+     "lang": "en",
+     "de": "Es ist in der Tat eine interessante Frage, warum Missouri gewählt worden sein sollte. Man muss sich erinnern, dass Missouri ein Sklavenstaat war und dass der deutsche Sinn eine natürliche Abneigung gegen die Einrichtung der Sklaverei hatte. Andere Staaten, in freiem Gebiet, hatten Land zu ebenso günstigen Bedingungen wie Missouri. Es darf jedoch nicht übersehen werden, dass ein Hauptpunkt in den Anweisungen an die Agenten der Gesellschaft darin bestand, dass sie nur solche Gebiete in Betracht ziehen sollten, die an einem schiffbaren Fluss lagen. Aus diesem Grund wurden zweifellos der Wabash und der Missouri ausdrücklich genannt. Wir möchten ferner behaupten, dass Missouri im öffentlichen Bewusstsein stärker gegenwärtig war als die anderen für die Kolonie vorgeschlagenen Gebiete. Es lag noch an der äußersten Grenze.",
+     "en": "It is indeed an interesting problem why Missouri should have been selected. It must be remembered that Missouri was a slave state and that the German mind had a natural antipathy for the institution of slavery. Other States, in free territory, had land at just as liberal terms as Missouri. It must not be overlooked, however, that one prime factor in the instructions issued to the agents of the society was that they should consider only such sections as were adjacent to a navigable river. For this reason, no doubt, the Wabash and the Missouri were specifically mentioned. We would further venture the assertion that Missouri was more in the public mind than the other sections suggested for the colony. It was yet on the very frontier.",
+     "note": "Beks „natürliche Abneigung“ ist eine Verallgemeinerung von 1907. Er nennt danach Dudens Bericht (1829) und Brommes Missouri-Buch (1835) als Werbung (S. 37–38). Auf S. 46 zählt Bek mehrere Vermutungen über Bayers Wahl des hügeligen Landes auf, darunter, er habe flaches Land gemieden, „in order that there might be no temptation or possibility for the settlers to own slaves“. Bek selbst hält die Nähe der Gießener und Berliner Siedlungen für den Hauptgrund (S. 46, Blatt n75).",
+     "note_en": "Bek's “natural antipathy” is a generalization of 1907. He then names Duden's report (1829) and Bromme's Missouri book (1835) as advertising (pp. 37–38). On p. 46 Bek lists several conjectures about Bayer's choice of hilly land, among them that he avoided level land “in order that there might be no temptation or possibility for the settlers to own slaves”. Bek himself thinks the nearness of the Giessen and Berlin settlements the main reason (p. 46, leaf n75)."
+    },
+    {
+     "n": 6,
+     "quelle": "bek1907",
+     "pg": "S. 47–48",
+     "bild": "IA germansettlement00bekw, Blatt n78–n79",
+     "titel": "Land gekauft, die Stadt heißt Hermann (5. Oktober 1837)",
+     "titel_en": "Land bought, the town is named Hermann (5 October 1837)",
+     "lang": "de",
+     "de": "The meeting of October 5th, 1837, was another memorable one in the annals of the Deutsche Ansiedlungs-Gesellschaft. After the president's order, that the society enter into secret session, had been obeyed, he announced: „Dass er die frohe Nachricht mitzutheilen habe, dass ein grosses Stück Land für die Gesellschaft gekauft sei.“ […] So favorable was the prospect and so bright the outlook that the Board of Managers felt justified soon after in resolving: „Dass, da das Land für die Gesellschaft an einem sehr günstigen Platze am Missouri Flusse angekauft ist, jede Actie vom 1. October d. J. an, bis auf weitere Anzeige, 35 Dollar kostet.“ […] On the same day that the announcement of the purchase was made, the name of the town was to be discussed. Only a name typically German would do. After a brief deliberation, this decision was reached: „Dass die auf dem von der Deutschen Ansiedlungs-Gesellschaft gekauften Lande zu erbauende Stadt den Namen Hermann erhalten soll.“",
+     "en": "The meeting of October 5th, 1837, was another memorable one in the annals of the Deutsche Ansiedlungs-Gesellschaft. After the president's order, that the society enter into secret session, had been obeyed, he announced: “That he had the glad news to communicate that a large piece of land had been bought for the society.” […] So favorable was the prospect and so bright the outlook that the Board of Managers felt justified soon after in resolving: “That, since the land for the society has been bought at a very favourable place on the Missouri River, each share shall cost 35 dollars from 1 October of this year until further notice.” […] On the same day that the announcement of the purchase was made, the name of the town was to be discussed. Only a name typically German would do. After a brief deliberation, this decision was reached: “That the town to be built on the land bought by the German Settlement Society shall receive the name Hermann.”",
+     "note": "Gemischte Einheit: Beks englischer Rahmen, die Beschlüsse deutsch. Dass der Name auf den Cherusker Arminius zielt, steht bei Bek nicht; er schreibt nur „typically German“. Am 2.11.1837 stieg der Aktienpreis auf 50 Dollar (S. 47).",
+     "note_en": "Mixed unit: Bek's English frame, the resolutions in German. That the name refers to the Cheruscan Arminius is not stated by Bek; he writes only “typically German”. On 2 November 1837 the share price rose to 50 dollars (p. 47)."
+    },
+    {
+     "n": 7,
+     "quelle": "bek1907",
+     "pg": "S. 55",
+     "bild": "IA germansettlement00bekw, Blatt n86",
+     "titel": "Instruktion des General-Agenten: beider Sprachen mächtig",
+     "titel_en": "Instructions for the General Agent: master of both languages",
+     "lang": "de",
+     "de": "„Par. 4. Sollte ein Fall vorkommen, wo der General-Agent nothwendig handeln müsste, ohne für den besonderen Fall Instruction von der Gesellschaft zu haben, so soll er mit Zuziehung und Berathung der dortigen Committee so handeln, wie es für die Gesellschaft am vortheilhaftesten ist. Par. 5. Der General-Agent soll alle Land-Vermessungen auf dem Gebiete der Gesellschaft besorgen. Par. 6. Der General-Agent soll sowohl der englischen als der deutschen Sprache mächtig sein.“ With these instructions Bayer, accompanied by his family, started out for his new field of labor, early in December, 1837.",
+     "en": "“Par. 4. Should a case occur in which the General Agent must necessarily act without having instruction from the society for the particular case, he shall, calling in and consulting the committee there, act as is most advantageous for the society. Par. 5. The General Agent shall take care of all land surveys on the territory of the society. Par. 6. The General Agent shall be master of the English as well as of the German language.” With these instructions Bayer, accompanied by his family, started out for his new field of labor, early in December, 1837.",
+     "note": "Georg Friedrich Bayer war Schullehrer der Zions-Gemeinde in Philadelphia (S. 39, nur OCR). Die Instruktion ist laut Fußnote auf S. 54 der Alten und Neuen Welt vom 27.1.1838 entnommen (nur OCR, Jahreszahl dort beschnitten).",
+     "note_en": "George F. Bayer was schoolmaster of the Zion congregation in Philadelphia (p. 39, OCR only). According to the footnote on p. 54 the instruction is taken from the Alte und Neue Welt of 27 January 1838 (OCR only, year clipped there)."
+    }
+   ]
+  },
+  {
+   "id": "stadt",
+   "titel": "Die Stadt (1838–1839)",
+   "titel_en": "The town (1838–1839)",
+   "blurb": "Feiern mit den amerikanischen Nachbarn, Streit zwischen Stadt und Farmern, Übergabe des Vermögens an Hermann.",
+   "blurb_en": "Celebrating with the American neighbours, conflict between town and farmers, handover of the property to Hermann.",
+   "units": [
+    {
+     "n": 8,
+     "quelle": "bek1907",
+     "pg": "S. 67",
+     "bild": "IA germansettlement00bekw, Blatt n98",
+     "titel": "Bayer am Vorabend des 4. Juli 1838",
+     "titel_en": "Bayer on the eve of 4 July 1838",
+     "lang": "de",
+     "de": "Hermann, July 3rd, 1838. Herrn Doctor Schmoele, Präsident der deutschen Ansiedlungs-Gesellschaft zu Philadelphia. Geehrter Herr! Ich benutze den Vorabend des für uns Deutsche so gehaltvollen Festes, das auch morgen hier nun von der ganzen Colonie mit Einschluss der uns umgebenden Amerikanern gefeiert werden soll, um Ihnen die Fortsetzung des unterm 25ten v. M. datirten Briefes zu liefern. Der Gedanke an den grossen, edlen Befreyer unserer jetzigen Heimath, hat viel für mich, sollte es für jeden Deutschen haben. Er handelte frey und recht mit seinen Landsleuten und wurde doch verkannt, sogar vom damaligen Congress. Warum soll ich mich beklagen, dem so Vieles abgeht, was ihm eigen war, wenn ich verkannt werde. Warum soll ich mich beleidigt fühlen, wenn Einer dem ich nicht nach seiner Pfeife tanzen konnte, ohne meine Instruction zu verletzen, in der St. Louiser Zeitung von Gewalt herunter schwatzt, die ich nicht kenne noch kennen mag? Oder ist das Gewalt, wenn ich ihm 200 Acker Land die er verlangt nicht auf Credit gebe, weil er nur zu 80 berechtigt ist? […]",
+     "en": "Hermann, July 3rd, 1838. To Doctor Schmoele, President of the German Settlement Society at Philadelphia. Honoured Sir! I use the eve of the festival so meaningful for us Germans, which tomorrow is to be celebrated here by the whole colony including the Americans around us, to send you the continuation of my letter dated the 25th of last month. The thought of the great, noble liberator of our present home means much to me, and should to every German. He acted freely and rightly with his countrymen and yet was misjudged, even by the Congress of that time. Why should I, who lack so much that was his, complain when I am misjudged? Why should I feel offended when someone to whose tune I could not dance without violating my instruction prattles in the St. Louis paper of a violence that I do not know nor wish to know? Or is it violence if I do not give him on credit the 200 acres of land he demands, because he is entitled only to 80? […]",
+     "note": "Der „Befreyer“ ist George Washington. Mit der „St. Louiser Zeitung“ ist wohl der Anzeiger des Westens gemeint [Zuordnung nicht geprüft]. Bayer legte sein Amt am 2.10.1838 nieder (S. 48).",
+     "note_en": "The “liberator” is George Washington. The “St. Louis paper” is probably the Anzeiger des Westens [attribution not checked]. Bayer laid down his office on 2 October 1838 (p. 48)."
+    },
+    {
+     "n": 9,
+     "quelle": "bek1907",
+     "pg": "S. 74",
+     "bild": "IA germansettlement00bekw, Blatt n105",
+     "titel": "„Neben Ober- und Niederländern … Amerikaner“ (Brief vom 1. Juni 1838)",
+     "titel_en": "“Besides Upper and Lower Germans … Americans” (letter of 1 June 1838)",
+     "lang": "de",
+     "de": "„[…] Es wohnen hier bereits neben Ober- und Niederländern, Schweizer, Franzosen, Schotten und Amerikaner, welche aber sicherlich nicht mit den „Natives“ zu verwechseln sind. Es ist ein treuer unverdorbener Menschenschlag, wie man östlich nicht mehr findet. Die innwohnenden Amerikaner interessiren sich sehr für Hermann, welches indess schon in ihrem eigenen Interesse liegt. Aus Obigem werden Sie schon ersehen, dass die Aussichten für Hermann nicht anders als sehr gut sein können. Von den Fremden, welche hierher kamen, ist fast keiner wieder fortgegangen, ohne vorher einen Bauplatz oder Land genommen zu haben, in der Absicht, sobald als möglich zurückzukommen und sich anzusiedeln. Viele sind schon häuslich eingerichtet und betreiben bürgerliche Geschäfte. […] Die innwohnenden Amerikaner liefern uns Lebensmittel, die nicht theuer sind. […] Es wäre zu wünschen, dass wir die ganze Verwaltung jetzt bald hierher bekämen und dass recht bald über den Zustand der Kasse der Deutschen Ansiedlungs-Gesellschaft hinreichende Auskunft gegeben und förmliche Rechnung abgelegt würde.“",
+     "en": "“[…] Living here already, besides Upper and Lower Germans, are Swiss, French, Scots and Americans, who, however, are certainly not to be confused with the ‘Natives’. They are a loyal, unspoilt breed of people such as one no longer finds in the East. The resident Americans take great interest in Hermann, which indeed is already in their own interest. From the above you will see that the prospects for Hermann cannot be other than very good. Of the strangers who came here, hardly one has left again without first taking a building lot or land, intending to come back as soon as possible and settle. Many are already settled in their homes and carry on civic trades. […] The resident Americans supply us with provisions that are not dear. […] It would be desirable that we soon received the whole administration here, and that very soon sufficient information were given about the state of the treasury of the German Settlement Society and formal account rendered.”",
+     "note": "Anonymer Brief aus Hermann, gedruckt im Anzeiger des Westens und nachgedruckt in der Alten und Neuen Welt vom 7.7.1838 (Bek S. 73, Fußnote, nur OCR). „Natives“ meint die Nativisten. Bek sieht im letzten Absatz den Anfang der Forderung, die Verwaltung nach Hermann zu verlegen (S. 74).",
+     "note_en": "Anonymous letter from Hermann, printed in the Anzeiger des Westens and reprinted in the Alte und Neue Welt of 7 July 1838 (Bek p. 73, footnote, OCR only). “Natives” means the nativists. Bek sees in the last paragraph the beginning of the demand to move the administration to Hermann (p. 74)."
+    },
+    {
+     "n": 10,
+     "quelle": "bek1907",
+     "pg": "S. 88",
+     "bild": "IA germansettlement00bekw, Blatt n121",
+     "titel": "Trautweins Protest: „Eine Oase in der Wüste“ (22. Februar 1839)",
+     "titel_en": "Trautwein's protest: “An oasis in the desert” (22 February 1839)",
+     "lang": "de",
+     "de": "„Es handelt sich um Ausschliessung eines achtbaren, wichtigen und zahlreichen Theiles der Gesellschaftsmitglieder von allen Rechten und Vortheilen der Gesellschaft, um die Beraubung der Landbewohner zum Besten der Stadt. Soll der Grundsatz der Rechtsgleichheit aller unserer Mitglieder schon am ersten Morgen unseres jungen Lebens niedergetreten und von einem deutschen Whigismus verschlungen werden?“ Continuing, he points out, that it had not been the intention of the founders of the society to establish a town only, but „eine lebenvolle Deutsche Ansiedlung Landwirthe eben sowohl als Gewerbe teibende Städter.“ Quite sensibly he remarks: „Wie hätte auch eine deutsche Stadt inmitten einer amerikanischen Landbevölkerung eine Heimath für uns werden können? Eine Oase in der Wüste — bald überweht von deren austrocknenden Sande! Wir sollten ein Ganzes seyn, ein Ganzes bleiben, gleiche Rechte geniessen, ob wir es vorziehen sollten auf dem Lande oder in der Stadt zu leben.“",
+     "en": "“It is a matter of excluding a respectable, important and numerous part of the society's members from all rights and advantages of the society, of robbing the country-dwellers for the benefit of the town. Shall the principle of equal rights of all our members be trampled down on the very first morning of our young life and swallowed up by a German Whiggism?” Continuing, he points out, that it had not been the intention of the founders of the society to establish a town only, but “a lively German settlement, farmers just as well as townspeople carrying on trades.” Quite sensibly he remarks: “How could a German town in the midst of an American rural population ever have become a home for us? An oasis in the desert — soon blown over by its parching sand! We were to be one whole, to remain one whole, to enjoy equal rights, whether we should prefer to live in the country or in the town.”",
+     "note": "Kernstelle zur Leitfrage. Der Streit ging um die Übertragung des Gesellschaftsvermögens an die zu inkorporierende Stadt; die Farmer fürchteten, leer auszugehen. Verfasst von Fr. Husmann, Fr. Leupold und Daniel Trautwein, unterschrieben nur von Trautwein (S. 88). „teibende“ ist Druckfehler für „treibende“, so belassen.",
+     "note_en": "Key passage for the guiding question. The dispute concerned the transfer of the society's property to the town that was to be incorporated; the farmers feared being left with nothing. Drawn up by Fr. Husmann, Fr. Leupold and Daniel Trautwein, signed only by Trautwein (p. 88). “teibende” is a misprint for “treibende”, left as printed."
+    },
+    {
+     "n": 11,
+     "quelle": "bek1907",
+     "pg": "S. 101",
+     "bild": "IA germansettlement00bekw, Blatt n134",
+     "titel": "Der Beschluss: das Vermögen geht an den Stadtrat (17. September 1839)",
+     "titel_en": "The resolution: the property passes to the town council (17 September 1839)",
+     "lang": "de",
+     "de": "This was done early in September. At an extra session of the home society on September 17th these promises evidently were joyfully received. A final and decisive resolution was then passed: „Dass die hiesigen Trustees sowohl, als die Trustees in der Ansiedlung hierdurch angewiesen sind, von allen ihnen respectiv anvertrauten gesellschaftlichen Vermögen einen vollständigen Deed of Trust an den Stadt-Council der Stadt Hermann, Gasconade County, Missouri, zu übermachen, welcher künftig als Trustee der deutschen Ansiedlungs-Gesellschaft das Vermögen der Letzteren repräsentiren soll.“ With the passage of this act the great decision had been reached. Everyone breathed more freely — even those who felt that the step was injudiciously made. The die was cast, and Hermann was thrown upon its own resources and its members upon their own ingenuity to make or mar the future of a German town.",
+     "en": "This was done early in September. At an extra session of the home society on September 17th these promises evidently were joyfully received. A final and decisive resolution was then passed: “That the trustees here as well as the trustees in the settlement are hereby instructed to make over a complete deed of trust of all the society's property respectively entrusted to them to the town council of the town of Hermann, Gasconade County, Missouri, which shall in future, as trustee of the German Settlement Society, represent the property of the latter.” With the passage of this act the great decision had been reached. Everyone breathed more freely — even those who felt that the step was injudiciously made. The die was cast, and Hermann was thrown upon its own resources and its members upon their own ingenuity to make or mar the future of a German town.",
+     "note": "Die letzte Versammlung in Philadelphia fand laut Bek am 12.12.1839 statt; die letzte Aktie wurde am 1.12.1839 verkauft (S. 102, 119; nur OCR). Insgesamt zählt Bek 678 Teilhaber (S. 119, nur OCR).",
+     "note_en": "According to Bek the last meeting in Philadelphia took place on 12 December 1839; the last share was sold on 1 December 1839 (pp. 102, 119; OCR only). In all Bek counts 678 participants (p. 119, OCR only)."
+    }
+   ]
+  },
+  {
+   "id": "schule",
+   "titel": "Die Schule (1839–1849)",
+   "titel_en": "The school (1839–1849)",
+   "blurb": "Ein zweisprachiger Lehrer, eine deutsche Schule neben der Distriktschule, ein eigener Fonds und die Charter von 1849.",
+   "blurb_en": "A bilingual teacher, a German school beside the district school, its own fund and the charter of 1849.",
+   "units": [
+    {
+     "n": 12,
+     "quelle": "bek1907",
+     "pg": "S. 129–130",
+     "bild": "IA germansettlement00bekw, Blatt n168–n169",
+     "titel": "Der erste Lehrer: in beiden Sprachen geprüft (August 1839)",
+     "titel_en": "The first teacher: examined in both languages (August 1839)",
+     "lang": "en",
+     "de": "(Beim Zitieren aus dem Stadtprotokoll müssen wir auf die englische Fassung zurückgreifen, da die deutsche Abschrift verlegt, gestohlen oder vernichtet ist. Die Sprache dieser Protokolle ist nicht immer fehlerfrei. Wir entschuldigen uns jedoch nicht, sie zu benutzen, da ein nicht amerikanisiertes Volk sie geschrieben hat. […]) […] Das Protokoll lautet: „Dass ein Ausschuss, bestehend aus Wm. Pommer, J. Leupold, D. Widersprecher, hiermit ersucht wird, Herrn F. A. Hemme hinsichtlich seiner Kenntnis der deutschen wie der englischen Sprache zu prüfen.“ […] Fünf Tage später wurde dieser Eintrag gemacht: „Dass Herr Hemme hiermit als Lehrer der Stadtschule unter folgenden Bedingungen angestellt wird: Dass er den Anweisungen der Trustees der Stadt gehorche. Dass sein Gehalt vorläufig nicht weniger als $300 jährlich betragen soll. Dass er im ersten Jahr im Winter von 9 bis 12 Uhr vormittags und von 2 bis 4 Uhr nachmittags, im Sommer von 6 bis 10 Uhr vormittags und von 2 bis 4 Uhr nachmittags Schule halte. Mittwoch- und Samstagnachmittag soll keine Schule gehalten werden. Dass wir Unterricht geben im Lesen und Schreiben der deutschen und englischen Sprache, Grammatik, Rechnen, Geschichte, Geographie und Zeichnen. Dass die Schule am 26. August 1839 beginne.“",
+     "en": "(In quoting from the town record, we are compelled to resort to the English version, the German copy being misplaced, stolen, or destroyed. The language of these records is not always faultless. We make no apologies, however, for using it, since an un-Americanized people wrote them. […]) […] The minutes read thus: “That a committee to consist of Wm. Pommer, J. Leupold, D. Widersprecher, is hereby requested to examine Mr. F. A. Hemme in regard to his knowledge of the German as well as the English languages.” […] Five days later this record was inserted: “That Mr. Hemme is hereby appointed as teacher of the town school under the following conditions: That he obey the instructions of the Trustees of the Town. That his salary for the present shall not be less than $300 per annum. That he shall attend school for the first year from 9 to 12 o'clock A. M. and from 2 to 4 o'clock P. M. in winter; and from 6 to 10 o'clock A. M. and from 2 to 4 o'clock P. M. in summer. Wednesday and Saturday afternoon no school to be held. That we give instruction in Reading and Writing the German and English languages, Grammatic, Arithmetic, History, Geography and Drawing. That school commence on the 26th of August, 1839.”",
+     "note": "Kernstelle. Das Protokoll der Stadt-Trustees vom 7.8.1839 liegt nur in der englischen Fassung vor; die Stadt führte ihre Protokolle also zweisprachig. „Grammatic“ steht so im Protokoll. Zuvor hatte Bayer im Frühjahr 1839 in einem gemieteten Raum unterrichtet; am 2.7.1839 wurde ein Schulhaus für $680 beschlossen (S. 129).",
+     "note_en": "Key passage. The minutes of the town trustees of 7 August 1839 survive only in the English version; the town thus kept its records in two languages. “Grammatic” is as in the record. Before this, Bayer had taught in a rented room in spring 1839; on 2 July 1839 a school house for $680 was decided (p. 129)."
+    },
+    {
+     "n": 13,
+     "quelle": "bek1907",
+     "pg": "S. 130–131",
+     "bild": "IA germansettlement00bekw, Blatt n169–n170",
+     "titel": "Kinderfreund und Webster; ein Lehrer aus Deutschland, der Englisch versteht",
+     "titel_en": "Kinderfreund and Webster; a teacher from Germany who understands English",
+     "lang": "en",
+     "de": "Zwei Tage nach dem für die Eröffnung angesetzten Datum beschloss der Vorstand: „Dass die nötigen Schulbücher von der Stadt beschafft und den Eltern der Kinder zum Selbstkostenpreis verkauft werden. Es sollen gekauft werden 100 Exemplare von Wilmsens „Kinderfreund“, 50 Exemplare von Websters „Spelling Books“, für $10.00 gewöhnliches Schreibpapier, Federkiele, Tinte und Tintenfässer. Herr J. Leupold soll den Ankauf des „Kinderfreund“ übernehmen, und die übrigen Artikel sollen von Herrn F. A. Hemme besorgt werden.“ […] Trotz all dieser Schwierigkeiten und Hindernisse war die Teilnahme an der Schule sehr lebendig. Die Trustees übertrugen sich selbst die Aufgabe: „Dass jede Woche zwei der Trustees zusammen die Schule der Stadt besuchen sollen, um den Fortschritt der Kinder festzustellen und ihn zu fördern.“ Natürlich war es nicht leicht, zu dem gebotenen Preis und mit der Forderung, dass der Unterricht in zwei Sprachen sein solle, tüchtige Lehrer zu finden. […] Es wurde dann beschlossen: „Dass für die Schule der Stadt ein Lehrer gesucht werde, der in Deutschland für den Beruf des Lehrens ausgebildet worden ist und der die englische Sprache gründlich versteht.“",
+     "en": "Two days after the date set for the opening, the Board resolved: “That the necessary school books be furnished by the Town and sold to the parents of the children at cost price. There shall be bought 100 copies of Wilmsen's “Kinderfreund,” 50 copies of Webster's “Spelling Books,” $10.00 worth of common writing paper, quills, ink and inkstands. Mr. J. Leupold is to undertake the purchase of the “Kinderfrenud,” and the other articles to be provided by Mr. F. A. Hemme.” […] Despite all these difficulties and hindrances, the interest in the school was very much alive. The Trustees voted upon themselves the task: “That every week two of the Trustees together shall visit the School of the Town to ascertain the progress of the children and to further the same.” Of course it was not an easy matter to find competent teachers at the price that was offered and with the requirements that the instruction should be in two languages. […] It was then decided: “That a teacher be sought for the school of the town who has been educated in Germany for the business of teaching, and who understands the English language thoroughly.”",
+     "note": "Das Verhältnis 100 deutsche Lesebücher zu 50 englischen Buchstabierbüchern zeigt die Gewichtung. „Kinderfrenud“ ist Druckfehler bei Bek, so belassen. Wilmsens „Der deutsche Kinderfreund“ war ein verbreitetes Lesebuch.",
+     "note_en": "The ratio of 100 German readers to 50 English spelling books shows the weighting. “Kinderfrenud” is a misprint in Bek, left as printed. Wilmsen's “Der deutsche Kinderfreund” was a widely used reader."
+    },
+    {
+     "n": 14,
+     "quelle": "bek1907",
+     "pg": "S. 132–133",
+     "bild": "IA germansettlement00bekw, Blatt n171–n172",
+     "titel": "Der Schuldistrikt von 1842: zwei Schulen nebeneinander",
+     "titel_en": "The school district of 1842: two schools side by side",
+     "lang": "en",
+     "de": "Drei Jahre lang waren alle Angelegenheiten der Hermanner Schule von den Deutschen der Kolonie angeregt und getragen worden. Ganz natürlich wurde die deutsche Seite des Unterrichts besonders betont. Im Frühjahr 1842 wurde der Schuldistrikt Hermann festgelegt. Das gab den Kolonisten gewisse Rechte, wie es ihnen auch gewisse Pflichten auferlegte. Unter dieser neuen Ordnung hatten alle Einwohner innerhalb der Grenzen des Dorfes Anspruch auf die Vorteile der Schule. Steuern mussten die Kosten decken. Schulhäuser mussten mit dem Geld aller Leute gebaut werden. Da die Mehrheit der Benutzer Deutsche waren, gab es keine Schwierigkeit, die Leitung zu behalten. Ein neues Schulhaus wurde errichtet und war als die Distriktschule bekannt. Viele Jahre bestanden die beiden Schulen nebeneinander. Es wurde den Männern in Hermann ganz klar, dass die deutsche Schule, um zu bestehen, auf ihre eigenen Mittel angewiesen sein würde, da von Seiten des Staates keine Unterstützung zu erwarten war.",
+     "en": "For three years all affairs of the Hermann school had been instigated and supported by the Germans of the colony. Quite naturally the German side of the instruction was especially emphasized. In the spring of 1842 the school district of Hermann was defined. This gave the colonists certain rights, as it also imposed certain obligations. Under this new régime all the residents within the limits of the village were entitled to benefits from the school. Taxes must defray the expenses. School houses must be built by all the people's money. Since the majority of the patrons were Germans, no difficulty was experienced in maintaining control. A new school house was erected and was known as the district school. For many years the two schools existed side by side. It became quite apparent to the men at Hermann that for the German school to exist, it would be compelled to look to its own resources, as no support could be expected from the hands of the state.",
+     "note": "Hier liegt die eigentliche Entscheidung: Die deutsche Schule blieb neben der öffentlichen Distriktschule bestehen und wurde privat finanziert. Bek berichtet auch, dass die Hermanner Lehrer bis 1907 öffentlich in beiden Sprachen geprüft wurden (S. 132).",
+     "note_en": "Here lies the actual decision: the German school continued beside the public district school and was privately funded. Bek also reports that Hermann teachers were examined publicly in both languages down to 1907 (p. 132)."
+    },
+    {
+     "n": 15,
+     "quelle": "bek1907",
+     "pg": "S. 133",
+     "bild": "IA germansettlement00bekw, Blatt n172",
+     "titel": "Kochs Schenkung „zum Besten einer deutschen Schule“ (19. Dezember 1839)",
+     "titel_en": "Koch's gift “for the benefit of a German school” (19 December 1839)",
+     "lang": "de",
+     "de": "„Geschenk für die deutsche Ansiedlungs-Gesellschaft. Ich, Johann Heinrich Koch, aus Hamfeldt, Amt Alten Bruchhausen, Königreich Hannover, erkläre hierdurch für mich und meine Erben, dass ich eine Actie obiger Gesellschaft, Share Book, No. 932, Running No. 576, ausgestellt in Philadelphia, den 18. September 1839 der Stadt Hermann im Staate Missouri zum Besten einer deutschen Schule geschenkt habe und ermächtige durch diese meine öffentliche Anzeige die Trustees der Stadt Hermann, denen ich nächstens den Actienschein schicken werde, nach diesem meinen Willen zum wahren Wohle der deutschen Jugend zu verfahren und die Einkünfte des zu wählenden Bauplatzes oder Landes zum Besten einer deutschen Schule in Hermann anzuwenden, wie sie es für eine gute und gediegene Bildung der dortigen Jugend am zweckmässigsten halten. Philadelphia, den 19. December 1839. Johann Heinrich Koch.“ J. G. Wesselhoeft, A. J. Stockfleth, Zeugen.",
+     "en": "“Gift for the German Settlement Society. I, Johann Heinrich Koch, from Hamfeldt, district of Alten Bruchhausen, Kingdom of Hanover, hereby declare for myself and my heirs that I have given one share of the above society, Share Book No. 932, Running No. 576, issued in Philadelphia on 18 September 1839, to the town of Hermann in the State of Missouri for the benefit of a German school, and by this my public notice I authorize the trustees of the town of Hermann, to whom I shall shortly send the share certificate, to act according to this my will for the true welfare of the German youth and to apply the revenues of the building lot or land to be chosen for the benefit of a German school in Hermann, as they consider most expedient for a good and solid education of the youth there. Philadelphia, 19 December 1839. Johann Heinrich Koch.” J. G. Wesselhoeft, A. J. Stockfleth, witnesses.",
+     "note": "Gedruckt in der Alten und Neuen Welt vom 21.12.1839 (Bek, Fußnote S. 133). „zum Besten einer deutschen Schule“ ist bei Bek gesperrt bzw. kursiv.",
+     "note_en": "Printed in the Alte und Neue Welt of 21 December 1839 (Bek, footnote p. 133). “zum Besten einer deutschen Schule” is italicized in Bek."
+    },
+    {
+     "n": 16,
+     "quelle": "bek1907",
+     "pg": "S. 134",
+     "bild": "IA germansettlement00bekw, Blatt n173",
+     "titel": "Land für den Schulfonds; 5.000 Dollar bis März 1849",
+     "titel_en": "Land for the school fund; 5,000 dollars by March 1849",
+     "lang": "en",
+     "de": "Als der Schuldistrikt Hermann gebildet wurde, beschlossen die Bürger, die den großen Nutzen erkannten, der daraus entstehen würde, und auch erkannten, dass nur wenige nichtdeutsche Einwohner davon profitieren würden, am 8. August 1842, einen Teil des Landes diesem Zweck zu widmen: „Dass die folgenden Ländereien, die der Deutschen Ansiedlungs-Gesellschaft, jetzt den Einwohnern von Hermann, gehören, als „Schenkung“ dem Schuldistrikt Hermann zu unbeschränktem Eigentum übertragen werden.“ Dann folgt die Aufzählung des so geschenkten Landes, im Ganzen 1.170,63 Acres. Am 6. Juni 1847 wurde eine weitere Zuwendung zur Förderung der Erziehung gemacht: „Dass die Reserveländereien der Stadt in Stadtblöcke entsprechend dem Stadtplan eingeteilt werden und darauf so viele dieser Blöcke öffentlich versteigert werden, bis eine genügende Summe erzielt ist, um einen unabhängigen Stadtschulfonds zu errichten.“ Es scheint, dass am 10. März 1849 ein deutscher Schulfonds von $5.000,00 bestand.",
+     "en": "When the Hermann School District was organized the citizens appreciating the vast good that would arise from it, and also realizing that only a few non-German residents would profit by it, they voted, on the 8th of August, 1842, to grant a portion of land to this purpose: “That the following lands, belonging to the German Settlement Society, now the inhabitants of Hermann, shall be deeded over as “A Donation” to the Hermann School District, in fee simple.” Then follows the stipulation of the land so donated, amounting to 1,170.63 acres. On the 6th of June, 1847, another grant was made for the support of education: “That the reserve lands of the Town be layed off in Town-blocks in conformity with the plot of the Town and thereupon so many of said blocks shall be sold at public auction until a sufficient sum is realized to establish an independent Town-school fund.” It appears that on March 10, 1849, there existed a German school fund of $5,000.00.",
+     "note": "Der 10. März 1849 ist zugleich das Datum der Charter; die 5.000 Dollar sind das Stiftungskapital ihres Sec. 9. Beks Satz „only a few non-German residents would profit“ ist seine Deutung.",
+     "note_en": "10 March 1849 is also the date of the charter; the 5,000 dollars are the endowment of its Sec. 9. Bek's phrase “only a few non-German residents would profit” is his interpretation."
+    },
+    {
+     "n": 17,
+     "quelle": "bek1907",
+     "pg": "S. 135–136",
+     "bild": "IA germansettlement00bekw, Blatt n174–n175",
+     "titel": "Die Charter der deutschen Schule, 1849 (I): Gründung und Trustees",
+     "titel_en": "The charter of the German school, 1849 (I): foundation and trustees",
+     "lang": "en",
+     "de": "Eine Schule so einzigartig zu führen, erfordert mehr als den Willen der Beteiligten. Die Schulgesetze sehen in den unteren Klassen Unterricht nur in englischer Sprache vor und billigen nur diesen. Es bedurfte eines Gesetzgebungsaktes, um diese Grenzen zu überschreiten. Dieses Vorrecht gewährte die Generalversammlung von Missouri 1849. Es lautet wie folgt: „Charter der deutschen Schule zu Hermann.“ Die Generalversammlung des Staates Missouri beschließt wie folgt: Section 1. Eine Schule für Knaben und Mädchen wird hiermit in der Stadt Hermann errichtet, die unter dem Namen „The German School of Hermann“ bekannt sein soll. Sec. 2. Friedrich Hundhausen, Julius Leupold, Joseph Lessel, August Wasser und H. Burkhardt werden hiermit zu Trustees dieser Schule ernannt, und sie und ihre Nachfolger im Amt werden hiermit zu einer Körperschaft öffentlichen Rechts gebildet, die unter dem Namen „The Trustees of the German School of Hermann“ bekannt ist; unter diesem Namen sollen sie fortdauernde Nachfolge im Amt haben, ein gemeinsames Siegel führen, es nach Belieben ändern und brechen können, klagen und verklagt werden […] vor allen Gerichten dieses Staates oder der Vereinigten Staaten. Sec. 3. Am ersten Montag des nächsten April soll in der Stadt Hermann eine Wahl von fünf Trustees zur Verwaltung dieser Schule stattfinden. Sie bleiben ein Jahr im Amt und bis ihre Nachfolger gewählt sind; am selben Tag jedes Jahres soll eine Wahl der Trustees stattfinden. Sec. 4. […] Sie sollen ein Protokoll ihrer Verhandlungen führen, und alle ihre Sitzungen sollen öffentlich sein. Sec. 5. Die Trustees sollen befugt sein, […] Land, Gebäude, Gelder, Güter oder Fahrnis jeder Art […] für die Schule zu empfangen und zu halten […]; sie sollen aber niemals befugt sein, Grundeigentum der Schule zu verkaufen, zu verpfänden oder auf irgendeine Weise mit Schulden zu belasten. Sec. 6. Der Vorstand der Trustees soll befugt und verpflichtet sein, die Schule zu beaufsichtigen, einen oder mehrere Lehrer, einen Schatzmeister und sonstige nötige Beamte und Bedienstete anzustellen, sie aus gutem Grund zu entlassen, ihr Gehalt festzusetzen, zu bestimmen, welche Fächer in der Schule gelehrt werden sollen, und die Satzungen, Regeln und Ordnungen zu erlassen, die sie für die Verwaltung der Schule für nötig halten, jedoch nicht im Widerspruch zu den Gesetzen dieses Staates; und sie sollen niemals zulassen, dass in der Schule bekenntnismäßige Religionslehren gelehrt werden.",
+     "en": "To conduct a school thus uniqely, it reqires more than the will of the people concerned. The school laws provide for and sanction instruction in the English language only, in the lower grades. It required a legislative act to overstep these bounds. This privilege was granted by the General Assembly of Missouri in 1849. It reads as follows: “Charter of the German School at Hermann.” Be it enacted by the General Assembly of the State of Missouri as follows:— Section 1. A school for males and females is hereby established in the town of Hermann, which shall be known by the name of “The German School of Hermann.” Sec. 2. Friedrich Hundhausen, Julius Leupold, Joseph Lessel, August Wasser and H. Burkhardt are hereby appointed trustees of said school, and they and their successors in office are hereby created and constituted a body politic and corporate, to be known by the name and style of “The Trustees of the German School of Hermann,” and by that name shall have perpetual succession in office, shall have a common seal, may change, alter and break the same at pleasure, may sue and be sued, plead and be impleaded, answer and be answered unto in all Courts of this State or of the United States. Sec. 3. On the first Monday of April next there shall be held an election in the town of Hermann for the election of five trustees to manage the affairs of said school. They shall hold their office for one year and until their successors are elected and qualified; on the same day every year an election for trustees shall be held. Sec. 4. […] They shall keep a journal of their proceedings, and all their meetings shall be public. Sec. 5. The trustees shall have power to receive by gift or otherwise and hold to them and their successors forever any land, tenements, moneys, goods or chattels of what kind soever, which may be purchased, devised or given to them for said school, and to lease, rent, put out on interest or otherwise dispose of the same in such manner as shall seem most conducive to the advantage of the school; but shall never have power to sell, mortgage or in any way encumber with debt any real estate belonging to said school. Sec. 6. The Board of Trustees shall have power, and it shall be their duty, to superintend said school, to appoint one or more teachers, treasurer, and such other officers and servants as may be necessary, to remove the same for good cause, to stipulate their salary, to direct and determine what branches of education shall be taught in said school, and to make such by-laws, rules and regulations as they shall deem necessary for the management of said school, but not contrary to the laws of this State; and they shall never permit any professional religious doctrines to be taught in said school.",
+     "note": "Kernstelle (mit Einheit 18 vollständig, ausgelassen nur Teile von Sec. 4 und Sec. 7–8 über Vorsitz, Eid und Bürgschaft). Text nach Beks Abdruck; die amtliche Fassung in den Laws of Missouri 1848/49 ist nicht eingesehen. Beks Satz über die Schulgesetze („English language only, in the lower grades“) ist am Missourier Schulgesetz von 1849 ungeprüft. „uniqely“ und „reqires“ sind Druckfehler bei Bek.",
+     "note_en": "Key passage (complete together with unit 18; omitted only parts of Sec. 4 and Secs. 7–8 on chairman, oath and bond). Text after Bek's reprint; the official version in the Laws of Missouri 1848/49 has not been seen. Bek's statement about the school laws (“English language only, in the lower grades”) is unchecked against the Missouri school law of 1849. “uniqely” and “reqires” are misprints in Bek."
+    },
+    {
+     "n": 18,
+     "quelle": "bek1907",
+     "pg": "S. 137–138",
+     "bild": "IA germansettlement00bekw, Blatt n176–n177",
+     "titel": "Die Charter der deutschen Schule, 1849 (II): „forever remain a German school“",
+     "titel_en": "The charter of the German school, 1849 (II): “forever remain a German school”",
+     "lang": "en",
+     "de": "Sec. 9. Die Zinsen eines Stammkapitals von fünftausend Dollar ($5000), das die Einwohner von Hermann der Schule geschenkt haben, sollen jährlich für die Bezahlung eines oder mehrerer Lehrer und für andere notwendige Ausgaben der Schulverwaltung verwendet werden; das Kapital aber soll für immer unangetastet bleiben. Sollten die Zinsen zur Deckung der notwendigen Ausgaben nicht ausreichen, so sollen die Trustees befugt sein, den Fehlbetrag durch Schulgeldrechnungen (rate bills) zu decken, wie sie den öffentlichen Schulen dieses Staates erlaubt sind. Sec. 10. Jeder freie weiße Haushaltsvorstand der Stadt Hermann, der mindestens zwölf Monate vor einer Wahl in der Stadt ansässig war, soll wählbar und berechtigt sein, die Trustees dieser Schule zu wählen […]. Sec. 11. Der Vorstand der Trustees soll mindestens einmal im Jahr eine Versammlung aller Einwohner der Stadt Hermann einberufen, ihnen die Lage der Schule vorlegen, und es soll mindestens eine öffentliche Prüfung jedes Jahr stattfinden. Sec. 12. Der Vorsitzende der Trustees soll am ersten Montag im März jedes Jahres durch Handzettel oder in einer Hermanner Zeitung eine Darstellung der Angelegenheiten und Verhältnisse der Schule veröffentlichen, mit Angabe der Zahl der angestellten Lehrer, der Zahl der Schüler, die im vergangenen Jahr die Schule besucht haben, Knaben und Mädchen; welche Fächer gelehrt worden sind, welche Sprachen usw.; welches Geld eingenommen und ausgegeben wurde. Sec. 13. Die Trustees sollen für gewöhnliche Dienste keine Bezahlung erhalten. Sec. 14. Diese Schule soll eine deutsche Schule sein und für immer bleiben, in der alle Zweige der Wissenschaft und Bildung in deutscher Sprache gelehrt werden sollen. Dieses Gesetz tritt mit seiner Verabschiedung in Kraft. Gebilligt am 10. März 1849.",
+     "en": "Sec. 9. The interest of a capital stock of five thousand dollars ($5000) donated by the inhabitants of Hermann to said school shall annually be appropriated to the payment of a teacher or teachers and other necessary expenditures in the management of said school; but the principal shall forever be and remain inviolate. Should said interest prove insufficient to defray the necessary expenses of said school, then the trustees shall be empowered to make up the deficiency by issuing rate bills, as allowed to the common schools in this State. Sec. 10. Every free white householder of the town of Hermann, who has been a resident of said town for at least twelve months preceding an election, shall be eligible and entitled to vote for trustees of this school […]. Sec. 11. The Board of Trustees shall call at least one meeting a year of all the inhabitants of the town of Hermann, lay before them the situation of the school, and there shall be at least one public examination every year. Sec. 12. The chairman of the trustees shall, on the first Monday of March of every year, publish handbills, or in a Hermann paper, an exhibit of its affairs and conditions of said school, stating the number of teachers employed, the number of scholars that have been attending the school during the preceding year, males and females; what branches of education have been taught what languages, etc.; what money received and expended. Sec. 13. The trustees shall receive no pay for any ordinary services rendered. Sec. 14. This school shall be and forever remain a German school, in which all branches of science and education shall be taught in the German language. This Act to take effect from and after its passage. Approved March 10, 1849.",
+     "note": "Kernstelle. Sec. 14 macht die Schule ausdrücklich deutschsprachig; Englisch wird in der Charter nicht erwähnt, war aber nach Einheit 12–13 seit 1839 Fach. Sec. 10 beschränkt das Wahlrecht auf „free white householder“, wie es dem Recht des Sklavenstaats Missouri entsprach. Ausgelassen ist der Schluss von Sec. 10 über Wahlverfahren und Nachwahlen.",
+     "note_en": "Key passage. Sec. 14 makes the school expressly German-language; English is not mentioned in the charter, but according to units 12–13 it had been a subject since 1839. Sec. 10 restricts the vote to “free white householder”, in keeping with the law of the slave state of Missouri. Omitted is the end of Sec. 10 on election procedure and by-elections."
+    }
+   ]
+  },
+  {
+   "id": "rueckblick",
+   "titel": "Rückblick (1858 und 1907)",
+   "titel_en": "Looking back (1858 and 1907)",
+   "blurb": "Zwei Beobachter zeigen, was aus der deutschen Stadt nach einer und nach drei Generationen geworden war.",
+   "blurb_en": "Two observers show what had become of the German town after one and after three generations.",
+   "units": [
+    {
+     "n": 19,
+     "quelle": "bek1907",
+     "pg": "S. 120",
+     "bild": "IA germansettlement00bekw, Blatt n153",
+     "titel": "Münch 1858: „In Hermann vergisst man …“",
+     "titel_en": "Münch 1858: “In Hermann one forgets …”",
+     "lang": "de",
+     "de": "In 1858 the venerable Friedrich Münch gave this picture of Hermann, which was then twenty years old. „Hermann, südlich am Missouri in Gasconade County mit 1400 teutschen Einwohnern, einem Hauptdepot der Pacific-Eisenbahn, zwei Kirchen, einem teutschen Gesellschaftshaus; Hauptgewerbe ist der Weinbau; hat eine teutsche Zeitung. Hermann ist auf der Südseite amphitheatralisch von Hügelreihen umgeben, auf welchen erst in den letzten Jahren der Urwald ausgetilgt wurde, um für die jährlich sich mehrenden Rebenanlagen Platz zu machen. […] In Hermann vergisst man dass man sich in einem nicht teutschen Lande befindet. Zwei öffentliche Schulen (von welchen die eine für immer eine teutsche bleiben muss) sorgen für die Unterweisung der Jugend.“",
+     "en": "In 1858 the venerable Friedrich Münch gave this picture of Hermann, which was then twenty years old. “Hermann, south of the Missouri in Gasconade County, with 1400 German inhabitants, a main depot of the Pacific Railroad, two churches, a German society house; the chief trade is viticulture; has a German newspaper. Hermann is surrounded on the south side, like an amphitheatre, by ranges of hills on which the primeval forest was cleared only in recent years to make room for the vineyards that increase every year. […] In Hermann one forgets that one is in a non-German country. Two public schools (of which one must forever remain a German one) provide for the instruction of the young.”",
+     "note": "Münch, „Der Staat Missouri“, S. 204, nach Bek. Münch war Mitgründer der Gießener Auswanderungsgesellschaft (Notizen 1683–1850, 7b). Der Klammersatz bezieht sich auf Sec. 14 der Charter.",
+     "note_en": "Münch, “Der Staat Missouri”, p. 204, after Bek. Münch was a co-founder of the Giessen Emigration Society (notes 1683–1850, 7b). The parenthesis refers to Sec. 14 of the charter."
+    },
+    {
+     "n": 20,
+     "quelle": "bek1907",
+     "pg": "S. 127–128",
+     "bild": "IA germansettlement00bekw, Blatt n164–n165",
+     "titel": "Bek 1907: Deutsch auf der Straße, Englisch auf Anrede",
+     "titel_en": "Bek 1907: German in the street, English when addressed",
+     "lang": "en",
+     "de": "Zur Ehre der Leute von Hermann sei gesagt, dass die meisten von ihnen stolz auf ihre deutsche Abstammung sind. Sie hängen zäh und liebevoll an ihrer Sprache, wie das Kapitel über die Erziehung bestätigen wird. Auf den Straßen und in den Geschäftshäusern wird ganz allgemein Deutsch gesprochen. Damit soll nicht gesagt sein, dass diese Leute die Sprache ihres Landes nicht kennen. Keineswegs. Nur eine begrenzte Zahl sehr alter Leute antwortet nicht auf Englisch, wenn man sie so anspricht. Dies jedoch sollte gesagt werden, dass mit wenigen Ausnahmen alle eine auffallende Eigentümlichkeit des Akzents und der Betonung haben. […] Die wenigen Englischsprechenden in Hermann haben fast ohne Ausnahme einige Kenntnis des Deutschen erworben. Wenn auch einige von ihnen es nicht gut sprechen können, sind sie doch alle praktisch, für Geschäftszwecke, gezwungen, es zu verstehen, wenn es gesprochen wird. Ihre Kinder nehmen den Deutschkurs in den Schulen ohne Abänderung. Interessanterweise sind die wenigen Neger in der Stadt Meister eines schönen Hermanner Deutsch. Ein deutschsprechender Neger ist in Missouri in der Tat eine Ausnahme.",
+     "en": "To the credit of the people of Hermann let it redound that most of them are proud of their German descent. They cling to their language tenaciously and lovingly, as will be verified by the Chapter on Education. On the streets and in the business houses German is quite generally spoken. This is not to imply that these people are ignorant of the language of their country. By no means. Only a limited number of very old people fail to respond in English when so addressed. This, however, should be said that with but few exceptions all of them have a striking peculiarity of accent and intonation. […] The few English speaking persons of Hermann have almost without exception acquired some knowledge of the German. While some of them cannot speak it well, all of them are practically, for business purposes, compelled to understand it when spoken. Their children take the German course in the schools without modification. Interestingly enough, the few negroes in the town are masters of a beautiful Hermann German. A German-speaking negro is indeed an exception in Missouri.",
+     "note": "Beobachtung Beks von etwa 1906, also zwei Generationen nach der Gründung. „negroes“ ist die übliche Bezeichnung der Zeit für Schwarze; sie wird hier als Quellensprache belassen. Bek nennt diese Menschen nur als Kuriosum; über ihre Lage in Hermann sagt er nichts.",
+     "note_en": "Bek's observation of about 1906, two generations after the founding. “negroes” is the usual term of the time for Black people; it is kept here as source language. Bek mentions these people only as a curiosity; he says nothing about their situation in Hermann."
+    }
+   ]
+  }
+ ],
+ "legenden": [
+  {
+   "behauptung": "Hermann wurde als abgeschlossene deutsche Stadt gegründet, die das Englische ablehnte.",
+   "behauptung_en": "Hermann was founded as a closed German town that rejected English.",
+   "befund": "Schon der Ausschussbericht von 1836 sah Englischunterricht und eine deutsch-englische Bibliothek vor; der Agent musste beide Sprachen beherrschen; der erste Lehrer wurde 1839 in beiden Sprachen geprüft, und gekauft wurden auch Websters Spelling Books. Deutsch war Kern, Englisch Fach.",
+   "befund_en": "The committee report of 1836 already provided for English instruction and a German-English library; the agent had to master both languages; the first teacher was examined in both languages in 1839, and Webster's spelling books were bought as well. German was the core, English a subject.",
+   "beleg": "Einheiten [3], [7], [12], [13]"
+  },
+  {
+   "behauptung": "Bayer wählte das hügelige Land, damit die Siedler keine Sklaven halten konnten.",
+   "behauptung_en": "Bayer chose the hilly land so that the settlers could not keep slaves.",
+   "befund": "Bek führt das 1907 nur als eine von mehreren umlaufenden Vermutungen an und hält selbst die Nähe der Gießener und Berliner Siedlungen und von St. Louis für entscheidend. Ein Beleg aus den Akten der Gesellschaft fehlt.",
+   "befund_en": "In 1907 Bek cites this only as one of several current conjectures and himself regards the nearness of the Giessen and Berlin settlements and of St. Louis as decisive. Evidence from the society's records is lacking.",
+   "beleg": "Bek S. 46 (Blatt n75); Einheit [5]"
+  },
+  {
+   "behauptung": "Die Stadt ist nach dem Cheruskerfürsten Arminius benannt.",
+   "behauptung_en": "The town is named after the Cheruscan chief Arminius.",
+   "befund": "Der Beschluss vom 5.10.1837 nennt nur den Namen; Bek schreibt, es habe ein „typically German“ Name sein sollen. Die Deutung auf Arminius ist naheliegend, steht aber nicht in der Quelle.",
+   "befund_en": "The resolution of 5 Oct. 1837 gives only the name; Bek writes that it had to be a “typically German” name. The reference to Arminius is plausible but is not in the source.",
+   "beleg": "Einheit [6]"
+  },
+  {
+   "behauptung": "Der Staat Missouri förderte 1849 den deutschen Unterricht.",
+   "behauptung_en": "In 1849 the State of Missouri promoted German instruction.",
+   "befund": "Die Charter erlaubte eine Körperschaft mit eigenem Fonds, gab aber kein Staatsgeld: Bezahlt wurde aus den Zinsen der 5.000 Dollar der Bürger, notfalls durch Schulgeld. Bek betont, die deutsche Schule habe vom Staat keine Unterstützung erwarten können.",
+   "befund_en": "The charter permitted a corporation with its own fund but gave no state money: payment came from the interest on the citizens' 5,000 dollars, if necessary from rate bills. Bek stresses that the German school could expect no support from the state.",
+   "beleg": "Einheiten [14], [16], [18]"
+  }
+ ],
+ "spiel": {
+  "optionen": [
+   {
+    "text": "Eine deutsche Stadtschule mit Lesen und Schreiben in beiden Sprachen einrichten und den Lehrer in beiden prüfen (1839).",
+    "text_en": "Set up a German town school with reading and writing in both languages and examine the teacher in both (1839).",
+    "beleg": "Einheiten [12], [13]",
+    "gewaehlt": true
+   },
+   {
+    "text": "Einen in Deutschland ausgebildeten Lehrer suchen, der das Englische gründlich versteht.",
+    "text_en": "Seek a teacher trained in Germany who understands English thoroughly.",
+    "beleg": "Einheit [13]",
+    "gewaehlt": false
+   },
+   {
+    "text": "Die deutsche Schule in der öffentlichen Distriktschule aufgehen lassen (1842).",
+    "text_en": "Let the German school merge into the public district school (1842).",
+    "beleg": "Einheit [14]",
+    "gewaehlt": false
+   },
+   {
+    "text": "Die deutsche Schule neben der Distriktschule halten, mit Land, Fonds und staatlicher Charter (1842–1849).",
+    "text_en": "Keep the German school beside the district school, with land, a fund and a state charter (1842–1849).",
+    "beleg": "Einheiten [14], [15], [16], [17], [18]",
+    "gewaehlt": true
+   },
+   {
+    "text": "Das Vermögen der Gesellschaft der Stadt übertragen statt Stadt und Farmer gleichzustellen (1839).",
+    "text_en": "Transfer the society's property to the town instead of giving town and farmers equal standing (1839).",
+    "beleg": "Einheiten [10], [11]",
+    "gewaehlt": true
+   }
+  ],
+  "folgen": "17.9.1839 Übergabe des Vermögens an den Stadtrat von Hermann; Dezember 1839 Auflösung der Gesellschaft in Philadelphia (nur OCR). 26.8.1839 Eröffnung der Stadtschule mit Unterricht in beiden Sprachen. Frühjahr 1842 Schuldistrikt Hermann; seither zwei Schulen nebeneinander. 8.8.1842 Landschenkung von 1.170,63 Acres an den Schuldistrikt; 6.6.1847 Verkauf von Stadtblöcken für einen Schulfonds. 10.3.1849 Charter der „German School of Hermann“, Stiftungskapital 5.000 Dollar. 1858 nach Münch 1.400 deutsche Einwohner und zwei öffentliche Schulen. 25.2.1870 Steuerrecht für die Trustees (Laws of Missouri 1870, S. 315, nach Bek), 17.3.1871 Anleihe bis 8.000 Dollar (Bek S. 139, nur OCR); ab 1871 beide Schulen unter einem Dach, jeder Lehrer unterrichtet in beiden Sprachen. 1907 wird nach Bek Deutsch in allen Klassen bis zur High School gelehrt; auf der Straße spricht man Deutsch, antwortet aber auf Englisch.",
+  "folgen_en": "17 Sept. 1839 handover of the property to the town council of Hermann; December 1839 dissolution of the society in Philadelphia (OCR only). 26 Aug. 1839 opening of the town school with instruction in both languages. Spring 1842 Hermann school district; from then on two schools side by side. 8 Aug. 1842 land gift of 1,170.63 acres to the school district; 6 June 1847 sale of town blocks for a school fund. 10 March 1849 charter of the “German School of Hermann”, endowment 5,000 dollars. 1858, according to Münch, 1,400 German inhabitants and two public schools. 25 Feb. 1870 taxing power for the trustees (Laws of Missouri 1870, p. 315, after Bek), 17 March 1871 bonds up to 8,000 dollars (Bek p. 139, OCR only); from 1871 both schools under one roof, each teacher teaching in both languages. In 1907, according to Bek, German is taught in all grades up to high school; German is spoken in the street, but people answer in English."
+ },
+ "tafeln": [
+  {
+   "motiv": "Gemälde von Hermann, Missouri, um 1850 (unbekannter Maler, Missouri History Museum)",
+   "url": "https://commons.wikimedia.org/wiki/File:Painting_of_Hermann,_Missouri.jpg",
+   "lizenz": "Public domain (Commons-Dateiseite geprüft 27.10.2026)",
+   "geprueft": true
+  },
+  {
+   "motiv": "Bildnis „Geo. F. Bayer, the Agent of the Society“, Tafel bei Bek 1907, zwischen S. 38 und 39",
+   "url": "https://archive.org/details/germansettlement00bekw",
+   "lizenz": "PD (US-Druck 1907; IA-Metadaten NOT_IN_COPYRIGHT); nicht auf Commons",
+   "geprueft": true
+  },
+  {
+   "motiv": "Karte der Landkäufe der Gesellschaft, Tafel bei Bek 1907 (bei S. 44–46)",
+   "url": "https://archive.org/details/germansettlement00bekw",
+   "lizenz": "PD (US-Druck 1907); Blatt noch zu bestimmen",
+   "geprueft": false
+  }
+ ],
+ "offen": [
+  "Der amtliche Text der Charter von 1849 (Laws of the State of Missouri, 15. Generalversammlung 1848/49) wurde online nicht gefunden: kein Exemplar auf archive.org, HathiTrust für Abruf gesperrt. Die Einheiten 17–18 folgen Beks Abdruck.",
+  "Beks Aussage, die Missourier Schulgesetze hätten in den unteren Klassen nur Englisch erlaubt, ist am Schulgesetz nicht geprüft.",
+  "Die Alte und Neue Welt (Philadelphia 1834–1843): Verbleib der Akte Rattermann und Digitalisat weiter unbekannt.",
+  "Die deutschen Stadtprotokolle von Hermann waren schon 1907 verloren; Bek zitiert die englische Fassung.",
+  "Laws of Missouri 1870, S. 315, und das Gesetz vom 17.3.1871 nicht eingesehen.",
+  "Die Gründung des Hermanner Wochenblatts (laut Notizen 1845) ist hier nicht geprüft."
+ ]
+}

@@ -1,0 +1,495 @@
+# -*- coding: utf-8 -*-
+"""Baut apparat/module/petition1795.json (Modul 4: 1794-1795, Kongress in Philadelphia).
+Die Petition aus Augusta County und die Muhlenberg-Legende.
+Alle Einheiten am Seitenbild gelesen: Annals of Congress (IA sim_united-states-congress-debates-
+and-proceedings_december-2-1793-march-3-1795_2, Blatt n = (erste Spalte + 3) / 2), House Journal
+(IA journalhouserep05conggoog, Faksimile), Statutes at Large Bd. 1 (LoC-PDF llsl-c3, mit pymupdf
+gerendert), Loeher 1847 (IA geschichteundzus00lh, Blatt n = Seite + 21, Fraktur),
+Seidensticker 1889 (IA jstor-20083312, Blatt n = Seite - 183)."""
+import json, os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+IA = "https://archive.org/details/"
+AN = "sim_united-states-congress-debates-and-proceedings_december-2-1793-march-3-1795_2"
+
+quellen = [
+    {"key": "journal1794", "zitat": "Journal of the House of Representatives of the United States, Third Congress, Second Session (3. November 1794 bis 3. März 1795), Philadelphia: Francis Childs und John Swaine [1795]; benutzt im photographischen Nachdruck: The Congressional Journals of the United States, The Journal of the House of Representatives, Bd. 7, hg. von Martin P. Claussen, Wilmington: Michael Glazier 1977 (nur die Faksimileseiten des Drucks von Childs und Swaine). US-Regierungswerk.", "url": IA + "journalhouserep05conggoog", "sprache": "en"},
+    {"key": "annals3", "zitat": "The Debates and Proceedings in the Congress of the United States […] Third Congress: comprising the period from December 2, 1793, to March 3, 1795, inclusive (Annals of Congress, Kolumnentitel „History of Congress“), Washington: Gales and Seaton [1849]; House of Representatives, Sp. 945–1230. US-Regierungswerk.", "url": IA + AN, "sprache": "en"},
+    {"key": "stat1", "zitat": "An Act for the more general promulgation of the laws of the United States, 3. März 1795, 3rd Congress, Sess. II, Ch. 50, 1 Stat. 443. United States Statutes at Large, Bd. 1 (Ausgabe Little and Brown, Boston 1845; LoC-Digitalisat llsl-c3). US-Regierungswerk.", "url": "https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c3/llsl-c3.pdf", "sprache": "en"},
+    {"key": "loeher1847", "zitat": "Franz Löher, Geschichte und Zustände der Deutschen in Amerika, Cincinnati: Eggers und Wulkop; Leipzig: [K.] F. Köhler 1847, Viertes Buch, Erstes und Zweites Blatt, S. 193–194 und 198–199. Löher starb 1892; gemeinfrei.", "url": IA + "geschichteundzus00lh", "sprache": "de"},
+    {"key": "seidensticker1889", "zitat": "Oswald Seidensticker, „Frederick Augustus Conrad Muhlenberg, Speaker of the House of Representatives, in the First Congress, 1789“, The Pennsylvania Magazine of History and Biography 13 (1889), S. 184–206, hier S. 196 und 203–204. Seidensticker starb 1894; gemeinfrei.", "url": IA + "jstor-20083312", "sprache": "en"},
+]
+
+
+def U(n, quelle, pg, bild, titel, titel_en, lang, de, en, note="", note_en=""):
+    u = {"n": n, "quelle": quelle, "pg": pg, "bild": bild, "titel": titel, "titel_en": titel_en,
+         "lang": lang, "de": de.strip(), "en": en.strip()}
+    if note:
+        u["note"] = note.strip(); u["note_en"] = note_en.strip()
+    return u
+
+
+BA = "IA " + AN + ", Blatt "
+BJ = "IA journalhouserep05conggoog, Blatt "
+BL = "IA geschichteundzus00lh, Blatt "
+BS = "IA jstor-20083312, Blatt "
+
+# ---------------------------------------------------------------- [1] Journal 28.11.1794
+u1_en = """
+FRIDAY, the 28th of November, 1794.
+
+Ordered, That Mr. Hartley have leave to be absent from the service of this House, until this day se'nnight.
+
+A petition of a number of Germans, residing in the county of Augusta, in the state of Virginia, was presented to the House and read, stating the inconveniences to which they are subjected, from an entire ignorance of the English language, and praying that a certain portion of the laws of the United States, may be printed in the German language. Also,
+
+A memorial of Andrew Ramsay, of Monongalia county, in the state of Virginia, praying compensation for his services as an express rider, from Ohio county in the said state, to the falls of Ohio river in Kentucky, by order of brigadier-general Irvine, in the year 1782.
+
+Ordered, That the said petition and memorial do lie on the table.
+"""
+u1_de = """
+FREITAG, den 28. November 1794.
+
+Beschlossen, dass Mr. Hartley die Erlaubnis erhält, dem Dienst dieses Hauses bis heute in acht Tagen fernzubleiben.
+
+Eine Petition einer Anzahl Deutscher, wohnhaft im County Augusta im Staat Virginia, wurde dem Haus vorgelegt und verlesen. Sie schildert die Unannehmlichkeiten, denen sie wegen völliger Unkenntnis der englischen Sprache ausgesetzt sind, und bittet, dass ein gewisser Teil der Gesetze der Vereinigten Staaten in deutscher Sprache gedruckt werde. Ferner
+
+eine Denkschrift von Andrew Ramsay aus dem Monongalia County im Staat Virginia, der um Vergütung seiner Dienste als Eilbote vom Ohio County im genannten Staat zu den Fällen des Ohio in Kentucky bittet, geleistet auf Befehl von Brigadegeneral Irvine im Jahr 1782.
+
+Beschlossen, dass die genannte Petition und die Denkschrift auf dem Tisch liegen bleiben.
+"""
+
+# ---------------------------------------------------------------- [2] Annals 1.12.1794
+u2_en = """
+Ordered, That the petition of a number of Germans, residing in the county of Augusta, in the State of Virginia, which lay on the table, be referred to the committee last appointed.
+
+The House resolved itself into a Committee of the Whole House on the report of the committee to whom was referred the petition of Moses Myers; and, after some time spent therein, the Committee rose and reported progress.
+
+PROMULGATION OF THE LAWS.
+
+Mr. Moore made a motion that a committee should be appointed to report a method for the more regular and effectual promulgation of the laws of the United States.
+
+Mr. Baldwin rose and observed, that in a country so extensive as America, and where the people are so widely scattered, it was a work of immense difficulty to have a regular and accurate account of the measures of Government communicated through every part of the Union. The importance of this object was equal to its difficulty. […] Reverting to the motion just now made, Mr. B. observed, that if the people are properly informed, and do their duty, it will be easy to guard against both these evils. […]
+
+The only cure against these mischiefs is to pour in light into every corner of the country. Let all the measures of the Government be accompanied by a blaze of day, and like the birds of night these animals are dislodged. They cannot bear the light.
+
+It can scarcely be conceived by those who have no calls to visit the interior and more retired parts of the country, how much the peace of our society is disturbed by the malicious propagation of political falsehood. The most wicked lies are kept in circulation, for months together, and before they can be effectually contradicted, the people have almost become frantic. For example, Mr. B. mentioned, that it had been asserted that a poll-tax of forty shillings per head had been laid on all the inhabitants, that the excise has been extended to wheat, to looms, and to the implements of husbandry, and that the late drafts of the eighty thousand militia are sold to France to carry on the war! It is probable, that riots and insurrections are fomented by these rumors more than by all other causes. If a constant and regular publication of all that is done could be made to reach every part of the United States, it would be an effectual, and perhaps the only cure of these mischiefs. […] He concluded by recommending some further and more extensive provision on the subject contemplated in the motion under consideration.
+
+Ordered, That a committee be appointed to report what further provisions are necessary for the general promulgation of the Laws of the United States.
+
+And a committee was appointed, of Mr. Moore, Mr. Baldwin, and Mr. Heister.
+"""
+u2_de = """
+Beschlossen, dass die Petition einer Anzahl Deutscher, wohnhaft im County Augusta im Staat Virginia, die auf dem Tisch lag, dem zuletzt eingesetzten Ausschuss überwiesen werde.
+
+Das Haus bildete sich zum Ausschuss des ganzen Hauses über den Bericht des Ausschusses, dem die Petition von Moses Myers überwiesen worden war; nach einiger Zeit erhob sich der Ausschuss und meldete Fortschritt.
+
+BEKANNTMACHUNG DER GESETZE.
+
+Mr. Moore stellte den Antrag, einen Ausschuss einzusetzen, der ein Verfahren zur regelmäßigeren und wirksameren Bekanntmachung der Gesetze der Vereinigten Staaten vorschlagen solle.
+
+Mr. Baldwin erhob sich und bemerkte, in einem so ausgedehnten Land wie Amerika, wo die Menschen so weit verstreut lebten, sei es eine Arbeit von ungeheurer Schwierigkeit, einen regelmäßigen und genauen Bericht über die Maßnahmen der Regierung in jeden Teil der Union gelangen zu lassen. Die Wichtigkeit dieses Ziels sei ebenso groß wie seine Schwierigkeit. […] Auf den eben gestellten Antrag zurückkommend, bemerkte Mr. B., wenn das Volk ordentlich unterrichtet sei und seine Pflicht tue, werde es leicht sein, sich gegen diese beiden Übel zu schützen. […]
+
+Das einzige Mittel gegen diese Übel sei, Licht in jeden Winkel des Landes zu gießen. Man lasse alle Maßnahmen der Regierung von hellem Tageslicht begleitet sein, dann würden diese Geschöpfe wie die Vögel der Nacht vertrieben. Sie könnten das Licht nicht ertragen.
+
+Wer keinen Anlass habe, das Innere und die abgelegeneren Teile des Landes zu besuchen, könne sich kaum vorstellen, wie sehr der Friede unserer Gesellschaft durch die böswillige Verbreitung politischer Unwahrheiten gestört werde. Die schlimmsten Lügen würden monatelang in Umlauf gehalten, und ehe man ihnen wirksam widersprechen könne, sei das Volk fast außer sich geraten. Als Beispiel nannte Mr. B., man habe behauptet, allen Einwohnern sei eine Kopfsteuer von vierzig Schilling auferlegt worden, die Verbrauchsteuer sei auf Weizen, Webstühle und Ackergerät ausgedehnt worden, und die jüngst ausgehobenen achtzigtausend Milizsoldaten seien an Frankreich verkauft, damit es seinen Krieg führen könne! Wahrscheinlich würden Unruhen und Aufstände durch solche Gerüchte mehr geschürt als durch alle anderen Ursachen. Könnte eine beständige und regelmäßige Veröffentlichung alles dessen, was geschieht, jeden Teil der Vereinigten Staaten erreichen, so wäre das ein wirksames und vielleicht das einzige Mittel gegen diese Übel. […] Er schloss mit der Empfehlung, über den Gegenstand des vorliegenden Antrags weitere und umfassendere Vorkehrungen zu treffen.
+
+Beschlossen, einen Ausschuss einzusetzen, der berichten soll, welche weiteren Vorkehrungen für die allgemeine Bekanntmachung der Gesetze der Vereinigten Staaten nötig sind.
+
+Und es wurde ein Ausschuss eingesetzt aus Mr. Moore, Mr. Baldwin und Mr. Heister.
+"""
+
+# ---------------------------------------------------------------- [3] Annals 23.12.1794
+u3_en = """
+Tuesday, December 23. […]
+
+A report was read, from the committee appointed, as to the distribution of the laws. It was ordered to be printed, and referred to a Committee of the Whole. The committee recommended that there should be printed three thousand copies, complete up to the end of the present session, of the laws; and an equal number in future. Part were to be printed in German. They were all to be distributed among the several States. Every printer of a newspaper in the United States, who can prove that he has printed the whole in his newspaper, is, at the end of each session, to receive the sum of —— dollars of compensation. But this is not to be given to more than two printers in any one town.
+"""
+u3_de = """
+Dienstag, 23. Dezember. […]
+
+Ein Bericht des eingesetzten Ausschusses über die Verteilung der Gesetze wurde verlesen. Er sollte gedruckt und einem Ausschuss des ganzen Hauses überwiesen werden. Der Ausschuss empfahl, dreitausend Exemplare der Gesetze, vollständig bis zum Ende der laufenden Sitzungsperiode, zu drucken und künftig eine gleiche Anzahl. Ein Teil sollte deutsch gedruckt werden. Alle sollten unter die einzelnen Staaten verteilt werden. Jeder Zeitungsdrucker in den Vereinigten Staaten, der nachweisen kann, dass er die Gesetze vollständig in seiner Zeitung abgedruckt hat, soll am Ende jeder Sitzungsperiode eine Vergütung von —— Dollar erhalten. Dies soll aber nicht mehr als zwei Druckern in einer Stadt gewährt werden.
+"""
+
+# ---------------------------------------------------------------- [4] Annals 7.1.1795
+u4_en = """
+PROMULGATION OF THE LAWS.
+
+There was then a motion for going into a Committee on the report of the select committee relative to the more general promulgation of the Laws of the United States. Gentlemen seemed considerably at a loss in what way this promulgation could be most effectually accomplished. Various schemes were proposed, of which not one appeared to meet the general sense of the members. Among other expedients, it was proposed to transmit them to the several States.
+
+But, on this head, Mr. Baldwin remarked that, if these States were not more successful in circulating the Laws of Congress than they sometimes were in distributing their own, the printing of three thousand copies, as proposed, would answer but little purpose. He further observed, that the bill ought to provide some place in each State, or each county, where complete sets of the Laws might be lodged; otherwise, as it is proposed to publish the additional acts of every session at the end of it, there may happen to be a State or county to which all the Laws have been sent, and yet wherein a complete set of them is not to be had.
+
+The Committee rose, the Chairman reported progress, and the House adjourned.
+"""
+u4_de = """
+BEKANNTMACHUNG DER GESETZE.
+
+Darauf wurde beantragt, in einen Ausschuss über den Bericht des Sonderausschusses zur allgemeineren Bekanntmachung der Gesetze der Vereinigten Staaten einzutreten. Die Herren schienen ziemlich ratlos, auf welche Weise diese Bekanntmachung am wirksamsten zu bewerkstelligen sei. Verschiedene Pläne wurden vorgeschlagen, von denen keiner die allgemeine Zustimmung der Mitglieder zu finden schien. Unter anderen Behelfen wurde vorgeschlagen, sie den einzelnen Staaten zu übersenden.
+
+Hierzu bemerkte Mr. Baldwin jedoch, wenn diese Staaten bei der Verbreitung der Gesetze des Kongresses nicht erfolgreicher seien als manchmal bei der Verteilung ihrer eigenen, werde der vorgeschlagene Druck von dreitausend Exemplaren wenig nützen. Er bemerkte weiter, das Gesetz müsse in jedem Staat oder jedem County einen Ort vorsehen, an dem vollständige Sammlungen der Gesetze hinterlegt würden; sonst könne es, da man die neuen Gesetze jeder Sitzungsperiode an deren Ende veröffentlichen wolle, einen Staat oder ein County geben, an das alle Gesetze geschickt worden seien und in dem dennoch keine vollständige Sammlung zu haben sei.
+
+Der Ausschuss erhob sich, der Vorsitzende meldete Fortschritt, und das Haus vertagte sich.
+"""
+
+# ---------------------------------------------------------------- [5] Annals 13.1.1795 (Kernstelle)
+u5_en = """
+PROMULGATION OF THE LAWS.
+
+The House went into a Committee of the Whole on the means of promulgating the laws, Mr. Cobb in the Chair. A great variety of plans were proposed, but none that seemed to meet the general sense of the House. It was admitted that the same mode of distributing the laws which would answer extremely well for one part of the country would not at all suit for some others. To give the copies to be disposed of by the State Legislatures, was recommended by some members. Mr. Baldwin observed, that this would not answer for Georgia. The books would be landed at the distance of two hundred miles from the town where the Assembly meets. They are carried across the country to that place, instead of being distributed in the counties through which they pass. When they arrive at the Seat of Government the Assembly have risen, and probably will not sit again for six or nine months to come. Mr. Baldwin said, that rather than see the heart-burning which had existed among the people of Georgia for the last six years, from ignorance of the laws, he would pay a part of the expense of distributing them himself. Mr. B. knew one way by which the Secretary of State might distribute the copies of the laws very effectually in the State of Georgia. This was by intrusting them to the member himself. He was better acquainted than most people with the places in Georgia to which these books ought to be sent, and the persons to whom they ought to be given. He was ready to take the whole business on himself. Mr. Hillhouse, who rose sometime after, had no doubt that gentlemen might find it extremely convenient to have the edition of the laws entirely at their private disposal. He had no objections, however, to this scheme.
+
+Mr. Page wished not only that the laws might have been printed, but that every thing else which passed in that House, and every word which was spoken, might be accurately taken down by a short-hand writer employed for that purpose by the public, and the whole printed and distributed. The people would then be able to judge exactly of the conduct and character of those whom they chose to represent them.
+
+After much miscellaneous conversation it was moved that the Committee should rise, the Chairman reported progress, and asked leave to sit again. The motion was negatived—ayes 41, noes 42. The same motion was again made some time after, and agreed to. But the motion for leave to sit again was negatived.
+
+It was then moved by Mr. W. Smith that a committee consisting of a member from each State in the Union should confer on this subject. This was agreed to; and on the motion of Mr. Vans Murray, Mr. White, the member from the Southwestern Territory, was added to the number.
+"""
+u5_de = """
+BEKANNTMACHUNG DER GESETZE.
+
+Das Haus trat als Ausschuss des ganzen Hauses über die Mittel zur Bekanntmachung der Gesetze zusammen, Mr. Cobb im Vorsitz. Eine große Vielfalt von Plänen wurde vorgeschlagen, aber keiner, der die allgemeine Zustimmung des Hauses zu finden schien. Man gab zu, dass dieselbe Art der Verteilung der Gesetze, die für einen Teil des Landes ausgezeichnet tauge, für andere ganz und gar nicht passe. Einige Mitglieder empfahlen, die Exemplare den Legislaturen der Staaten zur Verteilung zu übergeben. Mr. Baldwin bemerkte, das tauge für Georgia nicht. Die Bücher würden zweihundert Meilen von der Stadt entfernt gelandet, in der die Versammlung tage. Sie würden quer durchs Land dorthin gebracht, statt in den Counties verteilt zu werden, durch die sie kämen. Kämen sie am Regierungssitz an, sei die Versammlung auseinandergegangen und trete wahrscheinlich erst in sechs oder neun Monaten wieder zusammen. Mr. Baldwin sagte, ehe er den Groll mitansehe, der seit sechs Jahren aus Unkenntnis der Gesetze unter den Leuten in Georgia geherrscht habe, würde er einen Teil der Verteilungskosten selbst bezahlen. Mr. B. wisse einen Weg, auf dem der Secretary of State die Exemplare der Gesetze im Staat Georgia sehr wirksam verteilen könne, nämlich indem er sie dem Abgeordneten selbst anvertraue. Der kenne die Orte in Georgia, an die diese Bücher geschickt, und die Personen, denen sie gegeben werden müssten, besser als die meisten. Er sei bereit, das ganze Geschäft selbst zu übernehmen. Mr. Hillhouse, der sich einige Zeit danach erhob, zweifelte nicht, dass es den Herren äußerst bequem sein könnte, die Ausgabe der Gesetze ganz zu ihrer privaten Verfügung zu haben. Er habe aber gegen diesen Plan nichts einzuwenden.
+
+Mr. Page wünschte nicht nur, dass die Gesetze gedruckt würden, sondern dass alles andere, was in diesem Haus vorgehe, und jedes gesprochene Wort von einem dazu öffentlich angestellten Kurzschreiber genau aufgenommen und das Ganze gedruckt und verteilt werde. Das Volk könnte dann genau über das Verhalten und den Charakter derer urteilen, die es zu seinen Vertretern wählte.
+
+Nach vielem vermischtem Gespräch wurde beantragt, der Ausschuss solle sich erheben; der Vorsitzende meldete Fortschritt und bat um Erlaubnis, wieder zu tagen. Der Antrag wurde abgelehnt, 41 Ja, 42 Nein. Derselbe Antrag wurde einige Zeit später erneut gestellt und angenommen. Der Antrag aber, wieder tagen zu dürfen, wurde abgelehnt.
+
+Darauf beantragte Mr. W. Smith, ein Ausschuss aus je einem Mitglied jedes Staates der Union solle über diesen Gegenstand beraten. Das wurde angenommen; und auf Antrag von Mr. Vans Murray wurde Mr. White, der Abgeordnete des Südwest-Territoriums, hinzugefügt.
+"""
+
+# ---------------------------------------------------------------- [6] Journal 13.1.1795
+u6_en = """
+The House, according to the order of the day, again resolved itself into a committee of the whole House on the report of the committee appointed to report what further provisions are necessary for the more general promulgation of the laws; and after some time spent therein, Mr. Speaker resumed the chair, and Mr. Cobb reported, that the committee had, according to order, again had the said report under consideration, and made a farther progress therein.
+
+On motion,
+
+Ordered, That the committee of the whole House be discharged from the farther consideration of the said report, and that it be re-committed to Mr. Baldwin, Mr. Moore, Mr. Heister, Mr. Hunter, Mr. Macon, Mr. Murray, Mr. Latimer, Mr. Beatty, Mr. Gilbert, Mr. Orr, Mr. Swift, Mr. Malbone, Mr. Israel Smith, Mr. Dexter, Mr. Wingate, and Mr. White.
+"""
+u6_de = """
+Das Haus bildete sich gemäß der Tagesordnung erneut zum Ausschuss des ganzen Hauses über den Bericht des Ausschusses, der berichten sollte, welche weiteren Vorkehrungen für die allgemeinere Bekanntmachung der Gesetze nötig sind; nach einiger Zeit nahm Mr. Speaker wieder den Vorsitz ein, und Mr. Cobb berichtete, der Ausschuss habe den genannten Bericht gemäß dem Auftrag erneut beraten und weitere Fortschritte gemacht.
+
+Auf Antrag
+
+beschlossen, dass der Ausschuss des ganzen Hauses von der weiteren Beratung des genannten Berichts entbunden und dieser an Mr. Baldwin, Mr. Moore, Mr. Heister, Mr. Hunter, Mr. Macon, Mr. Murray, Mr. Latimer, Mr. Beatty, Mr. Gilbert, Mr. Orr, Mr. Swift, Mr. Malbone, Mr. Israel Smith, Mr. Dexter, Mr. Wingate und Mr. White zurückverwiesen werde.
+"""
+
+# ---------------------------------------------------------------- [7] Annals 16.2.1795 (Kernstelle)
+u7_en = """
+PROMULGATION OF THE LAWS.
+
+The House then went into a Committee on the report of the Select Committee on the further promulgation of the laws of the United States.
+
+The various clauses underwent a very long discussion, and several verbal amendments. The clause relating to the publishing of the laws in the newspapers, and in the German language, produced each of them a discussion of some length.
+
+Mr. Hillhouse said, that as to the printers, any man in the United States would print the laws annually for ten dollars. They are at present glad to get them to print for nothing. It was, in opposition to this, remarked, that the daily papers only could print the laws within a reasonable time; and the circulation of them was chiefly confined to a few large towns, where there were other and more expeditious ways of acquiring a knowledge of the laws; and that, as to ten dollars per annum, it was a sum too diminutive to be the smallest object with any printer.
+
+In favor of printing part of the edition of laws in the German language, Mr. Hartley said it was perhaps desirable that the Germans should learn English; but if it is our object to give present information, we should do it in the language understood. The Germans who are advanced in years cannot learn our language in a day. It would be generous in the Government to inform those persons. Many honest men, in the late disturbances, were led away by misrepresentation; ignorance of the laws laid them open to deception, when some counties in a neighboring State, and one or more in this, uninformed as to the nature of our laws, were in a state of insurrection. He considered it his duty to support the motion. It had been the practice in Pennsylvania to publish the laws in English and German. Good consequences had resulted from it.
+
+Mr. Kittera, and several other gentlemen, spoke on the same side of the question.
+
+Mr. Murray said, that it had never been the custom in England to translate the laws into Welsh cr [or] Gaelic, and yet the great bulk of the Welsh, and some hundred thousands of people in Scotland, did not understand a word of English.
+
+Mr. Boudinot was on the same side of the question.
+
+The Committee went through the report. The Chairman reported the resolutions to the House, which were agreed to as follows:
+
+Resolved, That there be printed, under the direction of the Secretary of State, a complete edition of —— copies of the laws, to the close of the present session of Congress, to include the Constitution of the United States, the public acts which are now in force, and the treaties; and that they be divided among the respective States, and the Territories Northwest and South of the river Ohio, according to the rule for apportioning Representatives: that the number allotted to each State or Territory be transmitted to the Governor or Supreme Executive Magistrate thereof, in order to be deposited in fixed and convenient places in each county or subordinate civil division, as the Executive or Legislature of such State or Territory may judge most conducive to the general information of the people.
+
+Resolved, That a like number of the laws passed at each succeeding session, and of all future treaties, be printed and distributed as above directed.
+
+Ordered, That a bill or bills be brought in pursuant to the said resolutions, and that Mr. Baldwin, Mr. Moore, Mr. Heister, Mr. Hunter, Mr. Macon, Mr. Murray, Mr. Latimer, Mr. Beatty, Mr. Gilbert, Mr. Orr, Mr. Swift, Mr. Malbone, Mr. Israel Smith, Mr. Dexter, Mr. Wingate, and Mr. White, do prepare and bring in the same.
+"""
+u7_de = """
+BEKANNTMACHUNG DER GESETZE.
+
+Das Haus trat dann als Ausschuss über den Bericht des Sonderausschusses zur weiteren Bekanntmachung der Gesetze der Vereinigten Staaten zusammen.
+
+Die einzelnen Klauseln wurden sehr lange erörtert und mehrfach im Wortlaut geändert. Die Klausel über die Veröffentlichung der Gesetze in den Zeitungen und die über die deutsche Sprache riefen jede eine längere Erörterung hervor.
+
+Mr. Hillhouse sagte, was die Drucker angehe, so würde jeder Mann in den Vereinigten Staaten die Gesetze jährlich für zehn Dollar drucken. Gegenwärtig seien sie froh, sie umsonst drucken zu dürfen. Dagegen wurde bemerkt, nur die Tageszeitungen könnten die Gesetze in angemessener Zeit drucken; ihre Verbreitung beschränke sich hauptsächlich auf einige große Städte, in denen es andere und schnellere Wege gebe, die Gesetze kennenzulernen; und zehn Dollar im Jahr seien eine zu geringe Summe, um für irgendeinen Drucker auch nur der kleinste Anreiz zu sein.
+
+Für den Druck eines Teils der Gesetzesausgabe in deutscher Sprache sagte Mr. Hartley, es sei vielleicht wünschenswert, dass die Deutschen Englisch lernten; aber wenn es unser Ziel sei, gegenwärtig zu unterrichten, müssten wir es in der Sprache tun, die verstanden wird. Die Deutschen, die schon in Jahren seien, könnten unsere Sprache nicht an einem Tag lernen. Es wäre großmütig von der Regierung, diese Leute zu unterrichten. Viele ehrliche Männer seien in den jüngsten Unruhen durch falsche Darstellungen verführt worden; die Unkenntnis der Gesetze habe sie der Täuschung ausgesetzt, als einige Counties in einem Nachbarstaat und eines oder mehrere in diesem, über die Natur unserer Gesetze nicht unterrichtet, im Aufstand gewesen seien. Er halte es für seine Pflicht, den Antrag zu unterstützen. In Pennsylvanien sei es üblich gewesen, die Gesetze englisch und deutsch zu veröffentlichen. Gute Folgen hätten sich daraus ergeben.
+
+Mr. Kittera und mehrere andere Herren sprachen auf derselben Seite der Frage.
+
+Mr. Murray sagte, in England sei es nie Brauch gewesen, die Gesetze ins Walisische oder Gälische zu übersetzen, und doch verstehe die große Masse der Waliser und einige hunderttausend Menschen in Schottland kein Wort Englisch.
+
+Mr. Boudinot stand auf derselben Seite der Frage.
+
+Der Ausschuss ging den Bericht durch. Der Vorsitzende legte dem Haus die Resolutionen vor, die wie folgt angenommen wurden:
+
+Beschlossen, dass unter der Leitung des Secretary of State eine vollständige Ausgabe der Gesetze in —— Exemplaren bis zum Schluss der laufenden Sitzungsperiode des Kongresses gedruckt werde, die die Verfassung der Vereinigten Staaten, die jetzt geltenden öffentlichen Gesetze und die Verträge enthält; dass sie unter die einzelnen Staaten und die Territorien nordwestlich und südlich des Ohio nach dem Schlüssel für die Verteilung der Abgeordnetensitze aufgeteilt werden; dass die jedem Staat oder Territorium zugeteilte Zahl dem Gouverneur oder obersten Regierungsbeamten übersandt werde, um an festen und geeigneten Orten in jedem County oder jeder untergeordneten Verwaltungseinheit hinterlegt zu werden, wie es die Regierung oder Legislatur dieses Staates oder Territoriums für die allgemeine Unterrichtung des Volkes am dienlichsten hält.
+
+Beschlossen, dass eine gleiche Anzahl der in jeder folgenden Sitzungsperiode beschlossenen Gesetze und aller künftigen Verträge gedruckt und wie oben bestimmt verteilt werde.
+
+Beschlossen, dass ein Gesetzentwurf oder Gesetzentwürfe gemäß diesen Resolutionen eingebracht werden und dass Mr. Baldwin, Mr. Moore, Mr. Heister, Mr. Hunter, Mr. Macon, Mr. Murray, Mr. Latimer, Mr. Beatty, Mr. Gilbert, Mr. Orr, Mr. Swift, Mr. Malbone, Mr. Israel Smith, Mr. Dexter, Mr. Wingate und Mr. White sie vorbereiten und einbringen.
+"""
+
+# ---------------------------------------------------------------- [8] 1 Stat. 443
+u8_en = """
+CHAP. L.—An Act for the more general promulgation of the laws of the United States.(a)
+
+SECTION 1. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That, for the more general promulgation of the laws of the United States, the Secretary for the department of State shall, after the end of the next session of Congress, cause to be printed and collated at the public expense, a complete edition of the laws of the United States, comprising the constitution of the United States, the public acts then in force, and the treaties, together with an index to the same.
+
+SEC. 2. And be it further enacted, That four thousand five hundred copies of the said edition shall be divided by the said secretary, among the respective states, and the territories northwest and south of the river Ohio, according to the rule for apportioning representatives; and that the proportion of each state or territory shall be transmitted by the said secretary to the governor or supreme executive magistrate thereof, to be deposited in such fixed and convenient place in each county, or other subordinate civil division of such state or territory, as the executive or legislature thereof shall deem most conducive to the general information of the people: and that five hundred copies of the said edition be reserved for the future disposition of Congress.
+
+SEC. 3. And be it further enacted, That the acts passed at each succeeding session of Congress, including future treaties, shall be printed and distributed, in like manner and proportion.
+
+APPROVED, March 3, 1795.
+
+[Footnote (a):] See an Act for the more general promulgation of the laws of the United States, March 2, 1799, ch. 30.
+"""
+u8_de = """
+KAP. L. Gesetz zur allgemeineren Bekanntmachung der Gesetze der Vereinigten Staaten.(a)
+
+§ 1. Vom Senat und Repräsentantenhaus der Vereinigten Staaten von Amerika im versammelten Kongress wird verordnet, dass der Secretary des Department of State zur allgemeineren Bekanntmachung der Gesetze der Vereinigten Staaten nach dem Ende der nächsten Sitzungsperiode des Kongresses auf öffentliche Kosten eine vollständige Ausgabe der Gesetze der Vereinigten Staaten drucken und zusammenstellen lässt, die die Verfassung der Vereinigten Staaten, die dann geltenden öffentlichen Gesetze und die Verträge samt einem Register umfasst.
+
+§ 2. Ferner wird verordnet, dass viertausendfünfhundert Exemplare dieser Ausgabe von dem genannten Secretary unter die einzelnen Staaten und die Territorien nordwestlich und südlich des Ohio nach dem Schlüssel für die Verteilung der Abgeordnetensitze aufgeteilt werden; dass der Anteil jedes Staates oder Territoriums von dem genannten Secretary dem Gouverneur oder obersten Regierungsbeamten übersandt wird, um an einem solchen festen und geeigneten Ort in jedem County oder jeder anderen untergeordneten Verwaltungseinheit dieses Staates oder Territoriums hinterlegt zu werden, wie es dessen Regierung oder Legislatur für die allgemeine Unterrichtung des Volkes am dienlichsten hält; und dass fünfhundert Exemplare der genannten Ausgabe für die künftige Verfügung des Kongresses zurückbehalten werden.
+
+§ 3. Ferner wird verordnet, dass die in jeder folgenden Sitzungsperiode des Kongresses beschlossenen Gesetze einschließlich künftiger Verträge in gleicher Weise und im gleichen Verhältnis gedruckt und verteilt werden.
+
+GEBILLIGT am 3. März 1795.
+
+[Fußnote (a):] Siehe das Gesetz zur allgemeineren Bekanntmachung der Gesetze der Vereinigten Staaten vom 2. März 1799, Kap. 30.
+"""
+
+# ---------------------------------------------------------------- [9] Loeher S. 193-194
+u9_de = """
+Viertes Buch. Das pennsylvanische Leben und der Westen.
+
+Erstes Blatt. Trennung von Deutschland.
+
+Deutsche Bestrebungen. — Hohe Schule zu Lancaster. Antrag auf Erhebung der deutschen Sprache zur Regierungssprache von Pennsylvanien. — Menschenverzehr in Deutschland. Amerika verschrien. Fremdengesetze. — Abnahme der deutschen Einwanderung. Aufhören des Verkehrs mit Deutschland. — Nachtheile für die Deutschen in Amerika.
+
+Soviel aber die Deutschen auch in Sachen der Volksherrschaft erstritten, so wenig gewannen sie für ihre deutsche Selbständigkeit. In ihrer eingewurzelten Abneigung gegen das Englische traten sie jedoch demselben nach dem Kriege noch entschiedener entgegen. Ihr Bewußtsein war zur Klarheit und zur Kraft gekommen und, von der Regierung der Engländer einmal befreit, meinten sie auch die Herrschaft der Englischen abzuschütteln und ein deutsches Land mit deutscher Bildung zu gründen.
+
+In Lancaster errichteten sie 1780 „die hohe Schule“ mit einem Grundvermögen von 10,000 Acker Landes, daraus sollte die deutsche Universität aufblühen. Auch der Gemeindeschulen nahm man sich ernstlich an, und es fanden sich mehrere Männer, welche sich mit Lust der Schriftstellerei widmeten. Die Bildung aber sollte die Unterlage für den deutschen Staat geben. Hier kam es darauf an, zunächst in Pennsylvanien die Englischen aus dem Felde zu schlagen. Deßhalb hielten die Deutschen jetzt bei den Wahlen fest zusammen und verjagten die Herrenparthei aus einer Schanze in die andere. Zuletzt war man so weit, daß in der Landesversammlung nicht lange nach dem Friedensschlusse der entscheidende Antrag gestellt wurde, die Gesetzes- und Gerichtssprache von Pennsylvanien solle die deutsche sein. Wäre dieser Antrag durchgegangen, und nun ein lebendiger Verkehr mit Deutschland erhalten worden, so wäre ein neues deutsches Vaterland in Amerika gesichert gewesen.
+"""
+u9_en = """
+Fourth Book. Pennsylvanian life and the West.
+
+First Leaf. Separation from Germany.
+
+German endeavours. — High school at Lancaster. Motion to raise the German language to the language of government of Pennsylvania. — Consumption of men in Germany. America decried. Alien laws. — Decline of German immigration. End of intercourse with Germany. — Disadvantages for the Germans in America.
+
+But however much the Germans won in matters of popular government, they gained just as little for their German independence. In their deep-rooted aversion to the English, however, they opposed it still more decidedly after the war. Their consciousness had come to clarity and strength, and, once freed from the government of the English [i.e. the British], they thought to shake off the dominance of the English [i.e. the Anglo-Americans] as well and to found a German land with German culture.
+
+In Lancaster in 1780 they set up "the high school" with an endowment of 10,000 acres of land; from it the German university was to flourish. The common schools too were taken seriously in hand, and several men were found who devoted themselves with pleasure to writing. Culture, however, was to provide the foundation for the German state. Here the point was first to drive the English from the field in Pennsylvania. Therefore the Germans now held firmly together at elections and chased the party of the gentry from one redoubt into the next. At last matters had come so far that in the state assembly, not long after the conclusion of peace, the decisive motion was made that the language of the laws and courts of Pennsylvania should be German. Had this motion passed, and had a lively intercourse with Germany then been maintained, a new German fatherland in America would have been secured.
+"""
+
+# ---------------------------------------------------------------- [10] Loeher S. 198-199 (Kernstelle Legende)
+u10_de = """
+[…] Daß die deutsche Bevölkerung zum bedeutsamsten Theile aus Ackerbauern bestand, diente noch in anderer Weise dazu, sie von der Herrschaft zurück zu halten. Als die Beschränkungen fielen, welche England dem amerikanischen Handel aufgelegt hatte, nahm dieser einen so schnellen Aufschwung, daß die Handels- und Geschäftsmänner ebenso wichtig und durch ihr Geld und ihre größere Beweglichkeit einflußreicher wurden, als die Ackerbauer. Dieses Uebergewicht kam aber lediglich der englischen Bevölkerung zu Gute, welche im Handel einmal den Vorrang hatte.
+
+Man konnte sich daher nicht mehr wundern, daß auch in Politik, in den Gerichten und bei den andern öffentlichen Verhandlungen die Englischen nach und nach die Leitung erhielten und ihre Sprache wenigstens bei den bedeutendsten Versammlungen einführten. In Pennsylvanien war das gleichwohl nicht leicht. Bei der Abstimmung über jene Frage: ob die herrschende Sprache auf dem Landtage, an den Gerichten und in den Urkunden in Pennsylvanien die deutsche sein solle, — waren die Stimmen gleich. Die Hälfte war für Einführung der deutschen Sprache, und das war schon von großer Bedeutung, wenn man bedenkt, daß es darauf ankam, einen Staat deutsch zu machen, in welchem die englische Sprache vorher die Gesetzessprache gewesen war. Da gab der Sprecher des Landtages, ein Mühlenberg, durch seine Stimme den Ausschlag zu Gunsten der englischen Sprache.
+
+Dieser Ausgang machte einen üblen Eindruck, es lag etwas Entmuthigendes darin, ein Deutscher hatte der englischen Sprache den Sieg verschafft. Dazu sprachen die Englischen zu den Deutschen: „Ihr habt ja alle Freiheit, die ihr wünscht, — eure Sitte und Sprache kann kein Mensch euch nehmen, sie gilt ja täglich mehr neben der englischen, — die Knaben in den Schulen und die Advocaten lernen ja deutsch, und die Gesetze und Verhandlungen des Staates werden deutsch gedruckt, — aber wenn überall deutsch gesprochen werden soll, dann haben wir keine Männer mehr zum amerikanischen Congresse zu schicken und mit den übrigen Amerikanern zu handeln, — dann gerathen wir in Zwiespalt mit ihnen, — seht, das sehen viele eurer Landsleute selbst ein und stimmen daher für das Englische.“ Solche Reden blieben nicht verloren, jedenfalls halfen sie dazu, die Deutschen einstweilen vom Sturmlaufen abzuhalten.
+"""
+u10_en = """
+[…] That the German population consisted for the most significant part of farmers served in yet another way to hold it back from power. When the restrictions fell that England had laid on American trade, trade took so rapid an upswing that the merchants and men of business became just as important as the farmers and, through their money and greater mobility, more influential. This preponderance, however, benefited solely the English population, which once and for all held the lead in trade.
+
+One could therefore no longer wonder that in politics, in the courts and in the other public proceedings too, the English gradually obtained the direction and introduced their language, at least in the most important assemblies. In Pennsylvania this was nevertheless not easy. In the vote on that question — whether the prevailing language in the legislature, in the courts and in public instruments in Pennsylvania should be German — the votes were equal. Half were for the introduction of the German language, and that was already of great significance, if one considers that the point was to make German a state in which the English language had previously been the language of the laws. Then the Speaker of the legislature, a Mühlenberg, by his vote gave the decision in favour of the English language.
+
+This outcome made a bad impression; there was something discouraging in it: a German had won the victory for the English language. In addition the English said to the Germans: "You have every freedom you wish, — no one can take your customs and language from you, it counts for more every day alongside English, — the boys in the schools and the lawyers are learning German, and the laws and proceedings of the state are printed in German, — but if German is to be spoken everywhere, then we shall have no more men to send to the American Congress and to deal with the other Americans, — then we shall fall into discord with them, — see, many of your countrymen see this themselves and therefore vote for English." Such speeches were not lost; at any rate they helped to keep the Germans from storming for the time being.
+"""
+
+# ---------------------------------------------------------------- [11] Seidensticker S. 196
+u11_en = """
+[…] "Believe me, I am not so well off now as when I left the Swamp [New Hanover], and if I had not been induced by the urgent appeals of the Germans to accept membership in the Assembly, a resolution in which the large majority of votes I received further confirmed me, I might have been tempted to take again to the apostolate. But I am here not my own master, and must be satisfied to serve where my fellow-citizens want me."
+
+Among the charges intrusted to Frederick Muhlenberg in Congress was also that of chairman of the Medical Committee, by no means a sinecure; for, as he writes to his brother (September 6, 1780), he had to perform all the duties of the Director-General of the military hospitals.
+
+Yielding to the pressure of his numerous friends, he had, as we have seen by the foregoing letter, accepted candidacy for the Assembly and been elected. It must have been owing to the good record he had made in Congress and to the great confidence which his character and his ability inspired that, though a new member and only thirty years of age, he was at the opening of the session (November 3, 1780) elected Speaker. To the same responsible position he was called by the two succeeding Assemblies (November 9, 1781, and October 31, 1782).
+"""
+u11_de = """
+[…] „Glaube mir, es geht mir jetzt nicht so gut wie damals, als ich den Swamp [New Hanover] verließ, und hätten mich nicht die dringenden Bitten der Deutschen bewogen, den Sitz in der Assembly anzunehmen – ein Entschluss, in dem mich die große Mehrheit der Stimmen, die ich erhielt, weiter bestärkte –, so wäre ich vielleicht versucht gewesen, wieder zum Apostelamt zurückzukehren. Aber hier bin ich nicht mein eigener Herr und muss zufrieden sein, dort zu dienen, wo meine Mitbürger mich haben wollen.“
+
+Zu den Ämtern, die Frederick Muhlenberg im Kongress übertragen wurden, gehörte auch der Vorsitz im Medizinischen Ausschuss, keineswegs eine Pfründe; denn, wie er seinem Bruder schreibt (6. September 1780), musste er alle Pflichten des Generaldirektors der Militärlazarette erfüllen.
+
+Dem Drängen seiner zahlreichen Freunde nachgebend, hatte er, wie wir aus dem vorstehenden Brief gesehen haben, die Kandidatur für die Assembly angenommen und war gewählt worden. Es muss an dem guten Ruf gelegen haben, den er sich im Kongress erworben hatte, und an dem großen Vertrauen, das sein Charakter und seine Fähigkeit einflößten, dass er, obwohl neues Mitglied und erst dreißig Jahre alt, bei der Eröffnung der Sitzung (3. November 1780) zum Speaker gewählt wurde. In dasselbe verantwortungsvolle Amt beriefen ihn die beiden folgenden Assemblies (9. November 1781 und 31. Oktober 1782).
+"""
+
+# ---------------------------------------------------------------- [12] Seidensticker S. 203-204
+u12_en = """
+He was also a member of the House of the Second, Third, and Fourth Congresses. In the Third Congress he was again elected Speaker—this time as candidate of the Antifederalists or Democrats (then called Republicans)—over Sedgwick, the Federalist candidate. He took part in a debate on the taxation of sugar refined in the United States, upon which an excise of two cents per pound was to be laid. Muhlenberg strenuously opposed this measure as a blow against domestic industry, but in vain.
+
+In the Fourth Congress, Jay's treaty became the subject of a very animated discussion; the Senate, however, ratified it on June 24, 1795, and it received the President's approval. Again very hot and protracted debates ensued in the House of Representatives when the resolution was offered to grant an appropriation for carrying out the provisions of the treaty. The President was requested by a resolution to place before the House all instructions, correspondence, etc., which had reference to the treaty, because there was an impression afloat that the branch of Congress representing the rights of the people had been ignored. Washington replied politely but firmly, declining to grant this request, as the House of Representatives had nothing to do with the conclusion of treaties. This news was handed over to the Committee of the Whole, of which Frederick Augustus Muhlenberg was the chairman. After a long and stormy debate, the vote was taken, April 29, 1796, on the resolution of granting the appropriation. There were forty-nine votes for and as many against it. Upon Muhlenberg now rested the very responsible duty of giving the deciding vote, and although not perfectly satisfied with the treaty as it had been expressed, he cast it in the affirmative. Had he voted differently serious complications might have resulted. The question now came before the House, and was favorably acted upon by a vote of fifty-one against forty-eight.
+
+The acceptance of Jay's treaty was denounced by its adversaries as a base surrender of American interests to the arrogant and wily foe. But Muhlenberg, in deciding as he did, was guided solely by the considerations of the statesman who looks to the welfare of his country. When, soon afterwards, the party lines were drawn between the Federalists, who were charged with servility to England, and the Republicans or Democrats, who sympathized with revolutionary France, Frederick Muhlenberg, as well as his brother Peter, stood on the side of the latter. Both used their influence in favor of the Democratic party, as John Adams, not without some bitterness, remarks, "These two Muhlenbergs addressed the public with their names, both in English and in German, with invectives against the administration and warm recommendations of Mr. Jefferson."
+"""
+u12_de = """
+Er war auch Mitglied des Repräsentantenhauses im Zweiten, Dritten und Vierten Kongress. Im Dritten Kongress wurde er erneut zum Speaker gewählt, diesmal als Kandidat der Antiföderalisten oder Demokraten (damals Republikaner genannt), gegen Sedgwick, den Kandidaten der Föderalisten. Er beteiligte sich an einer Debatte über die Besteuerung des in den Vereinigten Staaten raffinierten Zuckers, auf den eine Verbrauchsteuer von zwei Cent je Pfund gelegt werden sollte. Muhlenberg bekämpfte diese Maßnahme entschieden als Schlag gegen das heimische Gewerbe, aber vergeblich.
+
+Im Vierten Kongress wurde der Jay-Vertrag Gegenstand einer sehr lebhaften Erörterung; der Senat ratifizierte ihn jedoch am 24. Juni 1795, und er erhielt die Billigung des Präsidenten. Erneut folgten sehr hitzige und langwierige Debatten im Repräsentantenhaus, als die Resolution eingebracht wurde, Mittel zur Ausführung der Vertragsbestimmungen zu bewilligen. Der Präsident wurde durch eine Resolution ersucht, dem Haus alle Instruktionen, Korrespondenzen usw. vorzulegen, die sich auf den Vertrag bezogen, weil der Eindruck umging, der Zweig des Kongresses, der die Rechte des Volkes vertritt, sei übergangen worden. Washington antwortete höflich, aber bestimmt, er lehne dieses Ersuchen ab, da das Repräsentantenhaus mit dem Abschluss von Verträgen nichts zu tun habe. Diese Nachricht wurde dem Ausschuss des ganzen Hauses übergeben, dessen Vorsitzender Frederick Augustus Muhlenberg war. Nach langer und stürmischer Debatte wurde am 29. April 1796 über die Resolution zur Bewilligung der Mittel abgestimmt. Es gab neunundvierzig Stimmen dafür und ebenso viele dagegen. Auf Muhlenberg ruhte nun die sehr verantwortungsvolle Pflicht, die entscheidende Stimme abzugeben, und obwohl er mit dem Vertrag, wie er gefasst war, nicht völlig zufrieden war, gab er sie mit Ja ab. Hätte er anders gestimmt, hätten ernste Verwicklungen folgen können. Die Frage kam nun vor das Haus und wurde mit einundfünfzig gegen achtundvierzig Stimmen günstig entschieden.
+
+Die Annahme des Jay-Vertrags wurde von seinen Gegnern als schmähliche Preisgabe amerikanischer Interessen an den anmaßenden und listigen Feind angeprangert. Muhlenberg aber ließ sich bei seiner Entscheidung allein von den Erwägungen des Staatsmannes leiten, der auf das Wohl seines Landes sieht. Als bald darauf die Parteigrenzen zwischen den Föderalisten, denen man Unterwürfigkeit gegen England vorwarf, und den Republikanern oder Demokraten, die mit dem revolutionären Frankreich sympathisierten, gezogen wurden, standen Frederick Muhlenberg wie sein Bruder Peter auf der Seite der Letzteren. Beide setzten ihren Einfluss für die Demokratische Partei ein, wie John Adams nicht ohne Bitterkeit bemerkt: „Diese beiden Muhlenbergs wandten sich unter ihrem Namen, englisch wie deutsch, mit Schmähungen gegen die Regierung und warmen Empfehlungen für Mr. Jefferson an die Öffentlichkeit.“
+"""
+
+units_bitte = [
+    U(1, "journal1794", "S. 49", BJ + "n59 (Faksimile)",
+      "Die Petition aus Augusta County, 28. November 1794", "The Augusta County petition, 28 November 1794",
+      "en", u1_de, u1_en,
+      "Die Petition selbst ist weder im Journal noch in den Annals abgedruckt; Unterzeichner und Wortlaut sind nicht bekannt (siehe offen). Die Annals (Sp. 945–946, Blatt n474, am Bild gelesen) geben denselben Inhalt fast wörtlich und schließen mit „Laid on the table.“ Augusta County lag im Shenandoah-Tal, das von Pennsylvanien aus deutsch besiedelt worden war [Einordnung der Literatur]. Thomas Hartley (Pennsylvanien, York), der am 16. Februar 1795 für den deutschen Druck sprach (Einheit [7]), war an diesem Tag für eine Woche beurlaubt.",
+      "The petition itself is printed neither in the Journal nor in the Annals; its signers and wording are unknown (see open points). The Annals (cols. 945–946, leaf n474, read at the image) give the same content almost verbatim and end with “Laid on the table.” Augusta County lay in the Shenandoah Valley, settled by Germans from Pennsylvania [context from the literature]. Thomas Hartley (Pennsylvania, York), who spoke for the German printing on 16 February 1795 (unit [7]), was given a week's leave on this day."),
+    U(2, "annals3", "Sp. 951–953", BA + "n477–n478",
+      "Montag, 1. Dezember 1794: Moores Antrag und Baldwins Rede", "Monday, 1 December 1794: Moore's motion and Baldwin's speech",
+      "en", u2_de, u2_en,
+      "Gekürzt […] sind Baldwins allgemeine Ausführungen über Ehrgeiz und Misstrauen gegen Amtsträger (Sp. 951–953). In den Annals steht die Überweisung der Petition vor Moores Antrag; dort wäre der „zuletzt eingesetzte Ausschuss“ der für die Grenze Walker's line (Preston, Winston, Pickens, Sp. 950). Das Journal, S. 58 (Blatt n68, am Bild gelesen), hat die richtige Reihenfolge: erst der Ausschuss Moore, Baldwin, Heister zur Bekanntmachung der Gesetze, dann die Überweisung der Petition an „the committee last appointed“. Andrew Moore (Virginia) vertrat den Bezirk, zu dem Augusta gehörte [ungeprüft]; Daniel Heister (Hiester) war Pennsylvania-Deutscher. Die „Unruhen“ sind die Whiskey-Rebellion im Westen Pennsylvaniens im Sommer 1794.",
+      "Shortened […] are Baldwin's general remarks on ambition and on distrust of office-holders (cols. 951–953). In the Annals the referral of the petition stands before Moore's motion; there the “committee last appointed” would be the one on Walker's line (Preston, Winston, Pickens, col. 950). The Journal, p. 58 (leaf n68, read at the image), has the correct order: first the committee of Moore, Baldwin and Heister on the promulgation of the laws, then the referral of the petition to “the committee last appointed”. Andrew Moore (Virginia) represented the district that included Augusta [unverified]; Daniel Heister (Hiester) was a Pennsylvania German. The “insurrections” are the Whiskey Rebellion in western Pennsylvania in summer 1794."),
+]
+units_bericht = [
+    U(3, "annals3", "Sp. 1009", BA + "n506",
+      "Dienstag, 23. Dezember 1794: „Part were to be printed in German“", "Tuesday, 23 December 1794: “Part were to be printed in German”",
+      "en", u3_de, u3_en,
+      "Dies ist die einzige Stelle der Akten, an der ein deutscher Druck vorgeschlagen wird. Wie groß der deutsche „Teil“ sein sollte, sagt der Annals-Bericht nicht; die 3000 sind die Gesamtauflage. Das Journal, S. 111 (Blatt n133, am Bild gelesen), vermerkt nur, Moore habe den Bericht vorgelegt; den Wortlaut druckt es nicht. Die in der Literatur genannten „3000 deutschen Exemplare“ (nach den American State Papers) sind hier nicht belegt (siehe offen).",
+      "This is the only place in the record where German printing is proposed. The Annals report does not say how large the German “part” was to be; the 3,000 are the whole edition. The Journal, p. 111 (leaf n133, read at the image), records only that Moore presented the report; it does not print the text. The “3,000 German copies” named in the literature (after the American State Papers) are not documented here (see open points)."),
+    U(4, "annals3", "Sp. 1063", BA + "n533",
+      "Mittwoch, 7. Januar 1795: „considerably at a loss“", "Wednesday, 7 January 1795: “considerably at a loss”",
+      "en", u4_de, u4_en,
+      "Datum aus der folgenden Überschrift „Thursday, January 8“ und dem Journal (Mittwoch, 7. Januar, S. 147; nach der Textschicht, nicht am Bild). Baldwins Einwand, Gesetze müssten in jedem County hinterlegt werden, ging in die Resolutionen vom 16. Februar und ins Gesetz ein (Einheiten [7], [8]).",
+      "Date from the following heading “Thursday, January 8” and the Journal (Wednesday, 7 January, p. 147; from the text layer, not at the image). Baldwin's point that the laws must be lodged in every county went into the resolutions of 16 February and into the Act (units [7], [8])."),
+    U(5, "annals3", "Sp. 1082", BA + "n542 (Abstimmungszeile vergrößert)",
+      "Dienstag, 13. Januar 1795: „ayes 41, noes 42“ (Kernstelle)", "Tuesday, 13 January 1795: “ayes 41, noes 42” (core passage)",
+      "en", u5_de, u5_en,
+      "Kernstelle zur Legende, vollständig. Die Zahl ist am Seitenbild gelesen: „ayes 41, noes 42“ (die Textschicht des Digitalisats ist an dieser Stelle verderbt). Abgestimmt wurde im Ausschuss des ganzen Hauses unter dem Vorsitz von David Cobb (Massachusetts) über einen Verfahrensantrag: sich zu erheben, Fortschritt zu melden und um Erlaubnis zu bitten, wieder zu tagen. Die Mehrheit von 42 wollte also weiterberaten. Von Deutsch ist an diesem Tag keine Rede. Namen der Abstimmenden sind nicht verzeichnet; im Ausschuss des ganzen Hauses wurden keine namentlichen Abstimmungen genommen. Der Speaker führte nicht den Vorsitz; ob Muhlenberg mitstimmte, sagen die Akten nicht. Der Ausschuss „je ein Mitglied jedes Staates“ zählte 15 Staaten und White, also 16 Mitglieder (Einheit [6]).",
+      "Core passage for the legend, complete. The figure was read at the page image: “ayes 41, noes 42” (the digitization's text layer is corrupt at this point). The vote was taken in the Committee of the Whole, David Cobb (Massachusetts) in the chair, on a procedural motion: to rise, report progress and ask leave to sit again. The majority of 42 thus wanted to go on deliberating. German is not mentioned on this day. The names of those voting are not recorded; no roll calls were taken in the Committee of the Whole. The Speaker was not in the chair; the record does not say whether Muhlenberg voted. The committee of “a member from each State” counted 15 states plus White, i.e. 16 members (unit [6])."),
+    U(6, "journal1794", "S. 153", BJ + "n175 (Faksimile)",
+      "Dasselbe im Journal, 13. Januar 1795", "The same in the Journal, 13 January 1795",
+      "en", u6_de, u6_en,
+      "Das amtliche Journal verzeichnet weder die Zählung 41 zu 42 noch die abgelehnte Erlaubnis, nur die Entlastung des Ausschusses und die Zurückverweisung an 16 Abgeordnete. „Mr. Speaker resumed the chair“: Muhlenberg leitete das Haus, nicht den Ausschuss. Der Bericht dieses Sechzehnerausschusses wurde am 29. Januar 1795 vorgelegt (Journal, S. 193, Blatt n215, am Bild gelesen).",
+      "The official Journal records neither the count of 41 to 42 nor the refused leave, only the discharge of the committee and the recommitment to 16 members. “Mr. Speaker resumed the chair”: Muhlenberg presided over the House, not over the committee. This committee of sixteen reported on 29 January 1795 (Journal, p. 193, leaf n215, read at the image)."),
+]
+units_entscheidung = [
+    U(7, "annals3", "Sp. 1228–1229", BA + "n615–n616",
+      "Montag, 16. Februar 1795: Hartley gegen Murray (Kernstelle)", "Monday, 16 February 1795: Hartley against Murray (core passage)",
+      "en", u7_de, u7_en,
+      "Kernstelle zur Entscheidung, vollständig. Das Datum steht als Überschrift „Monday, February 16“ am Fuß von Sp. 1226 (Blatt n614). „cr“ steht so im Druck. Die Annals verzeichnen keine Abstimmung über die Deutsch-Klausel; die angenommenen Resolutionen enthalten sie nicht mehr. Ebenso das Journal, S. 240–241 (Blatt n262–n263, am Bild gelesen), das die beiden Resolutionen gleichlautend und mit derselben leeren Zahl abdruckt. Zu den Rednern: Thomas Hartley und John Wilkes Kittera (beide Pennsylvanien), William Vans Murray (Maryland), Elias Boudinot (New Jersey), James Hillhouse (Connecticut). Hartleys „Unruhen“ sind die Whiskey-Rebellion; der „Nachbarstaat“ ist aus der Sicht des in Philadelphia tagenden Kongresses wohl Virginia, „dieser“ Staat Pennsylvanien.",
+      "Core passage for the decision, complete. The date stands as the heading “Monday, February 16” at the foot of col. 1226 (leaf n614). “cr” stands thus in the print. The Annals record no vote on the German clause; the resolutions agreed to no longer contain it. So too the Journal, pp. 240–241 (leaves n262–n263, read at the image), which prints the two resolutions in the same words and with the same blank number. On the speakers: Thomas Hartley and John Wilkes Kittera (both Pennsylvania), William Vans Murray (Maryland), Elias Boudinot (New Jersey), James Hillhouse (Connecticut). Hartley's “disturbances” are the Whiskey Rebellion; the “neighboring State”, seen from the Congress sitting at Philadelphia, is probably Virginia, and “this” state Pennsylvania."),
+    U(8, "stat1", "1 Stat. 443", "LoC llsl-c3.pdf, PDF-Seite 103 (= S. 443), mit pymupdf gerendert",
+      "Das Gesetz vom 3. März 1795", "The Act of 3 March 1795",
+      "en", u8_de, u8_en,
+      "Vollständig. Das Gesetz sieht 4500 Exemplare für die Staaten und 500 für den Kongress vor, in jedem County hinterlegt; von einer deutschen Ausgabe oder von Zeitungsdruckern ist nicht die Rede. Randglossen der Ausgabe („Secretary of State to cause an edition of the laws, &c. to be printed“ usw.) und der Vermerk „[Obsolete.]“ sind ausgelassen. Das Haus beschloss den Entwurf am 18. Februar 1795 (Journal, S. 246, Blatt n268, am Bild gelesen); der Senat änderte ihn, das Haus stimmte den Änderungen zu (Journal, S. 304 f., nicht am Bild geprüft).",
+      "Complete. The Act provides 4,500 copies for the states and 500 for Congress, to be deposited in every county; there is no word of a German edition or of newspaper printers. The marginal notes of the edition (“Secretary of State to cause an edition of the laws, &c. to be printed” etc.) and the note “[Obsolete.]” are omitted. The House passed the bill on 18 February 1795 (Journal, p. 246, leaf n268, read at the image); the Senate amended it and the House agreed to the amendments (Journal, pp. 304 f., not checked at the image)."),
+]
+units_legende = [
+    U(9, "loeher1847", "S. 193–194", BL + "n214–n215 (Fraktur)",
+      "Löher 1847: „ein neues deutsches Vaterland“", "Löher 1847: “a new German fatherland”",
+      "de", u9_de, u9_en,
+      "Kapitelanfang mit Inhaltsübersicht. Löher nennt für den „entscheidenden Antrag“ weder Datum noch Fundstelle noch Antragsteller; er setzt ihn „nicht lange nach dem Friedensschlusse“ (1783) an, also ein Jahrzehnt vor der Petition aus Augusta County. Die „hohe Schule“ ist das 1787 gegründete Franklin College in Lancaster; Löhers Jahr 1780 ist unzutreffend [Einordnung der Literatur]. „Die Englischen“ meint bei Löher die englischsprachigen Amerikaner, nicht die Briten.",
+      "Opening of the chapter with its table of contents. Löher gives no date, source or mover for the “decisive motion”; he places it “not long after the conclusion of peace” (1783), a decade before the Augusta County petition. The “high school” is Franklin College at Lancaster, founded in 1787; Löher's year 1780 is wrong [context from the literature]. By “the English” Löher means English-speaking Americans, not the British."),
+    U(10, "loeher1847", "S. 198–199", BL + "n219–n220 (Fraktur)",
+      "Löher 1847: Stimmengleichheit und „ein Mühlenberg“ (Kernstelle)", "Löher 1847: a tie and “a Mühlenberg” (core passage)",
+      "de", u10_de, u10_en,
+      "Kernstelle der Legende, vollständig. Das ist die älteste Fassung, die das Vorhaben kennt (siehe Station 5 der Sichtung). Löher spricht vom Landtag von Pennsylvanien, nicht vom Kongress; er nennt keinen Vornamen, kein Jahr, keine Stimmenzahl und keine Quelle. Er sagt im selben Absatz, dass die Gesetze des Staates deutsch gedruckt würden, und bestätigt damit ungewollt Hartleys Hinweis vom 16. Februar 1795 (Einheit [7]). Frederick A. C. Muhlenberg war Sprecher der Assembly von November 1780 bis 1783 (Einheit [11]). Ausgelassen […] ist der Satzrest von S. 197.",
+      "Core passage of the legend, complete. This is the oldest version known to this project (see Station 5 of the survey). Löher speaks of the Pennsylvania legislature, not of Congress; he gives no first name, no year, no vote count and no source. In the same paragraph he says that the laws of the state were printed in German, and so unintentionally confirms Hartley's remark of 16 February 1795 (unit [7]). Frederick A. C. Muhlenberg was Speaker of the Assembly from November 1780 to 1783 (unit [11]). Omitted […] is the end of the sentence from p. 197."),
+    U(11, "seidensticker1889", "S. 196", BS + "n13",
+      "Seidensticker 1889: Sprecher der Assembly", "Seidensticker 1889: Speaker of the Assembly",
+      "en", u11_de, u11_en,
+      "Der Brief an den Bruder Henry ist im Original deutsch; Seidensticker gibt ihn englisch. Ausgelassen […] ist der Briefanfang auf S. 195–196. Seidensticker erwähnt in seinem ganzen Aufsatz weder die Petition von 1794 noch eine Abstimmung über die deutsche Sprache, weder in der Assembly noch im Kongress (Text S. 184–206 geprüft).",
+      "The letter to his brother Henry is in German in the original; Seidensticker gives it in English. Omitted […] is the opening of the letter on pp. 195–196. Seidensticker nowhere in his article mentions the 1794 petition or a vote on the German language, either in the Assembly or in Congress (text of pp. 184–206 checked)."),
+    U(12, "seidensticker1889", "S. 203–204", BS + "n20–n21",
+      "Seidensticker 1889: die wirkliche Stichentscheidung, 29. April 1796", "Seidensticker 1889: the real casting vote, 29 April 1796",
+      "en", u12_de, u12_en,
+      "Belegt ist ein Stichentscheid Muhlenbergs, aber über den Jay-Vertrag: am 29. April 1796 im Ausschuss des ganzen Hauses, dessen Vorsitz er führte, bei 49 zu 49. Darin liegt ein naheliegender Kern für das Motiv „eine Stimme, und zwar Muhlenbergs“; dass die Legende daraus entstand, ist eine Vermutung und hier nicht belegt. Seidenstickers Angaben zur Abstimmung sind nicht an den Annals des 4. Kongresses geprüft (siehe offen). Das Adams-Zitat gibt Seidensticker ohne Fundstelle.",
+      "What is documented is a casting vote by Muhlenberg, but on the Jay Treaty: on 29 April 1796 in the Committee of the Whole, which he chaired, at 49 to 49. This is an obvious kernel for the motif “one vote, and Muhlenberg's”; that the legend grew from it is a conjecture and not documented here. Seidensticker's account of the vote was not checked against the Annals of the 4th Congress (see open points). Seidensticker gives the Adams quotation without a reference."),
+]
+
+data = {
+    "id": "petition1795",
+    "nr": 4,
+    "zeit": "1794–1795",
+    "ort": "Kongress in Philadelphia; Augusta County, Virginia",
+    "ort_en": "Congress at Philadelphia; Augusta County, Virginia",
+    "titel": "Ein gewisser Teil der Gesetze",
+    "titel_en": "A certain portion of the laws",
+    "frage": "Bitten die Deutschen in Augusta County den Kongress, einen Teil der Bundesgesetze deutsch zu drucken, oder lernen sie Englisch?",
+    "frage_en": "Do the Germans of Augusta County ask Congress to print part of the federal laws in German, or do they learn English?",
+    "lede": "Am 28. November 1794 legte das Repräsentantenhaus in Philadelphia eine Petition „einer Anzahl Deutscher“ aus Augusta County in Virginia vor: Wegen „völliger Unkenntnis der englischen Sprache“ baten sie, einen Teil der Bundesgesetze deutsch zu drucken. Die Bitte ging an den Ausschuss, der nach der Whiskey-Rebellion beraten sollte, wie die Gesetze überhaupt unters Volk kämen, und dessen Bericht vom 23. Dezember sah vor, einen Teil der Auflage deutsch zu drucken. Am 13. Januar 1795 scheiterte im Gesamtausschuss ein Verfahrensantrag mit 41 zu 42 Stimmen; von Deutsch war dabei nicht die Rede. Am 16. Februar sprach Hartley für die Deutschen, Murray verwies auf Wales und Schottland, und die angenommenen Resolutionen kannten nur noch eine englische Ausgabe. Das Gesetz vom 3. März 1795 ließ 4500 englische Exemplare in den Counties hinterlegen. Ein halbes Jahrhundert später machte Franz Löher daraus eine Stimmengleichheit, die „ein Mühlenberg“ für das Englische entschied.",
+    "lede_en": "On 28 November 1794 the House of Representatives at Philadelphia received a petition from “a number of Germans” in Augusta County, Virginia: because of “an entire ignorance of the English language” they asked that part of the federal laws be printed in German. The request went to the committee that, after the Whiskey Rebellion, was to consider how the laws could reach the people at all, and its report of 23 December proposed printing part of the edition in German. On 13 January 1795 a procedural motion failed in the Committee of the Whole by 41 votes to 42; German was not mentioned. On 16 February Hartley spoke for the Germans, Murray pointed to Wales and Scotland, and the resolutions agreed to provided only for an English edition. The Act of 3 March 1795 had 4,500 English copies deposited in the counties. Half a century later Franz Löher turned this into a tie decided for English by “a Mühlenberg”.",
+    "hinweis": "Alle Einheiten sind am Seitenbild gelesen. Annals of Congress: archive.org-Blattbilder, Blatt n = (erste Spalte + 3) / 2 (Sp. 945–946 = n474, Sp. 1081–1082 = n542); die Textschicht des Digitalisats ist um 13 Blätter verschoben und an der Abstimmungszeile verderbt, die Zahl „ayes 41, noes 42“ ist an einer Vergrößerung des Bildes gelesen. House Journal: photographischer Nachdruck (Glazier 1977) der Ausgabe von Childs und Swaine, Blattzählung uneinheitlich (S. 49 = n59, S. 58 = n68, ab S. 111 Blatt n = Seite + 22); benutzt sind nur die Faksimileseiten des Drucks von 1795, keine Herausgebertexte; langes s ist als s gesetzt. Statutes at Large Bd. 1: LoC-PDF, Seite 443 mit pymupdf gerendert. Löher 1847: Fraktur am Blattbild gelesen, Blatt n = Seite + 21; ſ = s, Schreibung des Drucks („Deßhalb“, „Uebergewicht“, „Parthei“) beibehalten; die Inhaltszeilen der Kapitelüberschrift stehen mit am Anfang von Einheit [9]. Seidensticker 1889: Blatt n = Seite − 183. Die Sitzungen vom 1. Dezember 1794 und 16. Februar 1795 sind gekürzt bzw. vollständig wiedergegeben, wie in den Notizen angegeben; ausgelassen sind die nicht zur Sache gehörenden Geschäfte desselben Tages. Die Quellen des Kongresses sind englisch und haben eine deutsche Arbeitsübersetzung; Löher hat eine englische Arbeitsübersetzung.",
+    "hinweis_en": "All units were read against the page image. Annals of Congress: archive.org leaf images, leaf n = (first column + 3) / 2 (cols. 945–946 = n474, cols. 1081–1082 = n542); the digitization's text layer is offset by 13 leaves and corrupt at the vote line, and the figure “ayes 41, noes 42” was read on an enlargement of the image. House Journal: photographic reprint (Glazier 1977) of the Childs and Swaine edition, leaf numbering irregular (p. 49 = n59, p. 58 = n68, from p. 111 leaf n = page + 22); only the facsimile pages of the 1795 print are used, no editorial matter; long s is set as s. Statutes at Large vol. 1: LoC PDF, page 443 rendered with pymupdf. Löher 1847: Fraktur read at the leaf image, leaf n = page + 21; ſ = s, the print's spelling (“Deßhalb”, “Uebergewicht”, “Parthei”) kept; the summary lines of the chapter heading are included at the start of unit [9]. Seidensticker 1889: leaf n = page − 183. The sittings of 1 December 1794 and 16 February 1795 are given abridged and complete respectively, as stated in the notes; other business of the same days is omitted. The congressional sources are in English and have a German working translation; Löher has an English working translation.",
+    "quellen": quellen,
+    "sections": [
+        {"id": "bitte", "titel": "Die Bitte, November und Dezember 1794", "titel_en": "The request, November and December 1794",
+         "blurb": "Deutsche aus dem Shenandoah-Tal bitten um deutsche Gesetze; das Haus gibt die Bitte an einen Ausschuss, der nach der Whiskey-Rebellion beraten soll, wie die Gesetze überhaupt bekannt werden.",
+         "blurb_en": "Germans from the Shenandoah Valley ask for German laws; the House passes the request to a committee that, after the Whiskey Rebellion, is to consider how the laws can be made known at all.",
+         "units": units_bitte},
+        {"id": "bericht", "titel": "Bericht und Abstimmung, Dezember 1794 bis Januar 1795", "titel_en": "Report and vote, December 1794 to January 1795",
+         "blurb": "Der Ausschuss schlägt vor, einen Teil der Auflage deutsch zu drucken. Im Januar ringt der Gesamtausschuss um die Verteilung; die knappe Abstimmung betrifft das Verfahren.",
+         "blurb_en": "The committee proposes printing part of the edition in German. In January the Committee of the Whole struggles over distribution; the close vote concerns procedure.",
+         "units": units_bericht},
+        {"id": "entscheidung", "titel": "Die Entscheidung, Februar und März 1795", "titel_en": "The decision, February and March 1795",
+         "blurb": "Die einzige Debatte über Deutsch und das Gesetz, das daraus wurde.",
+         "blurb_en": "The only debate on German and the Act that came of it.",
+         "units": units_entscheidung},
+        {"id": "legende", "titel": "Die Legende und ihr Kern", "titel_en": "The legend and its kernel",
+         "blurb": "Löher 1847 erzählt von einer Stimmengleichheit im Landtag von Pennsylvanien. Seidensticker 1889 kennt Muhlenberg als Sprecher der Assembly und als den Mann, der 1796 den Jay-Vertrag mit seiner Stimme rettete, aber keine Sprachabstimmung.",
+         "blurb_en": "Löher in 1847 tells of a tie in the Pennsylvania legislature. Seidensticker in 1889 knows Muhlenberg as Speaker of the Assembly and as the man whose vote saved the Jay Treaty in 1796, but no language vote.",
+         "units": units_legende},
+    ],
+    "legenden": [
+        {"behauptung": "Deutsch wäre beinahe Amtssprache der Vereinigten Staaten geworden; es fehlte eine Stimme.",
+         "behauptung_en": "German almost became the official language of the United States; it lacked one vote.",
+         "befund": "Im Kongress ging es um die Bitte, einen Teil der Bundesgesetze auch deutsch zu drucken. Über eine Amtssprache wurde nie abgestimmt. Die einzige knappe Abstimmung (13. Januar 1795, 41 Ja zu 42 Nein) galt dem Antrag, der Gesamtausschuss solle sich erheben und um Erlaubnis zu weiterer Beratung bitten; Deutsch wird an diesem Tag nicht erwähnt.",
+         "befund_en": "Congress dealt with a request to print part of the federal laws in German as well. No vote on an official language was ever taken. The only close vote (13 January 1795, 41 ayes to 42 noes) was on the motion that the Committee of the Whole rise and ask leave to sit again; German is not mentioned on that day.",
+         "beleg": "Einheiten [1], [5], [6]"},
+        {"behauptung": "Der Kongress lehnte den Druck deutscher Gesetze mit 42 zu 41 Stimmen ab.",
+         "behauptung_en": "Congress rejected printing the laws in German by 42 votes to 41.",
+         "befund": "Die Zahl 42 zu 41 stimmt, gehört aber zum Verfahrensantrag vom 13. Januar. Über die Deutsch-Klausel ist keine Abstimmung verzeichnet. Sie stand im Bericht vom 23. Dezember 1794, wurde am 16. Februar 1795 erörtert und fehlt in den an diesem Tag angenommenen Resolutionen und im Gesetz vom 3. März 1795.",
+         "befund_en": "The figure 42 to 41 is right but belongs to the procedural motion of 13 January. No vote on the German clause is recorded. It stood in the report of 23 December 1794, was debated on 16 February 1795, and is missing from the resolutions agreed to that day and from the Act of 3 March 1795.",
+         "beleg": "Einheiten [3], [5], [7], [8]"},
+        {"behauptung": "Speaker Frederick A. C. Muhlenberg gab die entscheidende Stimme gegen das Deutsche.",
+         "behauptung_en": "Speaker Frederick A. C. Muhlenberg cast the deciding vote against German.",
+         "befund": "Am 13. Januar 1795 tagte das Haus als Gesamtausschuss unter dem Vorsitz von David Cobb; das Journal vermerkt, dass der Speaker erst danach den Vorsitz wieder einnahm. Namen der Abstimmenden sind nicht verzeichnet, eine Stimme Muhlenbergs ebenso wenig. Belegt ist ein Stichentscheid Muhlenbergs, aber am 29. April 1796 über die Mittel für den Jay-Vertrag (49 zu 49), als Vorsitzender des Gesamtausschusses.",
+         "befund_en": "On 13 January 1795 the House sat as Committee of the Whole with David Cobb in the chair; the Journal notes that the Speaker resumed the chair only afterwards. The names of those voting are not recorded, nor is any vote by Muhlenberg. What is documented is a casting vote by Muhlenberg, but on 29 April 1796 on the appropriation for the Jay Treaty (49 to 49), as chairman of the Committee of the Whole.",
+         "beleg": "Einheiten [5], [6], [12]"},
+        {"behauptung": "Im Landtag von Pennsylvanien herrschte Stimmengleichheit darüber, ob Deutsch Gesetzes-, Gerichts- und Urkundensprache werden solle; der Sprecher, „ein Mühlenberg“, entschied für das Englische (Löher 1847).",
+         "behauptung_en": "In the Pennsylvania legislature there was a tie on whether German should become the language of laws, courts and public instruments; the Speaker, “a Mühlenberg”, decided for English (Löher 1847).",
+         "befund": "Löher nennt weder Jahr noch Stimmenzahl noch Quelle und setzt den Antrag „nicht lange nach dem Friedensschlusse“ an. Frederick A. C. Muhlenberg war von 1780 bis 1783 Sprecher der Assembly. Seidensticker, der seine Briefe auswertete, kennt keine solche Abstimmung. Löher selbst schreibt im selben Absatz, die Gesetze des Staates würden deutsch gedruckt. Ob es in der Assembly einen solchen Antrag gab, ist hier nicht geprüft.",
+         "befund_en": "Löher gives no year, vote count or source and places the motion “not long after the conclusion of peace”. Frederick A. C. Muhlenberg was Speaker of the Assembly from 1780 to 1783. Seidensticker, who used his letters, knows of no such vote. Löher himself writes in the same paragraph that the state's laws were printed in German. Whether there was such a motion in the Assembly has not been checked here.",
+         "beleg": "Einheiten [9], [10], [11]"},
+        {"behauptung": "Die Abstimmung fand 1794 statt.",
+         "behauptung_en": "The vote took place in 1794.",
+         "befund": "Die Petition wurde am 28. November 1794 vorgelegt; die Abstimmung 41 zu 42 fand am 13. Januar 1795 statt, die Debatte über Deutsch am 16. Februar 1795.",
+         "befund_en": "The petition was presented on 28 November 1794; the 41-to-42 vote took place on 13 January 1795, the debate on German on 16 February 1795.",
+         "beleg": "Einheiten [1], [5], [7]"},
+    ],
+    "spiel": {
+        "optionen": [
+            {"text": "Den Kongress bitten, einen Teil der Bundesgesetze deutsch zu drucken, weil man kein Englisch versteht (Petition aus Augusta County).",
+             "text_en": "Ask Congress to print part of the federal laws in German, because one does not understand English (the Augusta County petition).",
+             "beleg": "Einheit [1]", "gewaehlt": True},
+            {"text": "Englisch lernen, wie es selbst der Fürsprecher Hartley „vielleicht wünschenswert“ nannte, und die Gesetze in der Sprache des Landes lesen.",
+             "text_en": "Learn English, as even their advocate Hartley called “perhaps desirable”, and read the laws in the language of the country.",
+             "beleg": "Einheit [7]", "gewaehlt": False},
+            {"text": "Sich an den eigenen Staat halten und deutsche Drucke von dort verlangen, wie Pennsylvanien sie herausgab.",
+             "text_en": "Turn to one's own state and ask for German printings from there, as Pennsylvania issued them.",
+             "beleg": "Einheiten [7], [10]", "gewaehlt": False},
+            {"text": "Die englischen Gesetze über die im County hinterlegte Ausgabe, die Zeitungen und den eigenen Abgeordneten erschließen.",
+             "text_en": "Get at the English laws through the edition deposited in the county, the newspapers and one's own representative.",
+             "beleg": "Einheiten [3], [5], [8]", "gewaehlt": False},
+        ],
+        "folgen": "28. November 1794: Die Petition wird vorgelegt und auf den Tisch gelegt. 1. Dezember: Ausschuss Moore, Baldwin, Heister zur Bekanntmachung der Gesetze, die Petition wird ihm überwiesen. 23. Dezember: Bericht mit 3000 Exemplaren, „Part were to be printed in German“. 7. und 13. Januar 1795: Beratung im Gesamtausschuss; am 13. Januar scheitert der Antrag, sich zu erheben, mit 41 zu 42, danach wird der Bericht an einen Ausschuss von 16 Abgeordneten zurückverwiesen. 29. Januar: neuer Bericht (Baldwin). 16. Februar: Debatte Hartley, Kittera, Murray, Boudinot; zwei Resolutionen ohne Deutsch. 17. Februar: Baldwin legt den Gesetzentwurf vor. 18. Februar: Das Haus beschließt ihn. 3. März 1795: Gesetz zur allgemeineren Bekanntmachung der Gesetze (1 Stat. 443): 4500 englische Exemplare in die Counties, 500 für den Kongress. 1847: Löher erzählt von der Stimmengleichheit und „einem Mühlenberg“. Für Augusta County ist eine Antwort an die Petenten nicht überliefert.",
+        "folgen_en": "28 November 1794: the petition is presented and laid on the table. 1 December: committee of Moore, Baldwin and Heister on the promulgation of the laws; the petition is referred to it. 23 December: report with 3,000 copies, “Part were to be printed in German”. 7 and 13 January 1795: deliberation in the Committee of the Whole; on 13 January the motion to rise fails by 41 to 42, after which the report is recommitted to a committee of 16 members. 29 January: new report (Baldwin). 16 February: debate with Hartley, Kittera, Murray, Boudinot; two resolutions without German. 17 February: Baldwin presents the bill. 18 February: the House passes it. 3 March 1795: Act for the more general promulgation of the laws (1 Stat. 443): 4,500 English copies to the counties, 500 for Congress. 1847: Löher tells of the tie and “a Mühlenberg”. No answer to the petitioners of Augusta County has come down.",
+    },
+    "tafeln": [
+        {"motiv": "Annals of Congress, 3. Kongress, Sp. 1081–1082 (13. Januar 1795, „ayes 41, noes 42“)", "url": IA + AN + "/page/n542/mode/1up", "lizenz": "PD (Werk der US-Bundesregierung, Druck 19. Jh.)", "geprueft": True},
+        {"motiv": "House Journal, 3. Kongress, 2. Sitzung, S. 49 (28. November 1794, Petition aus Augusta County)", "url": IA + "journalhouserep05conggoog/page/n59/mode/1up", "lizenz": "PD (Werk der US-Bundesregierung, Druck 1795; nur die Faksimileseite, nicht der Nachdruck von 1977 als Ganzes)", "geprueft": True},
+        {"motiv": "Franz Löher, Geschichte und Zustände der Deutschen in Amerika, 1847, S. 198 („ein Mühlenberg“)", "url": IA + "geschichteundzus00lh/page/n219/mode/1up", "lizenz": "PD (Druck 1847, Autor gest. 1892)", "geprueft": True},
+        {"motiv": "Statutes at Large Bd. 1, S. 443: An Act for the more general promulgation of the laws, 3. März 1795", "url": "https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c3/llsl-c3.pdf", "lizenz": "PD (Werk der US-Bundesregierung)", "geprueft": True},
+        {"motiv": "Joseph Wright, Bildnis Frederick Augustus Conrad Muhlenberg, 1790, Öl auf Leinwand (National Portrait Gallery, Washington)", "url": "https://commons.wikimedia.org/wiki/File:Frederick_Augustus_Conrad_Muhlenberg_by_Joseph_Wright,_1790,_oil_on_canvas_with_applied_wood_strip,_from_the_National_Portrait_Gallery_-_NPG-7400002A_2.jpg", "lizenz": "PD (Commons: Public domain; Gemälde 1790), 6019 × 7588 Pixel", "geprueft": True},
+    ],
+    "offen": [
+        "Die Petition aus Augusta County selbst (Wortlaut, Unterzeichner, Sprache) ist nicht gedruckt; das Original wäre in den Akten des Repräsentantenhauses (National Archives, Record Group 233, 3. Kongress) zu suchen. Nicht eingesehen.",
+        "Der Ausschussbericht vom 23. Dezember 1794 im Wortlaut (American State Papers, Miscellaneous, Bd. 1) ist nicht gelesen; die in der Literatur genannten „3000 deutschen Exemplare“ sind nach den Annals nicht bestätigt, dort sind 3000 die Gesamtauflage und „Part“ deutsch.",
+        "Ob über die Deutsch-Klausel am 16. Februar 1795 abgestimmt wurde, ist weder in den Annals noch im Journal verzeichnet; zeitgenössische Zeitungsberichte (z. B. Philadelphia, Februar 1795) nicht gesucht.",
+        "Löhers Landtagsabstimmung: Die Minutes bzw. das Journal der Pennsylvania General Assembly 1780–1790 sind nicht auf einen Antrag zu Deutsch als Gesetzes- oder Gerichtssprache durchgesehen. Ebenso nicht geprüft, woher Löher die Geschichte hatte.",
+        "Seidenstickers Angaben zum Stichentscheid vom 29. April 1796 (49 zu 49; Haus 51 zu 48) nicht an den Annals des 4. Kongresses geprüft.",
+        "Der Muhlenberg zugeschriebene Satz, je schneller die Deutschen Amerikaner würden, desto besser, ist in keiner gelesenen Quelle belegt.",
+        "Spätere Fassungen der Legende (Verlegung in den Kongress, Zuspitzung auf „Amtssprache“) sind hier nicht bis zu ihrem ersten Auftreten verfolgt.",
+        "Druckjahr des Annals-Bandes (Gales and Seaton, [1849]) und des Journals (Childs und Swaine, [1795]) nicht am Titelblatt gelesen; Journal S. 304 f. (Senatsänderungen) nicht am Bild geprüft.",
+        "Ob Andrew Moore den Bezirk mit Augusta County vertrat, ist nicht geprüft.",
+    ],
+}
+
+out = os.path.join(HERE, "petition1795.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=1)
+print("geschrieben:", out, "Einheiten:", sum(len(s["units"]) for s in data["sections"]))

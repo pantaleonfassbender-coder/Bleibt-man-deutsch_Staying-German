@@ -1,0 +1,112 @@
+{
+ "stations": [
+  {
+   "id": "germantown",
+   "nr": 1,
+   "zeit": "1683–1707",
+   "ort": "Germantown, Pennsylvanien",
+   "ort_en": "Germantown, Pennsylvania",
+   "titel": "Eine eigene Stadt nach englischem Recht",
+   "titel_en": "A Town of One's Own under English Law",
+   "frage": "Nehmen die Germantowner Penns Privilegien an und verwalten ihre Stadt selbst, aber „nach denen Englischen Gesetzen“, und wie gehen sie mit Ämtern, Eid und Gericht und mit dem Protest gegen den Menschenhandel um?",
+   "frage_en": "Do the people of Germantown accept Penn's charter and govern their own town, but according to the laws of England, and what do they do with offices, oaths and courts, and with the protest against the traffic in men?",
+   "shipped": true
+  },
+  {
+   "id": "wahl1755",
+   "nr": 2,
+   "zeit": "1739–1764",
+   "ort": "Pennsylvanien",
+   "ort_en": "Pennsylvania",
+   "titel": "Wen wählen, welche Schule?",
+   "titel_en": "Whom to Vote For, Which School?",
+   "frage": "Stimmen die Deutschen, wie Christoph Sauer rät, für die „milden“ Quäker-Abgeordneten oder, wie Conrad Weiser rät, für eine Assembly, die dem Gouverneur Geld für den Krieg bewilligt, und schicken sie ihre Kinder in die englischen Freischulen der Londoner Society?",
+   "frage_en": "Do the Germans vote, as Christopher Sauer advises, for the 'mild' Quaker assemblymen or, as Conrad Weiser advises, for an assembly that will grant the governor money for war, and do they send their children to the English free schools of the London Society?",
+   "shipped": true
+  },
+  {
+   "id": "petition1795",
+   "nr": 3,
+   "zeit": "1794–1795",
+   "ort": "Kongress in Philadelphia; Augusta County, Virginia",
+   "ort_en": "Congress at Philadelphia; Augusta County, Virginia",
+   "titel": "Ein gewisser Teil der Gesetze",
+   "titel_en": "A certain portion of the laws",
+   "frage": "Bitten die Deutschen in Augusta County den Kongress, einen Teil der Bundesgesetze deutsch zu drucken, oder lernen sie Englisch?",
+   "frage_en": "Do the Germans of Augusta County ask Congress to print part of the federal laws in German, or do they learn English?",
+   "shipped": true
+  },
+  {
+   "id": "michaelis1816",
+   "nr": 4,
+   "zeit": "1804–1817",
+   "ort": "St. Michaelis und Zion, Philadelphia, Pennsylvanien",
+   "ort_en": "St. Michael’s and Zion, Philadelphia, Pennsylvania",
+   "titel": "Mit Leib und Leben",
+   "titel_en": "With body and life",
+   "frage": "Lässt die deutsche lutherische Gemeinde neben dem deutschen auch englischen Gottesdienst in ihre Kirchen, tritt sie den Englischfreunden eine Kirche ab, oder bleibt sie ausschließlich deutsch?",
+   "frage_en": "Does the German Lutheran congregation admit English services into its churches alongside German, cede a church to the friends of English, or remain exclusively German?",
+   "shipped": true
+  },
+  {
+   "id": "hermann1837",
+   "nr": 5,
+   "zeit": "1836–1849",
+   "ort": "Philadelphia und Hermann, Missouri",
+   "ort_en": "Philadelphia and Hermann, Missouri",
+   "titel": "Eine deutsche Stadt mit Englisch als Fach",
+   "titel_en": "A German town with English as a subject",
+   "frage": "Soll die neue Stadt eine rein deutsche Schule haben, oder eine deutsche Schule mit Englisch als Fach, und wer bezahlt sie, wenn der Staat nur die englische Distriktschule trägt?",
+   "frage_en": "Should the new town have a purely German school, or a German school with English as a subject, and who pays for it when the state supports only the English district school?",
+   "shipped": true
+  },
+  {
+   "id": "sanantonio1854",
+   "nr": 6,
+   "zeit": "1854–1856",
+   "ort": "San Antonio, Texas",
+   "ort_en": "San Antonio, Texas",
+   "titel": "Ein Uebel, aber Sache der Staaten",
+   "titel_en": "An evil, but a matter for the States",
+   "frage": "Sollen die freisinnigen Deutschen in einem Sklavenstaat eine Plattform beschließen, die die Sklaverei ein Uebel nennt, und soll ihre Zeitung dafür einstehen, auch auf Englisch und auf eigenes Risiko?",
+   "frage_en": "Should the liberal Germans in a slave state adopt a platform calling slavery an evil, and should their newspaper stand by it, in English too and at its own risk?",
+   "shipped": true
+  },
+  {
+   "id": "bennett1890",
+   "nr": 7,
+   "zeit": "1889–1891 (Illinois bis 1893)",
+   "ort": "Wisconsin (Milwaukee, Watertown, Manitowoc) und Illinois",
+   "ort_en": "Wisconsin (Milwaukee, Watertown, Manitowoc) and Illinois",
+   "titel": "Zwei Wörter im Gesetz: „in the English language“",
+   "titel_en": "Two words in the law: “in the English language”",
+   "frage": "Soll die lutherische Gemeinde das Bennett-Gesetz ignorieren und vor Gericht testen, einen Kompromiss ohne Englischklausel anbieten oder mit den Katholiken an der Wahlurne die Partei wechseln, während die Turner das Gesetz verteidigen?",
+   "frage_en": "Should the Lutheran congregation ignore the Bennett Law and test it in court, offer a compromise without the English clause, or switch parties at the ballot box together with the Catholics, while the Turners defend the law?",
+   "shipped": true
+  },
+  {
+   "id": "krieg1917",
+   "nr": 8,
+   "zeit": "1917–1918",
+   "ort": "New Ulm (Minnesota), Davenport und Germania/Lakota (Iowa), Monroe (Wisconsin)",
+   "ort_en": "New Ulm (Minnesota), Davenport and Germania/Lakota (Iowa), Monroe (Wisconsin)",
+   "titel": "Was entscheidet die Gemeinde selbst?",
+   "titel_en": "What does the community decide for itself?",
+   "frage": "Protestiert die Gemeinde im Krieg öffentlich, beugt sie sich den Auflagen oder gibt sie das Deutsche von sich aus auf?",
+   "frage_en": "Does the community protest openly in wartime, submit to the restrictions, or give up German of its own accord?",
+   "shipped": true
+  },
+  {
+   "id": "meyer1923",
+   "nr": 9,
+   "zeit": "1919–1923",
+   "ort": "Hamilton County, Nebraska",
+   "ort_en": "Hamilton County, Nebraska",
+   "titel": "Die verlängerte Mittagspause",
+   "titel_en": "The longer noon recess",
+   "frage": "Gehorcht der Schulvorstand dem Siman-Gesetz, hält er Deutsch in einer verlängerten Mittagspause, klagt er oder stellt er ganz auf Englisch um?",
+   "frage_en": "Does the school board obey the Siman Act, keep German in an extended noon recess, go to court, or switch entirely to English?",
+   "shipped": true
+  }
+ ]
+}

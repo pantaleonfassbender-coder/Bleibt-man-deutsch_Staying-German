@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Bleibt man deutsch? – Staying German? Deutsche Gemeinden in Amerika 1683–1923. Ein zweisprachiger Quellenapparat"
+message: "Wenn Sie diesen Apparat benutzen, zitieren Sie ihn bitte wie unten angegeben, und zitieren Sie für jede übernommene Stelle auch die gedruckte Quelle. / If you use this apparatus, please cite it as below, and cite the printed source for any passage you quote."
+type: software
+authors:
+  - family-names: Fassbender
+    given-names: Pantaleon
+    orcid: "https://orcid.org/0000-0002-6683-3617"
+repository-code: "https://github.com/pantaleonfassbender-coder/Bleibt-man-deutsch_Staying-German"
+url: "https://bleibt-man-deutsch.netlify.app/"
+abstract: >-
+  Ein zweisprachiger digitaler Quellenapparat zu deutschen Gemeinden in
+  Amerika 1683–1923: neun Stationen mit 156 Einheiten, jedes Original
+  (deutsch oder englisch) neben einer Übersetzung, jeder Auszug am
+  Seitenbild eines gemeinfreien Drucks gelesen, von Germantown und dem
+  Protest gegen den Menschenhandel 1688 bis zum Urteil Meyer v. Nebraska
+  1923. Mit Legenden, amtlichen Zahlenreihen und 19 Bildtafeln.
+  Begleitspiel: Mit englischer Zunge – English on the Tongue.
+keywords:
+  - Deutschamerikaner
+  - German Americans
+  - Germantown
+  - Muhlenberg legend
+  - Bennett Law
+  - Meyer v. Nebraska
+  - Sprachpolitik
+  - language policy
+  - digital humanities
+license: MIT
+version: 1.0.0
+date-released: 2026-10-27

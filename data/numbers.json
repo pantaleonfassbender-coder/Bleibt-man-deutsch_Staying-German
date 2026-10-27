@@ -1,0 +1,272 @@
+{
+ "titel": "Wie viele?",
+ "titel_en": "How many?",
+ "lede": "Die amtlichen Reihen, mit ihren Grenzen. Die Einwanderungszahl für „Germany“ ist eine Untergrenze der deutschsprachigen Einwanderung (Österreich, Schweiz, Russland fehlen); der Zensus zählt nach den Grenzen seines eigenen Jahres; „Muttersprache“ heißt die Sprache der Einwandererfamilie, nicht die eigene Alltagssprache. Pennsylvania-Deutsche späterer Generationen stehen in keiner dieser Zahlen.",
+ "lede_en": "The official series, with their limits. The immigration figure for 'Germany' is a lower bound of German-speaking immigration (Austria, Switzerland and Russia are missing); each census counts by the borders of its own year; 'mother tongue' means the language of the immigrant family, not one's own everyday speech. Pennsylvania Germans of later generations appear in none of these figures.",
+ "tables": [
+  {
+   "titel": "Einwanderung aus „Germany“ je Jahrzehnt",
+   "titel_en": "Immigration from 'Germany' per decade",
+   "head": [
+    "Fiskaljahre",
+    "Personen",
+    "Anteil an allen"
+   ],
+   "head_en": [
+    "Fiscal years",
+    "Persons",
+    "Share of all"
+   ],
+   "rows": [
+    [
+     "1820–1829",
+     5753,
+     "4,5 %",
+     "4.5%"
+    ],
+    [
+     "1830–1839",
+     124726,
+     "23,2 %",
+     "23.2%"
+    ],
+    [
+     "1840–1849",
+     385434,
+     "27,0 %",
+     "27.0%"
+    ],
+    [
+     "1850–1859",
+     976072,
+     "34,7 %",
+     "34.7%"
+    ],
+    [
+     "1860–1869",
+     723734,
+     "34,8 %",
+     "34.8%"
+    ],
+    [
+     "1870–1879",
+     751769,
+     "27,4 %",
+     "27.4%"
+    ],
+    [
+     "1880–1889",
+     1445181,
+     "27,5 %",
+     "27.5%"
+    ],
+    [
+     "1890–1899",
+     579072,
+     "15,7 %",
+     "15.7%"
+    ],
+    [
+     "1900–1909",
+     328722,
+     "4,0 %",
+     "4.0%"
+    ],
+    [
+     "1910–1919",
+     174227,
+     "2,7 %",
+     "2.7%"
+    ],
+    [
+     "1920–1929",
+     386634,
+     "9,0 %",
+     "9.0%"
+    ]
+   ],
+   "quelle": "U.S. Department of Homeland Security, Yearbook of Immigration Statistics 2022, Table 2 (1820–1929; bis 1906 Herkunftsland, danach Land des letzten Wohnsitzes; vor 1868 Passagierankünfte). Dieselbe Reihe als Jahreswerte: Historical Statistics of the United States (1975), Series C 95.",
+   "quelle_en": "U.S. Department of Homeland Security, Yearbook of Immigration Statistics 2022, Table 2 (1820–1929; country of origin to 1906, then country of last residence; passenger arrivals before 1868). The same series by year: Historical Statistics of the United States (1975), Series C 95."
+  },
+  {
+   "titel": "In Deutschland Geborene laut Zensus",
+   "titel_en": "German-born by census",
+   "head": [
+    "Zensus",
+    "Personen",
+    "Anteil an allen Ausländern"
+   ],
+   "head_en": [
+    "Census",
+    "Persons",
+    "Share of all foreign-born"
+   ],
+   "rows": [
+    [
+     "1850",
+     583774,
+     "26,0 %",
+     "26.0%"
+    ],
+    [
+     "1860",
+     1276075,
+     "30,8 %",
+     "30.8%"
+    ],
+    [
+     "1870",
+     1690533,
+     "30,4 %",
+     "30.4%"
+    ],
+    [
+     "1880",
+     1966742,
+     "29,4 %",
+     "29.4%"
+    ],
+    [
+     "1890",
+     2784894,
+     "30,1 %",
+     "30.1%"
+    ],
+    [
+     "1900",
+     2663418,
+     "25,8 %",
+     "25.8%"
+    ],
+    [
+     "1910",
+     2311237,
+     "17,1 %",
+     "17.1%"
+    ],
+    [
+     "1920",
+     1686108,
+     "12,1 %",
+     "12.1%"
+    ]
+   ],
+   "quelle": "Gibson/Lennon, Historical Census Statistics on the Foreign-born Population of the United States: 1850–1990, U.S. Census Bureau, Working Paper No. 29 (1999), Table 4. Anteile berechnet. 1920 nach den Grenzen von Versailles.",
+   "quelle_en": "Gibson/Lennon, Historical Census Statistics on the Foreign-born Population of the United States: 1850–1990, U.S. Census Bureau, Working Paper No. 29 (1999), Table 4. Shares computed. 1920 by the post-Versailles borders."
+  },
+  {
+   "titel": "Muttersprache Deutsch (erste und zweite Generation)",
+   "titel_en": "German mother tongue (first and second generation)",
+   "head": [
+    "Zensus",
+    "Personen",
+    ""
+   ],
+   "head_en": [
+    "Census",
+    "Persons",
+    ""
+   ],
+   "rows": [
+    [
+     "1910",
+     8646402,
+     "davon 2.759.032 im Ausland geboren",
+     "of whom 2,759,032 born abroad"
+    ],
+    [
+     "1920",
+     8164111,
+     "davon 2.267.128 im Ausland geboren",
+     "of whom 2,267,128 born abroad"
+    ]
+   ],
+   "quelle": "Abstract of the Fourteenth Census of the United States, 1920 (1923), Table 109, S. 386–387 (1910 revidiert).",
+   "quelle_en": "Abstract of the Fourteenth Census of the United States, 1920 (1923), Table 109, pp. 386–387 (1910 revised)."
+  },
+  {
+   "titel": "Deutschsprachige Zeitungen und Zeitschriften",
+   "titel_en": "German-language newspapers and periodicals",
+   "head": [
+    "Jahr",
+    "Zahl",
+    ""
+   ],
+   "head_en": [
+    "Year",
+    "Number",
+    ""
+   ],
+   "rows": [
+    [
+     "1810",
+     8,
+     "Wochenblätter, alle in Pennsylvanien",
+     "weeklies, all in Pennsylvania"
+    ],
+    [
+     "1850",
+     133,
+     "",
+     ""
+    ],
+    [
+     "1880",
+     641,
+     "80 Tageszeitungen, 466 Wochenblätter",
+     "80 dailies, 466 weeklies"
+    ],
+    [
+     "1884",
+     621,
+     "",
+     ""
+    ],
+    [
+     "1893–94",
+     "Höchststand",
+     "Zahl in Parks Falttabelle, noch zu lesen",
+     "figure in Park's folding table, still to be read"
+    ],
+    [
+     "1920",
+     276,
+     "",
+     ""
+    ]
+   ],
+   "quelle": "S. N. D. North, History and Present Condition of the Newspaper and Periodical Press (Tenth Census, 1884), S. 126 f.; R. E. Park, The Immigrant Press and Its Control (1922), S. 310–319 (nach Ayer, nur anzeigenführende Blätter).",
+   "quelle_en": "S. N. D. North, History and Present Condition of the Newspaper and Periodical Press (Tenth Census, 1884), pp. 126 f.; R. E. Park, The Immigrant Press and Its Control (1922), pp. 310–319 (after Ayer, advertising papers only)."
+  },
+  {
+   "titel": "Deutsche im kolonialen Pennsylvanien (Schätzungen)",
+   "titel_en": "Germans in colonial Pennsylvania (estimates)",
+   "head": [
+    "Jahr",
+    "Personen",
+    ""
+   ],
+   "head_en": [
+    "Year",
+    "Persons",
+    ""
+   ],
+   "rows": [
+    [
+     "1775",
+     110000,
+     "Faust 1909, Minimum, nach den Ankünften in Philadelphia",
+     "Faust 1909, a minimum, from arrivals at Philadelphia"
+    ],
+    [
+     "1790",
+     141000,
+     "33,3 % der Weißen, Namensanalyse des Zensus 1790 (ACLS 1932)",
+     "33.3% of whites, name analysis of the 1790 census (ACLS 1932)"
+    ]
+   ],
+   "quelle": "A. B. Faust, The German Element in the United States (1909), Bd. 1, S. 128 f.; Report of Committee on Linguistic and National Stocks, Annual Report of the American Historical Association for 1931 (1932), S. 119, 124 f.",
+   "quelle_en": "A. B. Faust, The German Element in the United States (1909), vol. 1, pp. 128 f.; Report of Committee on Linguistic and National Stocks, Annual Report of the American Historical Association for 1931 (1932), pp. 119, 124 f."
+  }
+ ]
+}

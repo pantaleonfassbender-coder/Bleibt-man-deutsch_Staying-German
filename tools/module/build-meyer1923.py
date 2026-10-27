@@ -1,0 +1,568 @@
+# -*- coding: utf-8 -*-
+"""Baut apparat/module/meyer1923.json (Modul 10: 1919-1923, Hamilton County, Nebraska).
+Alle Einheiten am Seitenbild gelesen: Chronicling America (loc.gov/resource + IIIF),
+US Reports 262 als PDF von tile.loc.gov (mit pymupdf gerendert), Iowa Reports 191 auf archive.org,
+Statutes at Large Bd. 43 (LoC-PDF) fuer den Epilog."""
+import json, os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+CA = "https://www.loc.gov/resource/"
+USR = "https://tile.loc.gov/storage-services/service/ll/usrep/usrep262/"
+
+quellen = [
+    {"key": "tot19190405", "zitat": "Tägliche Omaha Tribüne (Omaha, Nebr.), Jg. 35, Samstag, 5. April 1919, S. 1: „Kein Religionsunterricht in fremden Sprachen; kein Sprachunterricht“.", "url": CA + "sn83045652/1919-04-05/ed-1/?sp=1", "sprache": "de"},
+    {"key": "tot19191118", "zitat": "Tägliche Omaha Tribüne, Jg. 35, Nr. 214, Dienstag, 18. November 1919, S. 1: „Der Prozeß gegen das Simangesetz“.", "url": CA + "sn83045652/1919-11-18/ed-1/?sp=1", "sprache": "de"},
+    {"key": "bartels262", "zitat": "Bartels v. Iowa; Bohning v. Ohio; Pohl v. Ohio; Nebraska District of Evangelical Lutheran Synod of Missouri, Ohio, and Other States v. McKelvie, 262 U.S. 404–413 (1923), entschieden 4. Juni 1923; Opinion McReynolds S. 409–411, abweichende Meinung Holmes (mit Sutherland) S. 412–413. United States Reports, Bd. 262 (US-Regierungswerk).", "url": USR + "usrep262404/usrep262404.pdf", "sprache": "en"},
+    {"key": "iowa191", "zitat": "State of Iowa v. August Bartels, entschieden 12. Februar 1921, Rehearing abgelehnt 25. Juni 1921, in: Reports of Cases at Law and in Equity Determined by the Supreme Court of the State of Iowa, Bd. 191 (1921), S. 1060 ff. (Opinion Faville, J.). Amtliche Entscheidungssammlung des Staates Iowa.", "url": "https://archive.org/details/reportscasesatl22courgoog", "sprache": "en"},
+    {"key": "odb19220217", "zitat": "Omaha Daily Bee (Omaha, Nebr.), Bd. 51, Nr. 210, Freitag, 17. Februar 1922, S. 1: „Siman Law Upheld by High Court“.", "url": CA + "sn99021999/1922-02-17/ed-1/?sp=1", "sprache": "en"},
+    {"key": "meyer262", "zitat": "Meyer v. State of Nebraska, 262 U.S. 390–403 (1923), Nr. 325, verhandelt 23. Februar 1923, entschieden 4. Juni 1923; Opinion of the Court von Justice McReynolds, S. 396–403. United States Reports, Bd. 262 (US-Regierungswerk).", "url": USR + "usrep262390/usrep262390.pdf", "sprache": "en"},
+    {"key": "omb19230605", "zitat": "Omaha Morning Bee (Omaha, Nebr.), Bd. 52, Nr. 302, Dienstag, 5. Juni 1923, S. 1: „Nebraska Language Law Held Invalid“; „Personal Liberty Basis of Decision Rendered by U. S. Supreme Court“ (George F. Authier) und „Nebraska Decision Reversed by U. S. Supreme Court“.", "url": CA + "sn84024326/1923-06-05/ed-1/?sp=1", "sprache": "en"},
+    {"key": "imm1924", "zitat": "An Act To limit the immigration of aliens into the United States, and for other purposes („Immigration Act of 1924“), 26. Mai 1924, 68th Congress, Sess. I, Ch. 190 [H. R. 7995], Public No. 139, 43 Stat. 153; § 11 (a) auf S. 159. United States Statutes at Large, Bd. 43 (US-Regierungswerk). Nur für den Epilog.", "url": "https://tile.loc.gov/storage-services/service/ll/llsl/llsl-c68/llsl-c68.pdf", "sprache": "en"},
+]
+
+def U(n, quelle, pg, bild, titel, titel_en, lang, de, en, note="", note_en=""):
+    u = {"n": n, "quelle": quelle, "pg": pg, "bild": bild, "titel": titel, "titel_en": titel_en,
+         "lang": lang, "de": de.strip(), "en": en.strip()}
+    if note:
+        u["note"] = note.strip(); u["note_en"] = note_en.strip()
+    return u
+
+IIIF = "LoC CA, IIIF-Ausschnitte (pct-Koordinaten) aus "
+PDF = "LoC-PDF, mit pymupdf gerendert (Zoom 1,6): "
+
+u1_de = """
+Kein Religionsunterricht in fremden Sprachen; kein Sprachunterricht. Das Haus hat die Siman Bill in ursprünglicher Fassung angenommen; Abgeordneter Reynolds machte vergeblichen Kampf für die Milderung der Vorlage. — Alle fremdsprachlichen Bücher der Wanderbibliothek der Universitätsbibliothek überwiesen. — Der Gouverneur unterzeichnet Pfarrschule-Kontrollvorlage.
+
+Lincoln, Neb., 4. April — Das Abgeordnetenhaus hat heute nachmittag die Siman Bill No 24, wie sie im Senat von Senator Siman von Wayne County eingereicht und vom Senat angenommen wurde, nach langem Kampf ebenfalls mit großer Mehrheit angenommen. Eine kleine unbedeutende Veränderung wurde an ihr vom Konferenzkomitee vorgenommen, die jedoch an den Bestimmungen garnichts ändert. Der Senat wird die Vorlage sicher nächsten Montag mit dieser Aenderung bestätigen, und da sie die Dringlichkeitsklausel hat, wird sie zum Gesetz werden, sobald sie vom Gouverneur unterzeichnet ist.
+
+Die Vorlage schreibt vor:
+
+1. Aller Unterricht (also auch Religionsunterricht) in allen Schulen im Staate nur in der englischen Sprache zu erteilen.
+
+2. Fremde Sprachen dürfen in keiner Schule gelehrt werden unter dem 9. Grade und dann dürfen ihn nur solche Schüler genießen, die ein vom Co.-Schulsuperintendent ausgestelltes Zeugnis haben, als Beweis, daß sie den 8. Grad absolviert haben.
+
+3. Eine Strafe von $25 bis $100 ist für jede Uebertretung des Gesetzes festgesetzt.
+
+Der Annahme der Vorlage durch das Haus ging eine interessante Debatte voraus. Der Abgeordnete Reynolds von Omaha, unterbreitete einen Minoritätsbericht, worin er vorschlug, daß Religionsunterricht in Muttersprachen gestattet werden sollte für solche Kinder, die diese Sprachen kennen, aber kein Sprachunterricht. Selbst darauf ging das Haus nicht ein, das eine Intoleranz und einen Fanatismus zeigte, die schwer auszumalen sind.
+
+Abgeordneter Reynolds sagte, der Mehrheitsbericht sei ein Verstoß gegen die religiöse Freiheit ebensowohl der Polen, Böhmen und Juden, als gegen die der Deutschen, gegen welche sie im Besonderen gerichtet sei. […]
+"""
+u1_en = """
+No religious instruction in foreign languages; no language instruction. The House has passed the Siman Bill in its original form; Representative Reynolds fought in vain for a softening of the bill. — All foreign-language books of the travelling library handed over to the university library. — The governor signs parochial-school control bill.
+
+Lincoln, Neb., 4 April — This afternoon the House of Representatives, after a long fight, likewise passed by a large majority Siman Bill No. 24 as introduced in the Senate by Senator Siman of Wayne County and passed by the Senate. A small, unimportant change was made in it by the conference committee, which, however, alters nothing in its provisions. The Senate will surely confirm the bill with this amendment next Monday, and since it carries the emergency clause, it will become law as soon as it is signed by the governor.
+
+The bill prescribes:
+
+1. All instruction (thus religious instruction too) in all schools in the state to be given only in the English language.
+
+2. Foreign languages may be taught in no school below the 9th grade, and then only such pupils may receive it as hold a certificate issued by the county superintendent of schools as proof that they have completed the 8th grade.
+
+3. A penalty of $25 to $100 is fixed for every violation of the law.
+
+The passage of the bill by the House was preceded by an interesting debate. Representative Reynolds of Omaha submitted a minority report in which he proposed that religious instruction in mother tongues should be permitted for such children as know these languages, but no language instruction. The House would not agree even to that, showing an intolerance and a fanaticism that are hard to depict.
+
+Representative Reynolds said the majority report was a violation of the religious freedom of the Poles, Bohemians and Jews just as much as of that of the Germans, against whom it was directed in particular. […]
+"""
+u2_de = """
+Der Prozeß [g]egen das [Sim]angesetz. Im Staats-Obergericht von Nebraska wurde am Montag dies ungerechte Sprachgesetz von fünf Anwälten förmlich zerpflückt. Die Entscheidung des Gerichts erfolgt später.
+
+Lincoln, Nebr., 18. Nov. — Gestern wurde im Obergericht des Staates Nebraska zu Lincoln die Berufung der deutschen Lutheraner der Missouri und Iowa Synode, der polnischen und böhmischen Katholiken und der dänischen Lutheraner, welche sowohl als Kirchengemeinschaften als auch durch einzelne Zugehörige vertreten waren, verhandelt, die das sogenannte Simangesetz wegen seiner direkten und indirekten Eingriffe in die verfassungsmäßigen Rechte der Bürger auf freie und ungehinderte Religionsausübung und die unveräußerlichen Rechte der Eltern auf religiöse und moralische Erziehung der Kinder für verfassungswidrig ansehen. Das Gesetz bestimmt, daß niemand, weder als Lehrer noch persönlich, in irgend einer Privat-, Kirchen-, Parochial- oder Volksschule, irgend ein Fach in einer anderen Sprache als der englischen lehren darf; daß fremde Sprachen nur als solche gelehrt werden dürfen, nachdem der Schüler gemäß Zeugnis des betreffenden Countysuperintendenten das Ziel des 8. Grades erreicht habe, und daß Uebertreter irgend welcher Bestimmungen dieses Gesetzes eines Vergehens für schuldig befunden und zur Erlegung einer Geldstrafe von $25 bis $100 oder zur Verbüßung einer Haft von nicht mehr als 30 Tagen verurteilt werden sollen.
+
+Die Appellanten wurden durch die folgenden Advokaten vertreten: I. L. Albert, Columbus; A. M. Post, Columbus; A. F. Müller, Omaha; J. T. Votava, Omaha, und J. Würzburg, Lincoln.
+
+I. L. Albert eröffnete das Gefecht mit dem Hinweis darauf, daß das Studium und Erlernen fremder Sprachen nicht nur eine unschädliche, sondern eine nützliche, lobenswerte Beschäftigung sei, welche zum Ergreifen gewisser Berufszweige geradezu notwendig sei. Er erinnere nur an den Priester, den Rabbi. Ein Verbot, Religion in einer fremden Sprache zu lehren, sei ein verfassungswidriger Eingriff nicht nur in das Recht der freien Religionsausübung, sondern auch eine Beschränkung gegen den freien Gebrauch von Eigentum seitens der Besitzer. Ein solches Ausnahmegesetz ließe sich nur durch eine aus dem Lehren fremder Sprachen erwachsende Gefahr für die allgemeine Wohlfahrt rechtfertigen. Eine solche Gefahr vermöge er nicht zu erkennen. Eine solche Gefahr hätte auch die Legislatur nicht erkannt, denn das Siman-Gesetz verbiete nicht das Lehren der fremden Sprachen an sich, sondern nur in Parochial- und Privatschulen. Der Privatunterricht sei nach wie vor frei. Er mache darauf aufmerksam, daß die Amerikanisierung des Eingewanderten nicht durch Polizeimaßregelung seitens des Staates befördert werde, daß Liebe und Respekt zu unserm Lande nicht durch Ausnahmegesetze erwirkt würden; daß Sprachverbote stets den entgegengesetztesten Erfolg gehabt hätten, und daß die „Du sollst und du sollst nicht“-Gesetzgebung dem der Polizeibevormundung europäischer Länder entnommenen Einwanderer nur die Ueberzeugung beibringen würde, einen willkürlichen Herrn mit einem anderen desselben Schlages vertauscht zu haben. […]
+"""
+u2_en = """
+The case against the Siman law. In the state supreme court of Nebraska this unjust language law was literally picked to pieces on Monday by five lawyers. The court's decision will follow later.
+
+Lincoln, Nebr., 18 Nov. — Yesterday the state supreme court of Nebraska at Lincoln heard the appeal of the German Lutherans of the Missouri and Iowa Synods, the Polish and Bohemian Catholics and the Danish Lutherans, who were represented both as church bodies and by individual members, and who regard the so-called Siman law as unconstitutional because of its direct and indirect encroachments on the citizens' constitutional rights to the free and unhindered exercise of religion and on the inalienable rights of parents to the religious and moral upbringing of their children. The law provides that no one, either as a teacher or personally, may teach any subject in any private, church, parochial or public school in a language other than English; that foreign languages may be taught as such only after the pupil, according to the certificate of the county superintendent concerned, has reached the standard of the 8th grade; and that violators of any provisions of this law shall be found guilty of a misdemeanour and sentenced to pay a fine of $25 to $100 or to serve a jail term of not more than 30 days.
+
+The appellants were represented by the following attorneys: I. L. Albert, Columbus; A. M. Post, Columbus; A. F. Müller, Omaha; J. T. Votava, Omaha; and J. Würzburg, Lincoln.
+
+I. L. Albert opened the battle by pointing out that the study and learning of foreign languages is not only a harmless but a useful and praiseworthy occupation, which is virtually necessary for entering certain callings. He need only recall the priest, the rabbi. A ban on teaching religion in a foreign language is an unconstitutional encroachment not only on the right of free exercise of religion but also a restriction on the owners' free use of property. Such an exceptional law could be justified only by a danger to the general welfare arising from the teaching of foreign languages. He was unable to see any such danger. Nor had the legislature seen such a danger, for the Siman law does not forbid the teaching of foreign languages as such, but only in parochial and private schools. Private tuition remains free as before. He pointed out that the Americanization of the immigrant is not furthered by police regimentation on the part of the state; that love and respect for our country are not won by exceptional laws; that bans on languages have always had the very opposite effect; and that "thou shalt and thou shalt not" legislation would only convince the immigrant, who had come from the police tutelage of European countries, that he had exchanged one arbitrary master for another of the same stamp. […]
+"""
+u3_en = """
+Number 440. An injunction is sought against the Governor and Attorney General of the State and the Attorney for Platte County to prevent enforcement of "An act to declare the English language the official language of this State, and to require all official proceedings, records and publications to be in such language and all school branches to be taught in said language in public, private, denominational and parochial schools," etc., approved April 14, 1921.[3] This statute is subject to the same objections as those offered to the Act of 1919 and sustained in Meyer v. Nebraska, supra. The purpose of the later enactment, as stated by counsel for the State, is "to place beyond the possibility for legal evasion a prohibition against the teaching in schools of foreign languages to children who have not passed the eighth grade." The Supreme Court considered the merits of the cause, upheld the statute, and refused an injunction. 187 N. W. 927.
+
+McKelvie and Davis, formerly Governor and Attorney General, no longer occupy those offices. The cause is dismissed as to them. Otto F. Walter is now the County Attorney and the judgment below as to him must be reversed.
+
+Reversed.
+
+[Footnote 3:] Sec. 1. The English language is hereby declared to be the official language of this State, and all official proceedings, records and publications shall be in such language, and the common school branches shall be taught in said language in public, private, denominational and parochial schools.
+
+Sec. 2. No person, individually or as a teacher, shall, in any private, denominational, or parochial or public school, teach any subject to any person in any language other than the English language.
+
+Sec. 3. Languages other than the English language may be taught as languages only after a pupil shall have attained and successfully passed the eighth grade as evidenced by a certificate of graduation issued by the county superintendent of the county or the city superintendent of the city in which the child resides. Provided, that the provisions of this act shall not apply to schools held on Sunday or on some other day of the week which those having the care and custody of the pupils attending same conscientiously observe as the Sabbath, where the object and purpose of such schools is the giving of religious instruction, but shall apply to all other schools and to schools held at all other times. Provided that nothing in this act shall prohibit any person from teaching his own children in his own home any foreign language. . . .
+
+Sec. 7. Chapter 249, of the Session Laws of Nebraska for 1919, entitled, 'An Act relating to the teaching of foreign languages in the State of Nebraska,' is hereby repealed. . . . [Laws 1921, c. 61.]
+"""
+u3_de = """
+Nummer 440. Begehrt wird eine einstweilige Verfügung gegen den Gouverneur und den Generalstaatsanwalt des Staates sowie den Anwalt des Platte County, um die Durchsetzung des „Gesetzes zur Erklärung der englischen Sprache zur Amtssprache dieses Staates und zur Vorschrift, dass alle amtlichen Verfahren, Akten und Veröffentlichungen in dieser Sprache zu erfolgen haben und alle Schulfächer in öffentlichen, privaten, konfessionellen und Pfarrschulen in dieser Sprache zu unterrichten sind“ usw., gebilligt am 14. April 1921,[3] zu verhindern. Dieses Gesetz unterliegt denselben Einwänden, die gegen das Gesetz von 1919 erhoben und in Meyer v. Nebraska, supra, anerkannt worden sind. Der Zweck des späteren Gesetzes ist nach Angabe der Anwälte des Staates, „ein Verbot des Unterrichts fremder Sprachen in Schulen an Kinder, die die achte Klasse nicht abgeschlossen haben, jeder Möglichkeit rechtlicher Umgehung zu entziehen“. Der Supreme Court [von Nebraska] prüfte die Sache in der Hauptsache, hielt das Gesetz aufrecht und verweigerte eine einstweilige Verfügung. 187 N. W. 927.
+
+McKelvie und Davis, früher Gouverneur und Generalstaatsanwalt, bekleiden diese Ämter nicht mehr. Ihnen gegenüber wird die Sache abgewiesen. Otto F. Walter ist jetzt County Attorney, und das Urteil der Vorinstanz muss ihm gegenüber aufgehoben werden.
+
+Aufgehoben.
+
+[Fußnote 3:] § 1. Die englische Sprache wird hiermit zur Amtssprache dieses Staates erklärt; alle amtlichen Verfahren, Akten und Veröffentlichungen erfolgen in dieser Sprache, und die Grundschulfächer werden in öffentlichen, privaten, konfessionellen und Pfarrschulen in dieser Sprache unterrichtet.
+
+§ 2. Niemand darf, als Einzelner oder als Lehrer, in einer privaten, konfessionellen, Pfarr- oder öffentlichen Schule irgendein Fach irgendeiner Person in einer anderen Sprache als der englischen unterrichten.
+
+§ 3. Andere Sprachen als die englische dürfen als Sprachen erst unterrichtet werden, nachdem ein Schüler die achte Klasse erreicht und erfolgreich abgeschlossen hat, nachgewiesen durch ein Abschlusszeugnis des County-Schulrats des Countys oder des städtischen Schulrats der Stadt, in der das Kind wohnt. Vorausgesetzt, dass die Bestimmungen dieses Gesetzes nicht gelten für Schulen, die am Sonntag oder an einem anderen Wochentag gehalten werden, den die Sorgeberechtigten der Schüler gewissenhaft als Sabbat halten, sofern Gegenstand und Zweck solcher Schulen die Erteilung von Religionsunterricht ist; sie gelten aber für alle anderen Schulen und für Schulen zu allen anderen Zeiten. Vorausgesetzt, dass nichts in diesem Gesetz jemanden hindert, seine eigenen Kinder in seinem eigenen Haus in einer fremden Sprache zu unterrichten. . . .
+
+§ 7. Kapitel 249 der Sitzungsgesetze von Nebraska für 1919, betitelt „Gesetz über den Unterricht fremder Sprachen im Staat Nebraska“, wird hiermit aufgehoben. . . . [Laws 1921, c. 61.]
+"""
+u4_en = """
+STATE OF IOWA, Appellee, v. AUGUST BARTELS, Appellant. […] Appeal from Bremer District Court.—M. F. EDWARDS, Judge. FEBRUARY 12, 1921. REHEARING DENIED JUNE 25, 1921.
+
+THE defendant was convicted of a violation of Chapter 198 of the Acts of the Thirty-eighth General Assembly, which prohibits the use of any language other than English, in teaching secular subjects in the public or private schools of this state. From such conviction and sentence thereon, this appeal is prosecuted. The opinion states the facts.—Affirmed. […]
+
+FAVILLE, J.—An information filed with a justice of the peace charged that the defendant, on or about November 10, 1919, "did use a language other than English, to wit, the German language, as a medium of instruction in the teaching of a secular subject, to wit, reading, to Selma Steege, Cordelia Griese, and Lawrence Phipo, the said persons then and there being scholars in a private school in the aforesaid township, county and state, and receiving said instruction below the eighth grade in said school from said defendant, who was then and there a teacher in said school." He was found guilty, and, on appeal to the district court, the case was submitted on stipulation of facts, from which it appeared that:
+
+(1) "A rural church known as 'St. Johns Evangelical Lutheran Church,' located in Maxfield Township, Bremer County, owns and uses a church edifice and parochial school building, and other property in connection therewith, of the value of approximately $40,000, and, during the period in question, had a congregation of about 300, of whom 200 were communicants; that it is a religious organization, affiliated with the Evangelical Lutheran Synod of Iowa and other states; […]"
+
+(2) "Those attending said school are children of the members of the church, approximately 36 pupils in number of the ages between 6 and 13 years, both inclusive; that the said school is in session 36 weeks, of 5 days each, with school hours from 9 o'clock A. M. to 12 o'clock noon, and from 1 o'clock P. M. to 4 o'clock P. M., each school day, […]"
+
+(3) The defendant, Bartels, is "the duly appointed, employed, and acting teacher of said parochial school continuously during the last 5 years; that said defendant is a competent teacher, possessing the necessary qualifications and moral character for that purpose."
+
+(4) The members of the said church whose children attend this school are of foreign extraction, but they, as well as their children and this defendant, are citizens of this country.
+
+(5) "The members and communicants of said church have always been accustomed to worship in the church and have devotional exercises in the home in the German language, and that the devotional exercises and religious instruction of the children in said parochial school for many years was exclusively in German. During recent years, religious instruction in the said parochial school has been and is now given in both the English and German languages. This instruction has been given in this way in order that the children might be able to participate intelligently with their parents in religious worship in the home and in the church. It is done for the purpose of enabling the parents to supplement the religious instruction of the school by instruction in religion and morals in the home. It is the desire of the parents of the children who are in attendance at said school that their children be given instruction in religious matters in the German language, to enable them to read intelligently the church catchism [sic] and the Bible in the German." […]
+"""
+u4_de = """
+STAAT IOWA, Berufungsgegner, gegen AUGUST BARTELS, Berufungsführer. […] Berufung vom Bezirksgericht Bremer [County]. — M. F. EDWARDS, Richter. 12. FEBRUAR 1921. ERNEUTE VERHANDLUNG ABGELEHNT AM 25. JUNI 1921.
+
+Der Angeklagte wurde wegen Verstoßes gegen Kapitel 198 der Gesetze der Achtunddreißigsten Generalversammlung verurteilt, das den Gebrauch jeder anderen Sprache als der englischen beim Unterricht weltlicher Fächer in den öffentlichen oder privaten Schulen dieses Staates verbietet. Gegen diese Verurteilung und das darauf ergangene Strafurteil richtet sich diese Berufung. Die Urteilsbegründung legt die Tatsachen dar. — Bestätigt. […]
+
+FAVILLE, Richter. Eine bei einem Friedensrichter eingereichte Anklageschrift beschuldigte den Angeklagten, am oder um den 10. November 1919 „eine andere Sprache als die englische, nämlich die deutsche Sprache, als Unterrichtsmittel beim Unterricht in einem weltlichen Fach, nämlich Lesen, an Selma Steege, Cordelia Griese und Lawrence Phipo gebraucht zu haben, wobei die genannten Personen damals und dort Schüler einer Privatschule in dem vorgenannten Township, County und Staat waren und in dieser Schule unterhalb der achten Klasse diesen Unterricht von dem Angeklagten erhielten, der damals und dort Lehrer in dieser Schule war“. Er wurde für schuldig befunden, und in der Berufung zum Bezirksgericht wurde die Sache auf Grund einer Tatsachenvereinbarung vorgelegt, aus der hervorging:
+
+(1) „Eine Landkirche, bekannt als ‚St. Johns Evangelical Lutheran Church‘, gelegen im Maxfield Township, Bremer County, besitzt und nutzt ein Kirchengebäude und ein Pfarrschulgebäude sowie weiteres damit verbundenes Eigentum im Wert von etwa 40.000 Dollar und hatte in dem fraglichen Zeitraum eine Gemeinde von etwa 300 Seelen, davon 200 Abendmahlsberechtigte; sie ist eine religiöse Körperschaft, angeschlossen an die Evangelisch-Lutherische Synode von Iowa und anderen Staaten; […]“
+
+(2) „Die Besucher dieser Schule sind Kinder der Gemeindeglieder, etwa 36 Schüler im Alter von 6 bis einschließlich 13 Jahren; die Schule wird 36 Wochen zu je 5 Tagen gehalten, mit Schulstunden von 9 Uhr vormittags bis 12 Uhr mittags und von 1 Uhr bis 4 Uhr nachmittags an jedem Schultag, […]“
+
+(3) Der Angeklagte Bartels ist „der ordnungsgemäß berufene, angestellte und amtierende Lehrer dieser Pfarrschule, ununterbrochen während der letzten 5 Jahre; er ist ein fähiger Lehrer und besitzt die nötige Befähigung und den sittlichen Charakter dafür“.
+
+(4) Die Gemeindeglieder, deren Kinder diese Schule besuchen, sind ausländischer Herkunft, aber sie, ebenso wie ihre Kinder und dieser Angeklagte, sind Bürger dieses Landes.
+
+(5) „Die Glieder und Abendmahlsberechtigten dieser Kirche waren stets gewohnt, in der Kirche Gottesdienst und zu Hause Andachten in deutscher Sprache zu halten, und die Andachten und der Religionsunterricht der Kinder in dieser Pfarrschule waren viele Jahre ausschließlich deutsch. In den letzten Jahren ist und wird der Religionsunterricht in dieser Pfarrschule in englischer und in deutscher Sprache erteilt. Er wird so erteilt, damit die Kinder verständig mit ihren Eltern am Gottesdienst zu Hause und in der Kirche teilnehmen können. Es geschieht, um den Eltern zu ermöglichen, den Religionsunterricht der Schule durch Unterweisung in Religion und Sitte zu Hause zu ergänzen. Es ist der Wunsch der Eltern der Kinder, die diese Schule besuchen, dass ihre Kinder in religiösen Dingen in deutscher Sprache unterwiesen werden, damit sie den Katechismus der Kirche und die Bibel auf Deutsch verständig lesen können.“ […]
+"""
+u5_en = """
+Siman Law Upheld by High Court. Instructor in Hamilton County Parochial School Fined $25 for Teaching German Language. Two Justices Dissent.
+
+Lincoln, Feb. 16.—(Special.)—The supreme court today affirmed the Hamilton county district court in fining Robert T. Meyer, instructor in a parochial school, $25 for teaching the German language against edicts of the Siman language law passed by the legislature in 1919.
+
+Meyer and the school board were charged by the state with evading the law by ostensibly lengthening the noon recess from 12 to 1:30 and using the last half hour of recess to teach German.
+
+Meyer contended he did not come under the law because it did not forbid teaching German outside of school hours and from 1 to 1:30 could not technically be called school hours.
+
+Strengthened by Amendment. Two members of the court joined in a dissenting opinion.
+
+Mason Wheeler, assistant in the office of Attorney General Clarence A. Davis, represented the state in the case.
+
+At the last session the Siman law was strengthened by passing the Reed-Norval law.
+
+The Opinion. The opinion, in part, reads: "It is within the power of the legislature to say that education of a child in primary grades shall not be conducted in a foreign language, and prevent teaching of foreign language until he is thoroughly grounded in English.
+
+"The statute prohibiting such teaching was intended to prohibit its teaching whenever pupils of the school should be assembled for purpose of receiving instruction, and was not limited in its aims to those hours only which should be set aside to teaching of the common school branches."
+"""
+u5_de = """
+Siman-Gesetz vom Obersten Gericht bestätigt. Lehrer einer Pfarrschule im Hamilton County wegen Deutschunterrichts zu 25 Dollar verurteilt. Zwei Richter weichen ab.
+
+Lincoln, 16. Febr. (Eigenbericht.) Der Oberste Gerichtshof bestätigte heute das Bezirksgericht des Hamilton County, das Robert T. Meyer, Lehrer an einer Pfarrschule, zu 25 Dollar Geldstrafe verurteilt hatte, weil er entgegen den Vorschriften des 1919 von der Legislatur verabschiedeten Siman-Sprachgesetzes die deutsche Sprache unterrichtet hatte.
+
+Meyer und dem Schulvorstand warf der Staat vor, das Gesetz umgangen zu haben, indem sie die Mittagspause zum Schein von 12 auf 13.30 Uhr verlängerten und die letzte halbe Stunde der Pause für Deutschunterricht nutzten.
+
+Meyer machte geltend, er falle nicht unter das Gesetz, weil es Deutschunterricht außerhalb der Schulstunden nicht verbiete und die Zeit von 13 bis 13.30 Uhr genau genommen nicht als Schulstunden gelten könne.
+
+Durch Änderung verschärft. Zwei Mitglieder des Gerichts schlossen sich einer abweichenden Meinung an.
+
+Mason Wheeler, Assistent im Amt von Generalstaatsanwalt Clarence A. Davis, vertrat den Staat in dem Verfahren.
+
+In der letzten Sitzungsperiode wurde das Siman-Gesetz durch die Verabschiedung des Reed-Norval-Gesetzes verschärft.
+
+Die Urteilsbegründung. Die Begründung lautet zum Teil: „Es liegt in der Macht der Legislatur zu bestimmen, dass die Erziehung eines Kindes in den Grundklassen nicht in einer fremden Sprache erfolgen soll, und den Unterricht einer fremden Sprache zu verhindern, bis es im Englischen gründlich gefestigt ist.
+
+Das Gesetz, das solchen Unterricht verbietet, sollte ihn verbieten, wann immer die Schüler der Schule zum Empfang von Unterricht versammelt sind, und beschränkte sich in seinen Zielen nicht auf die Stunden, die für den Unterricht in den Grundschulfächern bestimmt sind.“
+"""
+u6_en = """
+MEYER v. STATE OF NEBRASKA. ERROR TO THE SUPREME COURT OF THE STATE OF NEBRASKA. No. 325. Argued February 23, 1923.—Decided June 4, 1923.
+
+A state law forbidding, under penalty, the teaching in any private, denominational, parochial or public school, of any modern language, other than English, to any child who has not attained and successfully passed the eighth grade, invades the liberty guaranteed by the Fourteenth Amendment and exceeds the power of the State. P. 399.
+
+So held where the statute was applied in punishment of an instructor who taught reading in German, to a child of ten years, in a parochial school.
+
+107 Neb. 657, reversed.
+
+ERROR to a judgment of the Supreme Court of Nebraska affirming a conviction for infraction of a statute against teaching of foreign languages to young children in schools.
+
+Mr. Charles E. Sandall, with whom Mr. I. L. Albert, Mr. Arthur G. Wray and Mr. August Wagner were on the briefs, for plaintiff in error. […]
+
+Mr. Mason Wheeler and Mr. O. S. Spillman, with whom Mr. Clarence A. Davis, Attorney General of the State of Nebraska, and Mr. Hugh La Master were on the brief, for defendant in error. […]
+
+Mr. William D. Guthrie and Mr. Bernard Hershkopf, by leave of court, filed a brief as amici curiæ.
+"""
+u6_de = """
+MEYER gegen STAAT NEBRASKA. REVISION (WRIT OF ERROR) GEGEN DEN OBERSTEN GERICHTSHOF DES STAATES NEBRASKA. Nr. 325. Verhandelt am 23. Februar 1923. Entschieden am 4. Juni 1923.
+
+Ein Gesetz eines Staates, das unter Strafe verbietet, in einer privaten, konfessionellen, Pfarr- oder öffentlichen Schule irgendeine neuere Sprache außer Englisch einem Kind zu unterrichten, das die achte Klasse nicht erreicht und erfolgreich abgeschlossen hat, verletzt die durch den Vierzehnten Verfassungszusatz verbürgte Freiheit und überschreitet die Befugnis des Staates. S. 399.
+
+So entschieden in einem Fall, in dem das Gesetz zur Bestrafung eines Lehrers angewandt wurde, der einem zehnjährigen Kind in einer Pfarrschule Lesen auf Deutsch beibrachte.
+
+107 Neb. 657, aufgehoben.
+
+REVISION gegen ein Urteil des Obersten Gerichtshofs von Nebraska, das eine Verurteilung wegen Verstoßes gegen ein Gesetz gegen den Unterricht fremder Sprachen an kleine Kinder in Schulen bestätigt hatte.
+
+Charles E. Sandall, mit I. L. Albert, Arthur G. Wray und August Wagner auf den Schriftsätzen, für den Revisionskläger. […]
+
+Mason Wheeler und O. S. Spillman, mit Clarence A. Davis, Generalstaatsanwalt des Staates Nebraska, und Hugh La Master auf dem Schriftsatz, für den Revisionsbeklagten. […]
+
+William D. Guthrie und Bernard Hershkopf reichten mit Erlaubnis des Gerichts einen Schriftsatz als amici curiae ein.
+"""
+u7_en = """
+MR. JUSTICE McREYNOLDS delivered the opinion of the Court.
+
+Plaintiff in error was tried and convicted in the District Court for Hamilton County, Nebraska, under an information which charged that on May 25, 1920, while an instructor in Zion Parochial School, he unlawfully taught the subject of reading in the German language to Raymond Parpart, a child of ten years, who had not attained and successfully passed the eighth grade. The information is based upon "An act relating to the teaching of foreign languages in the State of Nebraska," approved April 9, 1919, which follows [Laws 1919, c. 249.]:
+
+"Section 1. No person, individually or as a teacher, shall, in any private, denominational, parochial or public school, teach any subject to any person in any language other than the English language.
+
+"Sec. 2. Languages, other than the English language, may be taught as languages only after a pupil shall have attained and successfully passed the eighth grade as evidenced by a certificate of graduation issued by the county superintendent of the county in which the child resides.
+
+"Sec. 3. Any person who violates any of the provisions of this act shall be deemed guilty of a misdemeanor and upon conviction, shall be subject to a fine of not less than twenty-five dollars ($25), nor more than one hundred dollars ($100) or be confined in the county jail for any period not exceeding thirty days for each offense.
+
+"Sec. 4. Whereas, an emergency exists, this act shall be in force from and after its passage and approval."
+"""
+u7_de = """
+JUSTICE McREYNOLDS verkündete die Urteilsbegründung des Gerichts.
+
+Der Revisionskläger wurde vor dem Bezirksgericht für das Hamilton County, Nebraska, angeklagt und verurteilt auf Grund einer Anklageschrift, die ihm vorwarf, am 25. Mai 1920 als Lehrer an der Zion-Pfarrschule das Fach Lesen in deutscher Sprache gesetzwidrig an Raymond Parpart unterrichtet zu haben, ein zehnjähriges Kind, das die achte Klasse nicht erreicht und erfolgreich abgeschlossen hatte. Die Anklageschrift stützt sich auf das „Gesetz über den Unterricht fremder Sprachen im Staat Nebraska“, gebilligt am 9. April 1919, das lautet [Laws 1919, c. 249.]:
+
+„§ 1. Niemand darf, als Einzelner oder als Lehrer, in einer privaten, konfessionellen, Pfarr- oder öffentlichen Schule irgendein Fach irgendeiner Person in einer anderen Sprache als der englischen unterrichten.
+
+§ 2. Andere Sprachen als die englische dürfen als Sprachen erst unterrichtet werden, nachdem ein Schüler die achte Klasse erreicht und erfolgreich abgeschlossen hat, nachgewiesen durch ein Abschlusszeugnis des County-Schulrats des Countys, in dem das Kind wohnt.
+
+§ 3. Wer gegen eine Bestimmung dieses Gesetzes verstößt, macht sich eines Vergehens schuldig und wird bei Verurteilung mit einer Geldstrafe von nicht weniger als fünfundzwanzig Dollar (25 $) und nicht mehr als einhundert Dollar (100 $) oder mit Haft im County-Gefängnis bis zu dreißig Tagen für jeden Verstoß bestraft.
+
+§ 4. Da ein Notstand besteht, tritt dieses Gesetz mit seiner Verabschiedung und Billigung in Kraft.“
+"""
+u8_en = """
+The Supreme Court of the State affirmed the judgment of conviction. 107 Neb. 657. It declared the offense charged and established was "the direct and intentional teaching of the German language as a distinct subject to a child who had not passed the eighth grade," in the parochial school maintained by Zion Evangelical Lutheran Congregation, a collection of Biblical stories being used therefor. And it held that the statute forbidding this did not conflict with the Fourteenth Amendment, but was a valid exercise of the police power. The following excerpts from the opinion sufficiently indicate the reasons advanced to support the conclusion.
+
+"The salutary purpose of the statute is clear. The legislature had seen the baneful effects of permitting foreigners, who had taken residence in this country, to rear and educate their children in the language of their native land. The result of that condition was found to be inimical to our own safety. To allow the children of foreigners, who had emigrated here, to be taught from early childhood the language of the country of their parents was to rear them with that language as their mother tongue. It was to educate them so that they must always think in that language, and, as a consequence, naturally inculcate in them the ideas and sentiments foreign to the best interests of this country. The statute, therefore, was intended not only to require that the education of all children be conducted in the English language, but that, until they had grown into that language and until it had become a part of them, they should not in the schools be taught any other language. The obvious purpose of this statute was that the English language should be and become the mother tongue of all children reared in this state. The enactment of such a statute comes reasonably within the police power of the state. Pohl v. State, 132 N. E. (Ohio) 20; State v. Bartels, 181 N. W. (Ia.) 508.
+
+"It is suggested that the law is an unwarranted restriction, in that it applies to all citizens of the state and arbitrarily interferes with the rights of citizens who are not of foreign ancestry, and prevents them, without reason, from having their children taught foreign languages in school. That argument is not well taken, for it assumes that every citizen finds himself restrained by the statute. The hours which a child is able to devote to study in the confinement of school are limited. It must have ample time for exercise or play. Its daily capacity for learning is comparatively small. A selection of subjects for its education, therefore, from among the many that might be taught, is obviously necessary. The legislature no doubt had in mind the practical operation of the law. The law affects few citizens, except those of foreign lineage. Other citizens, in their selection of studies, except perhaps in rare instances, have never deemed it of importance to teach their children foreign languages before such children have reached the eighth grade. In the legislative mind, the salutary effect of the statute no doubt outweighed the restriction upon the citizens generally, which, it appears, was a restriction of no real consequence."
+"""
+u8_de = """
+Der Oberste Gerichtshof des Staates bestätigte das Strafurteil. 107 Neb. 657. Er erklärte, das angeklagte und erwiesene Vergehen sei „der unmittelbare und absichtliche Unterricht der deutschen Sprache als eigenes Fach an ein Kind, das die achte Klasse nicht abgeschlossen hatte“, in der von der Zion Evangelical Lutheran Congregation unterhaltenen Pfarrschule, wobei eine Sammlung biblischer Geschichten benutzt wurde. Und er befand, das Gesetz, das dies verbiete, widerspreche nicht dem Vierzehnten Verfassungszusatz, sondern sei eine gültige Ausübung der Polizeigewalt. Die folgenden Auszüge aus der Urteilsbegründung zeigen hinreichend die Gründe, die für dieses Ergebnis angeführt wurden.
+
+„Der heilsame Zweck des Gesetzes ist klar. Die Legislatur hatte die verderblichen Folgen davon gesehen, Ausländern, die in diesem Land ansässig geworden waren, zu erlauben, ihre Kinder in der Sprache ihres Heimatlandes aufzuziehen und zu erziehen. Die Folge dieses Zustands erwies sich als unserer eigenen Sicherheit abträglich. Den Kindern von Ausländern, die hierher eingewandert waren, zu erlauben, von früher Kindheit an die Sprache des Landes ihrer Eltern zu lernen, hieß, sie mit dieser Sprache als Muttersprache aufzuziehen. Es hieß, sie so zu erziehen, dass sie immer in dieser Sprache denken müssen und ihnen folglich natürlicherweise Ideen und Gesinnungen einzuprägen, die den besten Interessen dieses Landes fremd sind. Das Gesetz sollte daher nicht nur verlangen, dass die Erziehung aller Kinder in englischer Sprache erfolgt, sondern auch, dass sie, bis sie in diese Sprache hineingewachsen sind und bis sie ein Teil von ihnen geworden ist, in den Schulen keine andere Sprache lernen sollen. Der offensichtliche Zweck dieses Gesetzes war, dass die englische Sprache die Muttersprache aller in diesem Staat aufwachsenden Kinder sein und werden soll. Der Erlass eines solchen Gesetzes fällt vernünftigerweise unter die Polizeigewalt des Staates. Pohl v. State, 132 N. E. (Ohio) 20; State v. Bartels, 181 N. W. (Ia.) 508.
+
+Es wird eingewandt, das Gesetz sei eine ungerechtfertigte Beschränkung, weil es für alle Bürger des Staates gelte und willkürlich in die Rechte von Bürgern eingreife, die nicht ausländischer Abstammung sind, und sie ohne Grund daran hindere, ihre Kinder in der Schule fremde Sprachen lernen zu lassen. Dieses Argument trifft nicht zu, denn es setzt voraus, dass jeder Bürger sich durch das Gesetz beschränkt sieht. Die Stunden, die ein Kind in der Enge der Schule dem Lernen widmen kann, sind begrenzt. Es muss reichlich Zeit für Bewegung oder Spiel haben. Seine tägliche Aufnahmefähigkeit ist verhältnismäßig gering. Eine Auswahl der Fächer für seine Erziehung aus den vielen, die gelehrt werden könnten, ist daher offensichtlich notwendig. Die Legislatur hatte zweifellos die praktische Wirkung des Gesetzes im Auge. Das Gesetz betrifft wenige Bürger außer denen ausländischer Abstammung. Andere Bürger haben bei der Wahl der Fächer, außer vielleicht in seltenen Fällen, es nie für wichtig gehalten, ihre Kinder fremde Sprachen lernen zu lassen, bevor diese die achte Klasse erreicht haben. Nach Auffassung der Legislatur überwog die heilsame Wirkung des Gesetzes zweifellos die Beschränkung der Bürger im Allgemeinen, die, wie es scheint, eine Beschränkung ohne wirkliche Bedeutung war.“
+"""
+u9_en = """
+The problem for our determination is whether the statute as construed and applied unreasonably infringes the liberty guaranteed to the plaintiff in error by the Fourteenth Amendment. "No State shall . . . deprive any person of life, liberty, or property, without due process of law."
+
+While this Court has not attempted to define with exactness the liberty thus guaranteed, the term has received much consideration and some of the included things have been definitely stated. Without doubt, it denotes not merely freedom from bodily restraint but also the right of the individual to contract, to engage in any of the common occupations of life, to acquire useful knowledge, to marry, establish a home and bring up children, to worship God according to the dictates of his own conscience, and generally to enjoy those privileges long recognized at common law as essential to the orderly pursuit of happiness by free men. Slaughter-House Cases, 16 Wall. 36; Butchers' Union Co. v. Crescent City Co., 111 U. S. 746; Yick Wo v. Hopkins, 118 U. S. 356; Minnesota v. Barber, 136 U. S. 313; Allgeyer v. Louisiana, 165 U. S. 578; Lochner v. New York, 198 U. S. 45; Twining v. New Jersey, 211 U. S. 78; Chicago, Burlington & Quincy R. R. Co. v. McGuire, 219 U. S. 549; Truax v. Raich, 239 U. S. 33; Adams v. Tanner, 244 U. S. 590; New York Life Ins. Co. v. Dodge, 246 U. S. 357; Truax v. Corrigan, 257 U. S. 312; Adkins v. Children's Hospital, 261 U. S. 525; Wyeth v. Cambridge Board of Health, 200 Mass. 474. The established doctrine is that this liberty may not be interfered with, under the guise of protecting the public interest, by legislative action which is arbitrary or without reasonable relation to some purpose within the competency of the State to effect. Determination by the legislature of what constitutes proper exercise of police power is not final or conclusive but is subject to supervision by the courts. Lawton v. Steele, 152 U. S. 133, 137.
+"""
+u9_de = """
+Die Frage, die wir zu entscheiden haben, ist, ob das Gesetz in seiner Auslegung und Anwendung die dem Revisionskläger durch den Vierzehnten Verfassungszusatz verbürgte Freiheit unvernünftig verletzt. „Kein Staat darf . . . irgendjemandem Leben, Freiheit oder Eigentum ohne ordentliches Rechtsverfahren nehmen.“
+
+Wenn dieses Gericht auch nicht versucht hat, die so verbürgte Freiheit genau zu bestimmen, so ist der Begriff doch viel erwogen worden, und einiges, was er umfasst, ist bestimmt ausgesprochen worden. Ohne Zweifel bedeutet er nicht bloß die Freiheit von körperlichem Zwang, sondern auch das Recht des Einzelnen, Verträge zu schließen, einer der gewöhnlichen Beschäftigungen des Lebens nachzugehen, nützliche Kenntnisse zu erwerben, zu heiraten, einen Hausstand zu gründen und Kinder großzuziehen, Gott nach den Weisungen seines eigenen Gewissens zu verehren und überhaupt jene Vorrechte zu genießen, die im Common Law seit langem als wesentlich für das geordnete Streben freier Menschen nach Glück anerkannt sind. [Folgen 14 Entscheidungen von Slaughter-House Cases, 16 Wall. 36, bis Wyeth v. Cambridge Board of Health, 200 Mass. 474; Liste im Original.] Die feststehende Lehre ist, dass in diese Freiheit nicht unter dem Vorwand, das öffentliche Interesse zu schützen, durch gesetzgeberisches Handeln eingegriffen werden darf, das willkürlich ist oder in keinem vernünftigen Zusammenhang mit einem Zweck steht, den zu verfolgen der Staat zuständig ist. Was die Legislatur als rechte Ausübung der Polizeigewalt bestimmt, ist nicht endgültig oder abschließend, sondern unterliegt der Aufsicht der Gerichte. Lawton v. Steele, 152 U. S. 133, 137.
+"""
+u10_en = """
+The American people have always regarded education and acquisition of knowledge as matters of supreme importance which should be diligently promoted. The Ordinance of 1787 declares, "Religion, morality, and knowledge being necessary to good government and the happiness of mankind, schools and the means of education shall forever be encouraged." Corresponding to the right of control, it is the natural duty of the parent to give his children education suitable to their station in life; and nearly all the States, including Nebraska, enforce this obligation by compulsory laws.
+
+Practically, education of the young is only possible in schools conducted by especially qualified persons who devote themselves thereto. The calling always has been regarded as useful and honorable, essential, indeed, to the public welfare. Mere knowledge of the German language cannot reasonably be regarded as harmful. Heretofore it has been commonly looked upon as helpful and desirable. Plaintiff in error taught this language in school as part of his occupation. His right thus to teach and the right of parents to engage him so to instruct their children, we think, are within the liberty of the Amendment.
+
+The challenged statute forbids the teaching in school of any subject except in English; also the teaching of any other language until the pupil has attained and successfully passed the eighth grade, which is not usually accomplished before the age of twelve. The Supreme Court of the State has held that "the so-called ancient or dead languages" are not "within the spirit or the purpose of the act." Nebraska District of Evangelical Lutheran Synod v. McKelvie, 187 N. W. 927. Latin, Greek, Hebrew are not proscribed; but German, French, Spanish, Italian and every other alien speech are within the ban. Evidently the legislature has attempted materially to interfere with the calling of modern language teachers, with the opportunities of pupils to acquire knowledge, and with the power of parents to control the education of their own.
+"""
+u10_de = """
+Das amerikanische Volk hat Erziehung und Erwerb von Wissen stets als Angelegenheiten von höchster Bedeutung angesehen, die eifrig zu fördern sind. Die Ordinance von 1787 erklärt: „Da Religion, Sittlichkeit und Wissen für gute Regierung und das Glück der Menschheit notwendig sind, sollen Schulen und die Mittel der Erziehung für immer gefördert werden.“ Dem Recht der Erziehungsgewalt entspricht die natürliche Pflicht der Eltern, ihren Kindern eine ihrer Lebensstellung angemessene Erziehung zu geben; und fast alle Staaten, auch Nebraska, setzen diese Pflicht durch Schulpflichtgesetze durch.
+
+Praktisch ist die Erziehung der Jugend nur in Schulen möglich, die von besonders befähigten Personen geleitet werden, die sich ihr widmen. Dieser Beruf galt stets als nützlich und ehrenvoll, ja als wesentlich für das öffentliche Wohl. Die bloße Kenntnis der deutschen Sprache kann vernünftigerweise nicht als schädlich angesehen werden. Bisher galt sie gemeinhin als hilfreich und wünschenswert. Der Revisionskläger unterrichtete diese Sprache in der Schule als Teil seines Berufs. Sein Recht, so zu unterrichten, und das Recht der Eltern, ihn mit einem solchen Unterricht ihrer Kinder zu beauftragen, gehören nach unserer Auffassung zur Freiheit des Verfassungszusatzes.
+
+Das angefochtene Gesetz verbietet den Unterricht jedes Fachs in der Schule außer auf Englisch, ferner den Unterricht jeder anderen Sprache, bis der Schüler die achte Klasse erreicht und erfolgreich abgeschlossen hat, was gewöhnlich nicht vor dem zwölften Lebensjahr geschieht. Der Oberste Gerichtshof des Staates hat entschieden, dass „die sogenannten alten oder toten Sprachen“ nicht „unter Geist oder Zweck des Gesetzes“ fallen. Nebraska District of Evangelical Lutheran Synod v. McKelvie, 187 N. W. 927. Latein, Griechisch, Hebräisch sind nicht verboten; aber Deutsch, Französisch, Spanisch, Italienisch und jede andere fremde Sprache fallen unter den Bann. Offenbar hat die Legislatur versucht, wesentlich in den Beruf der Lehrer neuerer Sprachen einzugreifen, in die Möglichkeiten der Schüler, Wissen zu erwerben, und in die Befugnis der Eltern, über die Erziehung der Ihren zu bestimmen.
+"""
+u11_en = """
+It is said the purpose of the legislation was to promote civic development by inhibiting training and education of the immature in foreign tongues and ideals before they could learn English and acquire American ideals; and "that the English language should be and become the mother tongue of all children reared in this State." It is also affirmed that the foreign born population is very large, that certain communities commonly use foreign words, follow foreign leaders, move in a foreign atmosphere, and that the children are thereby hindered from becoming citizens of the most useful type and the public safety is imperiled.
+
+That the State may do much, go very far, indeed, in order to improve the quality of its citizens, physically, mentally and morally, is clear; but the individual has certain fundamental rights which must be respected. The protection of the Constitution extends to all, to those who speak other languages as well as to those born with English on the tongue. Perhaps it would be highly advantageous if all had ready understanding of our ordinary speech, but this cannot be coerced by methods which conflict with the Constitution—a desirable end cannot be promoted by prohibited means.
+
+For the welfare of his Ideal Commonwealth, Plato suggested a law which should provide: "That the wives of our guardians are to be common, and their children are to be common, and no parent is to know his own child, nor any child his parent. . . . The proper officers will take the offspring of the good parents to the pen or fold, and there they will deposit them with certain nurses who dwell in a separate quarter; but the offspring of the inferior, or of the better when they chance to be deformed, will be put away in some mysterious, unknown place, as they should be." In order to submerge the individual and develop ideal citizens, Sparta assembled the males at seven into barracks and intrusted their subsequent education and training to official guardians. Although such measures have been deliberately approved by men of great genius, their ideas touching the relation between individual and State were wholly different from those upon which our institutions rest; and it hardly will be affirmed that any legislature could impose such restrictions upon the people of a State without doing violence to both letter and spirit of the Constitution.
+"""
+u11_de = """
+Es heißt, der Zweck der Gesetzgebung sei gewesen, die staatsbürgerliche Entwicklung zu fördern, indem die Ausbildung und Erziehung der Unmündigen in fremden Sprachen und Idealen unterbunden werde, bevor sie Englisch lernen und amerikanische Ideale annehmen könnten; und „dass die englische Sprache die Muttersprache aller in diesem Staat aufwachsenden Kinder sein und werden soll“. Es wird auch versichert, die im Ausland geborene Bevölkerung sei sehr groß, gewisse Gemeinden gebrauchten gewöhnlich fremde Wörter, folgten fremden Führern, bewegten sich in fremder Atmosphäre, und die Kinder würden dadurch gehindert, Bürger der nützlichsten Art zu werden, und die öffentliche Sicherheit sei gefährdet.
+
+Dass der Staat viel tun, ja sehr weit gehen darf, um die Beschaffenheit seiner Bürger körperlich, geistig und sittlich zu heben, ist klar; aber der Einzelne hat gewisse Grundrechte, die geachtet werden müssen. Der Schutz der Verfassung erstreckt sich auf alle, auf die, die andere Sprachen sprechen, ebenso wie auf die, die mit englischer Zunge geboren sind. Vielleicht wäre es höchst vorteilhaft, wenn alle unsere gewöhnliche Sprache ohne Mühe verstünden, aber das kann nicht durch Methoden erzwungen werden, die der Verfassung widersprechen; ein wünschenswertes Ziel kann nicht mit verbotenen Mitteln gefördert werden.
+
+Zum Wohl seines idealen Gemeinwesens schlug Platon ein Gesetz vor, das bestimmen sollte: „Die Frauen unserer Wächter sollen gemeinsam sein und ihre Kinder gemeinsam, und kein Elternteil soll sein eigenes Kind kennen und kein Kind seine Eltern. . . . Die zuständigen Beamten werden die Nachkommen der guten Eltern in den Pferch oder die Hürde bringen und sie dort bestimmten Ammen übergeben, die in einem gesonderten Viertel wohnen; die Nachkommen der Geringeren aber, oder der Besseren, wenn sie zufällig missgestaltet sind, werden an irgendeinem geheimnisvollen, unbekannten Ort beiseitegeschafft, wie es sich gehört.“ Um den Einzelnen zurückzudrängen und ideale Bürger heranzubilden, versammelte Sparta die Knaben mit sieben Jahren in Kasernen und vertraute ihre weitere Erziehung und Ausbildung amtlichen Vormündern an. Obwohl solche Maßnahmen von Männern großen Geistes bewusst gebilligt worden sind, waren ihre Vorstellungen vom Verhältnis zwischen Einzelnem und Staat völlig andere als die, auf denen unsere Einrichtungen beruhen; und schwerlich wird man behaupten, irgendeine Legislatur könne dem Volk eines Staates solche Beschränkungen auferlegen, ohne Buchstaben und Geist der Verfassung Gewalt anzutun.
+"""
+u12_en = """
+The desire of the legislature to foster a homogeneous people with American ideals prepared readily to understand current discussions of civic matters is easy to appreciate. Unfortunate experiences during the late war and aversion toward every characteristic of truculent adversaries were certainly enough to quicken that aspiration. But the means adopted, we think, exceed the limitations upon the power of the State and conflict with rights assured to plaintiff in error. The interference is plain enough and no adequate reason therefor in time of peace and domestic tranquility has been shown.
+
+The power of the State to compel attendance at some school and to make reasonable regulations for all schools, including a requirement that they shall give instructions in English, is not questioned. Nor has challenge been made of the State's power to prescribe a curriculum for institutions which it supports. Those matters are not within the present controversy. Our concern is with the prohibition approved by the Supreme Court. Adams v. Tanner, supra, p. 594, pointed out that mere abuse incident to an occupation ordinarily useful is not enough to justify its abolition, although regulation may be entirely proper. No emergency has arisen which renders knowledge by a child of some language other than English so clearly harmful as to justify its inhibition with the consequent infringement of rights long freely enjoyed. We are constrained to conclude that the statute as applied is arbitrary and without reasonable relation to any end within the competency of the State.
+
+As the statute undertakes to interfere only with teaching which involves a modern language, leaving complete freedom as to other matters, there seems no adequate foundation for the suggestion that the purpose was to protect the child's health by limiting his mental activities. It is well known that proficiency in a foreign language seldom comes to one not instructed at an early age, and experience shows that this is not injurious to the health, morals or understanding of the ordinary child.
+
+The judgment of the court below must be reversed and the cause remanded for further proceedings not inconsistent with this opinion.
+
+Reversed.
+
+[See the separate opinion of MR. JUSTICE HOLMES, concurred in by MR. JUSTICE SUTHERLAND, in the next case, at p. 412, infra.]
+"""
+u12_de = """
+Der Wunsch der Legislatur, ein einheitliches Volk mit amerikanischen Idealen heranzubilden, das bereit ist, die laufenden Erörterungen staatsbürgerlicher Fragen ohne Mühe zu verstehen, ist leicht nachzuvollziehen. Unglückliche Erfahrungen während des letzten Krieges und Abneigung gegen jeden Zug streitsüchtiger Gegner reichten gewiss aus, dieses Streben zu beleben. Aber die gewählten Mittel überschreiten nach unserer Auffassung die Grenzen der Befugnis des Staates und widersprechen Rechten, die dem Revisionskläger verbürgt sind. Der Eingriff ist offensichtlich genug, und ein hinreichender Grund dafür in Zeiten des Friedens und der inneren Ruhe ist nicht dargetan worden.
+
+Die Befugnis des Staates, den Besuch irgendeiner Schule zu erzwingen und vernünftige Vorschriften für alle Schulen zu erlassen, einschließlich der Vorschrift, dass sie Unterricht auf Englisch erteilen, wird nicht in Frage gestellt. Ebenso wenig ist die Befugnis des Staates angefochten worden, für Einrichtungen, die er unterhält, einen Lehrplan vorzuschreiben. Diese Dinge sind nicht Gegenstand des gegenwärtigen Streits. Wir befassen uns mit dem vom Obersten Gerichtshof [Nebraskas] gebilligten Verbot. Adams v. Tanner, supra, S. 594, hat dargelegt, dass bloßer Missbrauch, der mit einem gewöhnlich nützlichen Beruf einhergeht, nicht genügt, um dessen Abschaffung zu rechtfertigen, obwohl eine Regelung durchaus angebracht sein kann. Es ist kein Notstand eingetreten, der die Kenntnis einer anderen Sprache als Englisch bei einem Kind so offensichtlich schädlich machte, dass ihr Verbot mit der daraus folgenden Verletzung lange frei genossener Rechte gerechtfertigt wäre. Wir müssen zu dem Schluss kommen, dass das Gesetz in seiner Anwendung willkürlich ist und in keinem vernünftigen Zusammenhang mit einem Ziel steht, das zu verfolgen der Staat zuständig ist.
+
+Da das Gesetz nur in Unterricht eingreift, der eine neuere Sprache betrifft, und in anderen Dingen völlige Freiheit lässt, scheint der Vorschlag, sein Zweck sei, die Gesundheit des Kindes durch Begrenzung seiner geistigen Tätigkeit zu schützen, keine hinreichende Grundlage zu haben. Bekanntlich erwirbt selten jemand Gewandtheit in einer fremden Sprache, der nicht früh darin unterrichtet worden ist, und die Erfahrung zeigt, dass dies der Gesundheit, der Sittlichkeit oder dem Verstand des gewöhnlichen Kindes nicht schadet.
+
+Das Urteil der Vorinstanz muss aufgehoben und die Sache zu weiterem Verfahren zurückverwiesen werden, das dieser Begründung nicht widerspricht.
+
+Aufgehoben.
+
+[Siehe die gesonderte Meinung von JUSTICE HOLMES, der sich JUSTICE SUTHERLAND anschließt, im nächsten Fall, S. 412, infra.]
+"""
+u13_en = """
+MR. JUSTICE HOLMES, dissenting.
+
+We all agree, I take it, that it is desirable that all the citizens of the United States should speak a common tongue, and therefore that the end aimed at by the statute is a lawful and proper one. The only question is whether the means adopted deprive teachers of the liberty secured to them by the Fourteenth Amendment. It is with hesitation and unwillingness that I differ from my brethren with regard to a law like this but I cannot bring my mind to believe that in some circumstances, and circumstances existing it is said in Nebraska, the statute might not be regarded as a reasonable or even necessary method of reaching the desired result. The part of the act with which we are concerned deals with the teaching of young children. Youth is the time when familiarity with a language is established and if there are sections in the State where a child would hear only Polish or French or German spoken at home I am not prepared to say that it is unreasonable to provide that in his early years he shall hear and speak only English at school. But if it is reasonable it is not an undue restriction of the liberty either of teacher or scholar. No one would doubt that a teacher might be forbidden to teach many things, and the only criterion of his liberty under the Constitution that I can think of is "whether, considering the end in view, the statute passes the bounds of reason and assumes the character of a merely arbitrary fiat." Purity Extract & Tonic Co. v. Lynch, 226 U. S. 192, 204. Hebe Co. v. Shaw, 248 U. S. 297, 303. Jacob Ruppert v. Caffey, 251 U. S. 264. I think I appreciate the objection to the law but it appears to me to present a question upon which men reasonably might differ and therefore I am unable to say that the Constitution of the United States prevents the experiment being tried.
+
+I agree with the Court as to the special proviso against the German language contained in the statute dealt with in Bohning v. Ohio.
+
+MR. JUSTICE SUTHERLAND concurs in this opinion.
+"""
+u13_de = """
+JUSTICE HOLMES, abweichend.
+
+Wir sind uns, nehme ich an, alle einig, dass es wünschenswert ist, dass alle Bürger der Vereinigten Staaten eine gemeinsame Sprache sprechen, und dass daher das Ziel, das das Gesetz verfolgt, rechtmäßig und angemessen ist. Die einzige Frage ist, ob die gewählten Mittel den Lehrern die ihnen durch den Vierzehnten Verfassungszusatz gesicherte Freiheit nehmen. Mit Zögern und Widerstreben weiche ich bei einem Gesetz wie diesem von meinen Brüdern ab, aber ich kann mich nicht zu dem Glauben bringen, dass das Gesetz unter gewissen Umständen, und solche Umstände bestehen, wie es heißt, in Nebraska, nicht als ein vernünftiges oder sogar notwendiges Mittel angesehen werden könnte, das gewünschte Ergebnis zu erreichen. Der Teil des Gesetzes, um den es uns geht, betrifft den Unterricht kleiner Kinder. Die Jugend ist die Zeit, in der sich die Vertrautheit mit einer Sprache bildet, und wenn es Gegenden im Staat gibt, in denen ein Kind zu Hause nur Polnisch oder Französisch oder Deutsch hören würde, bin ich nicht bereit zu sagen, es sei unvernünftig vorzuschreiben, dass es in seinen frühen Jahren in der Schule nur Englisch hören und sprechen soll. Ist es aber vernünftig, dann ist es keine ungebührliche Beschränkung der Freiheit des Lehrers oder des Schülers. Niemand würde bezweifeln, dass einem Lehrer verboten werden könnte, vieles zu lehren, und der einzige Maßstab seiner Freiheit unter der Verfassung, der mir einfällt, ist, „ob das Gesetz in Anbetracht des verfolgten Ziels die Grenzen der Vernunft überschreitet und den Charakter eines bloß willkürlichen Machtspruchs annimmt“. Purity Extract & Tonic Co. v. Lynch, 226 U. S. 192, 204. Hebe Co. v. Shaw, 248 U. S. 297, 303. Jacob Ruppert v. Caffey, 251 U. S. 264. Ich glaube, ich verstehe den Einwand gegen das Gesetz, aber es scheint mir eine Frage aufzuwerfen, über die vernünftige Menschen verschiedener Meinung sein können, und darum kann ich nicht sagen, dass die Verfassung der Vereinigten Staaten verbietet, den Versuch zu machen.
+
+Ich stimme dem Gericht zu, was die besondere Bestimmung gegen die deutsche Sprache in dem in Bohning v. Ohio behandelten Gesetz betrifft.
+
+JUSTICE SUTHERLAND schließt sich dieser Meinung an.
+"""
+u14_en = """
+NEBRASKA LANGUAGE LAW HELD INVALID [banner across the page]
+
+Personal Liberty Basis of Decision Rendered by U. S. Supreme Court. Opinion Vindicates Robert T. Meyer, Teacher in Hamilton County Parochial School, Convicted of Unlawfully Reading German Language to Child—Statutes in Iowa and Ohio Also Invalidated. Knowledge of Foreign Tongue Needed, Says Judg[e].
+
+By GEORGE F. AUTHIER, Washington Correspondent The Omaha Bee.
+
+Washington, June 4.—The paramount right of the individual was made the basis of a sweeping decision by the supreme court today in knocking out the various language laws passed in Nebraska, Ohio and Iowa, aimed to prevent the teaching of the German languages in the schools. The Nebraska case was made the instrument which overturned the laws in the state and in Iowa and Ohio. Justices Sutherland and Holmes dissented.
+
+These cases were an inheritance of the war period and their presence in the supreme court represented a hard fight which has been in progress concerning them ever since their passage. […]
+
+The principal decision in the cases was in a case of Robert T. Meyer, plaintiff in error, against state of Nebraska. Meyer was tried and convicted in the district court of Hamilton county, Nebraska, on the charge that on May 25, 1920, while an instructor in a parochial school, he unlawfully taught reading in the German language to a 10-year-old child who had not passed the eighth grade.
+
+Files Writ of Error. The informatino [sic] was based on an act of the state of Nebraska forbidding the teaching of any language but English in private, denominational, parochial or public schools. The Nebraska supreme court affirmed the conviction and Meyer brought the case to the United States supreme court on writ of error. Justice McReynolds delivered the opinion.
+
+On the strength of the decision in the Meyer case, the supreme court proceeded to reverse the judgments of the supreme courts of Iowa, Ohio and Nebraska in four other cases before it. These cases were: August Bartels, plaintiff in error, against state of Iowa; H. H. Bohning plaintiff in error, against state of Ohio; Emil Empohl [sic], plaintiff in error against state of Ohio; Nebraska district of Evangelical Lutheran synod of Missouri, Ohio and other states, et al, plaintiffs in error, against Samuel R. McKelvie, Clarence A. Davis, Otto F. Walker and their deputies, subordinates and assistants. […]
+
+Nebraska Decision Reversed by U. S. Supreme Cour[t]. Special Dispatch to The Omaha Bee. Lincoln, June 4.—The Reed-Norval law declared invalid by the United States supreme court at Washington today, was passed by the legislature at the session two years ago and was even more drastic than the Siman law passed at a prior session.
+
+Immediately after its passage those opposed to the law went into the Nebraska courts. An appeal was filed in the Nebraska supreme court December 2, 1921, and on February 16, a majority of members of the court held the law was valid. A minority opinion was handed down by Chief Justice Morrissey and Justice Letton.
+
+Then the case was taken to the United States supreme court. The attorney general represented the state, while a number of attorneys represented those opposed to the law.
+"""
+u14_de = """
+NEBRASKAS SPRACHGESETZ FÜR UNGÜLTIG ERKLÄRT [Schlagzeile über die ganze Seite]
+
+Persönliche Freiheit Grundlage der Entscheidung des Obersten Bundesgerichts. Urteil rechtfertigt Robert T. Meyer, Lehrer an einer Pfarrschule im Hamilton County, verurteilt, weil er einem Kind gesetzwidrig Lesen in deutscher Sprache beibrachte. Gesetze in Iowa und Ohio ebenfalls für ungültig erklärt. Kenntnis fremder Sprache notwendig, sagt Richter.
+
+Von GEORGE F. AUTHIER, Washingtoner Korrespondent der Omaha Bee.
+
+Washington, 4. Juni. Das vorrangige Recht des Einzelnen wurde heute zur Grundlage einer umfassenden Entscheidung des Obersten Gerichtshofs, die die verschiedenen in Nebraska, Ohio und Iowa erlassenen Sprachgesetze zu Fall brachte, die den Unterricht der deutschen Sprache[n] in den Schulen verhindern sollten. Der Fall aus Nebraska wurde zum Werkzeug, das die Gesetze in diesem Staat und in Iowa und Ohio umstieß. Die Richter Sutherland und Holmes waren anderer Meinung.
+
+Diese Fälle waren ein Erbe der Kriegszeit, und ihr Erscheinen vor dem Obersten Gericht stand für einen harten Kampf, der um sie seit ihrer Verabschiedung geführt wird. […]
+
+Die Hauptentscheidung in den Fällen erging im Fall Robert T. Meyer, Revisionskläger, gegen den Staat Nebraska. Meyer war vor dem Bezirksgericht des Hamilton County, Nebraska, angeklagt und verurteilt worden, weil er am 25. Mai 1920 als Lehrer an einer Pfarrschule einem zehnjährigen Kind, das die achte Klasse nicht abgeschlossen hatte, gesetzwidrig Lesen in deutscher Sprache beigebracht habe.
+
+Reicht Revision ein. Die Anklage stützte sich auf ein Gesetz des Staates Nebraska, das den Unterricht jeder anderen Sprache als Englisch in privaten, konfessionellen, Pfarr- oder öffentlichen Schulen verbot. Der Oberste Gerichtshof von Nebraska bestätigte die Verurteilung, und Meyer brachte die Sache mit einem Writ of Error vor den Obersten Gerichtshof der Vereinigten Staaten. Justice McReynolds verkündete die Begründung.
+
+Gestützt auf die Entscheidung im Fall Meyer hob der Oberste Gerichtshof sodann die Urteile der Obersten Gerichte von Iowa, Ohio und Nebraska in vier weiteren vor ihm anhängigen Fällen auf. Diese Fälle waren: August Bartels, Revisionskläger, gegen den Staat Iowa; H. H. Bohning, Revisionskläger, gegen den Staat Ohio; Emil Empohl [so im Druck], Revisionskläger, gegen den Staat Ohio; Nebraska-Distrikt der Evangelisch-Lutherischen Synode von Missouri, Ohio und anderen Staaten u. a., Revisionskläger, gegen Samuel R. McKelvie, Clarence A. Davis, Otto F. Walker und ihre Stellvertreter, Untergebenen und Gehilfen. […]
+
+Entscheidung aus Nebraska vom Obersten Bundesgericht aufgehoben. Eigener Drahtbericht der Omaha Bee. Lincoln, 4. Juni. Das Reed-Norval-Gesetz, das der Oberste Gerichtshof der Vereinigten Staaten heute in Washington für ungültig erklärte, wurde von der Legislatur in der Sitzungsperiode vor zwei Jahren verabschiedet und war noch schärfer als das Siman-Gesetz einer früheren Sitzungsperiode.
+
+Unmittelbar nach seiner Verabschiedung gingen die Gegner des Gesetzes vor die Gerichte Nebraskas. Am 2. Dezember 1921 wurde beim Obersten Gerichtshof von Nebraska Berufung eingelegt, und am 16. Februar befand eine Mehrheit der Mitglieder des Gerichts das Gesetz für gültig. Eine Minderheitsmeinung gaben Chief Justice Morrissey und Justice Letton ab.
+
+Dann wurde die Sache vor den Obersten Gerichtshof der Vereinigten Staaten gebracht. Der Generalstaatsanwalt vertrat den Staat, während eine Reihe von Anwälten die Gegner des Gesetzes vertraten.
+"""
+
+units_gesetz = [
+    U(1, "tot19190405", "S. 1, Sp. 4", IIIF + "sn83045652/1919-04-05 sp=1 (Bild …1919040501:0335), Spalte 4, Fraktur, drei Ausschnitte",
+      "Das Haus beschließt die Siman Bill, 4. April 1919", "The House passes the Siman Bill, 4 April 1919",
+      "de", u1_de, u1_en,
+      "Die OCR liest „No 21“; am Bild steht „No 24“. Der Bericht ist parteiisch („Intoleranz“, „Fanatismus“), nennt aber den einzigen Kompromissvorschlag: Religionsunterricht in der Muttersprache ohne Sprachunterricht. Er wurde abgelehnt. Reynolds nennt schon im April 1919 Polen, Böhmen und Juden als Mitbetroffene. Gebilligt wurde das Gesetz am 9. April 1919 (Einheit [7]). Ausgelassen ist der Rest der Debatte (Byrum, Howard, Porter, Crozier, Jeary).",
+      "The OCR reads “No 21”; the image has “No 24”. The report is partisan (“intolerance”, “fanaticism”), but it names the only compromise offered: religious instruction in the mother tongue without language instruction. It was rejected. Already in April 1919 Reynolds names Poles, Bohemians and Jews as affected too. The Act was approved on 9 April 1919 (unit [7]). The rest of the debate (Byrum, Howard, Porter, Crozier, Jeary) is omitted."),
+    U(2, "tot19191118", "S. 1, Sp. 1", IIIF + "sn83045652/1919-11-18 sp=1 (Bild …1919111801:0314), Spalte 1, Fraktur, fünf Ausschnitte",
+      "Die Kirchen klagen gemeinsam, November 1919", "The churches sue together, November 1919",
+      "de", u2_de, u2_en,
+      "Kernstelle für die Option „klagen“. Ein aufgeklebter Archivzettel („Nebraska State Historical Society“) verdeckt Teile der Überschrift; ergänzt in eckigen Klammern. Die OCR liest „80 Tagen“, am Bild steht „30 Tagen“. Den Anwalt druckt die Fraktur als „J. L. Albert“ (I und J haben in Fraktur dieselbe Form); die US Reports nennen ihn „I. L. Albert“ (Einheit [6]). Verhandelt wurde die Klage der Kirchen (Nebraska District of Evangelical Lutheran Synod v. McKelvie, 104 Neb. 93, nach US Reports S. 393; Ergebnis hier nicht geprüft). Der Satz, das Gesetz verbiete Sprachen „nur in Parochial- und Privatschulen“, steht so im Druck, obwohl das Gesetz auch öffentliche Schulen nennt.",
+      "Core passage for the option “sue”. A pasted archival slip (“Nebraska State Historical Society”) covers parts of the headline; supplied in square brackets. The OCR reads “80 Tagen”, the image “30 Tagen” (30 days). The Fraktur prints the lawyer as “J. L. Albert” (I and J share one form in Fraktur); the US Reports give “I. L. Albert” (unit [6]). The case heard was the churches' suit (Nebraska District of Evangelical Lutheran Synod v. McKelvie, 104 Neb. 93, per US Reports p. 393; outcome not checked here). The statement that the law forbade languages “only in parochial and private schools” stands thus in the print, although the Act also names public schools."),
+    U(3, "bartels262", "262 U.S. 410–411", PDF + "usrep262404.pdf, PDF-Seiten 7–8 (Druckseiten 410–411)",
+      "Das Reed-Norval-Gesetz von 1921: die Umgehung schließen", "The Reed–Norval Act of 1921: closing the evasion",
+      "en", u3_de, u3_en,
+      "Die Antwort des Staates auf die Mittagspause: Das Gesetz vom 14. April 1921 (Laws 1921, c. 61) hob das Siman-Gesetz auf und ersetzte es, ausdrücklich, um „legal evasion“ zu verhindern. Es ließ Sonntags- und Sabbatschulen mit Religionsunterricht und den Unterricht der eigenen Kinder zu Hause frei. Die Auslassungspunkte „. . .“ stehen in den US Reports (gekürzter Abdruck des Gesetzes). Die Fußnotenziffer ist als [3] gesetzt.",
+      "The state's answer to the noon recess: the Act of 14 April 1921 (Laws 1921, c. 61) repealed and replaced the Siman Act, expressly to prevent “legal evasion”. It left free Sunday and Sabbath schools giving religious instruction and the teaching of one's own children at home. The dots “. . .” are in the US Reports (abridged print of the Act). The footnote numeral is given as [3]."),
+    U(4, "iowa191", "S. 1060–1063", "IA reportscasesatl22courgoog, Blatt n1091–n1094 (Druckseite = n − 31); Metadaten des Digitalisats nennen irrig 1891",
+      "Die Nachbargemeinde: St. Johns, Bremer County, Iowa", "The neighbouring congregation: St. Johns, Bremer County, Iowa",
+      "en", u4_de, u4_en,
+      "Klärt die offenen Angaben zu Bartels: August Bartels, Lehrer an der Pfarrschule der St. Johns Evangelical Lutheran Church im Maxfield Township, Bremer County, Iowa (Iowa-Synode); Tat am oder um den 10. November 1919; Bestätigung durch den Iowa Supreme Court am 12. Februar 1921, Rehearing abgelehnt am 25. Juni 1921. In den US Reports stehen Vorname und Ort nicht. Die vereinbarten Tatsachen zeigen eine Gemeinde, die den Religionsunterricht schon zweisprachig gab, damit die Kinder den Katechismus auf Deutsch lesen. Drei Richter (Evans, Weaver, Preston) wichen ab. „catchism“ ist Druckfehler. Ausgelassen: Rest der Punkte (1) und (2), Punkte (6) ff. und die Begründung.",
+      "Settles the open details on Bartels: August Bartels, teacher at the parochial school of St. Johns Evangelical Lutheran Church in Maxfield Township, Bremer County, Iowa (Iowa Synod); offence on or about 10 November 1919; affirmed by the Iowa Supreme Court on 12 February 1921, rehearing denied 25 June 1921. The US Reports give neither first name nor place. The stipulated facts show a congregation already giving religious instruction in two languages so that the children could read the catechism in German. Three judges (Evans, Weaver, Preston) dissented. “catchism” is a misprint. Omitted: the rest of points (1) and (2), points (6) ff., and the opinion's reasoning."),
+]
+units_zion = [
+    U(5, "odb19220217", "S. 1, Sp. 3", IIIF + "sn99021999/1922-02-17 sp=1 (Bild …1922021701:0516), Spalte 3, drei Ausschnitte",
+      "Die verlängerte Mittagspause (Kernstelle)", "The extended noon recess (core passage)",
+      "en", u5_de, u5_en,
+      "Kernstelle der Entscheidung, vollständig. Die Geldstrafe von 25 Dollar ist am Bild klar lesbar (die OCR hatte „5.'5“ und „123“); sie ist die Mindeststrafe nach § 3 des Gesetzes (Einheit [7]). Nicht Meyer allein, sondern „Meyer and the school board“ verlängerten die Pause: Es war ein Beschluss der Gemeindeschule. Der Ort „Hampton“ steht weder hier noch in den US Reports; dort heißt es „Zion Parochial School“ bzw. „Zion Evangelical Lutheran Congregation“ im Hamilton County. „Reed-Norval law“: Laws 1921, c. 61 (Einheit [3]).",
+      "Core passage of the decision, complete. The $25 fine is clearly legible at the image (the OCR had “5.'5” and “123”); it is the minimum fine under § 3 of the Act (unit [7]). Not Meyer alone but “Meyer and the school board” extended the recess: it was a decision of the congregation's school. The place name “Hampton” appears neither here nor in the US Reports, which say “Zion Parochial School” and “Zion Evangelical Lutheran Congregation” in Hamilton County. “Reed-Norval law”: Laws 1921, c. 61 (unit [3])."),
+]
+units_urteil = [
+    U(6, "meyer262", "262 U.S. 390–391, 393, 396", PDF + "usrep262390.pdf, PDF-Seiten 1–2, 4, 7 (Druckseiten 390–391, 393, 396)",
+      "Kopf und Leitsatz", "Heading and syllabus",
+      "en", u6_de, u6_en,
+      "Der Leitsatz („Syllabus“) stammt vom Reporter des Gerichts, nicht vom Gericht. Ausgelassen […] sind die Zusammenfassungen der Schriftsätze (S. 391–396). I. L. Albert aus Columbus war einer der Anwälte von 1919 (Einheit [2]).",
+      "The syllabus is the Court reporter's, not the Court's. Omitted […] are the summaries of the briefs (pp. 391–396). I. L. Albert of Columbus was one of the lawyers of 1919 (unit [2])."),
+    U(7, "meyer262", "262 U.S. 396–397", PDF + "usrep262390.pdf, PDF-Seiten 7–8",
+      "Die Anklage und das Siman-Gesetz im Wortlaut", "The charge and the Siman Act verbatim",
+      "en", u7_de, u7_en,
+      "Opinion of the Court, Anfang. Das Gesetz ist hier vollständig wiedergegeben (Laws 1919, c. 249, gebilligt 9. April 1919). Meyers Vorname Robert T. steht nicht im Urteil, sondern in der Presse (Einheiten [5], [14]).",
+      "Opinion of the Court, beginning. The Act is given here in full (Laws 1919, c. 249, approved 9 April 1919). Meyer's first name Robert T. is not in the opinion but in the press (units [5], [14])."),
+    U(8, "meyer262", "262 U.S. 397–399", PDF + "usrep262390.pdf, PDF-Seiten 8–10",
+      "Was der Oberste Gerichtshof Nebraskas begründete", "The reasoning of the Nebraska Supreme Court",
+      "en", u8_de, u8_en,
+      "Hier spricht der Staat: Ziel sei, dass Englisch „the mother tongue of all children reared in this state“ werde. Die Begründung aus Nebraska zitiert schon State v. Bartels (Einheit [4]). Gelesen wurde „a collection of Biblical stories“: Meyer las mit dem Kind biblische Geschichten.",
+      "Here the state speaks: the aim was that English become “the mother tongue of all children reared in this state”. The Nebraska opinion already cites State v. Bartels (unit [4]). What was read was “a collection of Biblical stories”: Meyer read Bible stories with the child."),
+    U(9, "meyer262", "262 U.S. 399–400", PDF + "usrep262390.pdf, PDF-Seiten 10–11",
+      "Die Freiheit des Vierzehnten Zusatzes", "The liberty of the Fourteenth Amendment",
+      "en", u9_de, u9_en,
+      "Die Liste der Entscheidungen ist im englischen Text vollständig, in der Übersetzung zusammengefasst.",
+      "The list of decisions is complete in the English text and summarized in the German translation."),
+    U(10, "meyer262", "262 U.S. 400–401", PDF + "usrep262390.pdf, PDF-Seiten 11–12",
+      "„Mere knowledge of the German language“", "“Mere knowledge of the German language”",
+      "en", u10_de, u10_en,
+      "Die Ordinance von 1787 ist die Nordwest-Verordnung. Nebraska District of Evangelical Lutheran Synod v. McKelvie, 187 N. W. 927, ist das Verfahren der Kirchen gegen das Gesetz von 1921 (Einheit [3]).",
+      "The Ordinance of 1787 is the Northwest Ordinance. Nebraska District of Evangelical Lutheran Synod v. McKelvie, 187 N. W. 927, is the churches' case against the Act of 1921 (unit [3])."),
+    U(11, "meyer262", "262 U.S. 401–402", PDF + "usrep262390.pdf, PDF-Seiten 12–13",
+      "„English on the tongue“ (Kernstelle)", "“English on the tongue” (core passage)",
+      "en", u11_de, u11_en,
+      "Kernstelle, nach der der Apparat benannt ist. Das Platon-Zitat folgt der Übersetzung, die das Gericht benutzte (Quelle im Urteil nicht genannt).",
+      "Core passage, after which the apparatus is named. The Plato quotation follows the translation the Court used (not identified in the opinion)."),
+    U(12, "meyer262", "262 U.S. 402–403", PDF + "usrep262390.pdf, PDF-Seiten 13–14",
+      "Ergebnis: aufgehoben", "Result: reversed",
+      "en", u12_de, u12_en,
+      "Das Gericht stellt nicht in Frage, dass ein Staat Unterricht auf Englisch verlangen darf. Es verwirft das Verbot, einem Kind unterhalb der achten Klasse eine neuere Sprache beizubringen.",
+      "The Court does not question that a state may require instruction in English. It strikes down the ban on teaching a modern language to a child below the eighth grade."),
+    U(13, "bartels262", "262 U.S. 412–413", PDF + "usrep262404.pdf, PDF-Seiten 9–10",
+      "Holmes, abweichend", "Holmes, dissenting",
+      "en", u13_de, u13_en,
+      "Holmes' Meinung steht im Folgefall Bartels v. Iowa, gilt aber für Meyer und die übrigen Fälle (Verweis am Schluss von Meyer, Einheit [12]). Er stimmt der Mehrheit nur zu, soweit Ohio Deutsch eigens verbot (Bohning v. Ohio).",
+      "Holmes's opinion stands in the following case, Bartels v. Iowa, but applies to Meyer and the other cases (cross-reference at the end of Meyer, unit [12]). He agrees with the majority only insofar as Ohio singled out German (Bohning v. Ohio)."),
+]
+units_presse = [
+    U(14, "omb19230605", "S. 1, Sp. 7–8", IIIF + "sn84024326/1923-06-05 sp=1 (Bild …1923060501:0094), Schlagzeile und Spalten 7–8, fünf Ausschnitte",
+      "Die Omaha Bee am Tag danach", "The Omaha Bee the day after",
+      "en", u14_de, u14_en,
+      "Ausgelassen […] sind die Auszüge aus der Begründung und aus Holmes' Meinung, die die Zeitung abdruckt (Einheiten [10]–[13]). „informatino“ und „Emil Empohl“ stehen so im Druck; die US Reports nennen nur „Pohl“, den Vornamen nicht. „Otto F. Walker“ heißt in den US Reports „Otto F. Walter“. Dass die Zeitung den 1921 erlassenen Reed-Norval-Text als das für ungültig erklärte Gesetz nennt, trifft nur für den Kirchenfall (Nr. 440) zu; Meyer wurde nach dem Siman-Gesetz von 1919 verurteilt.",
+      "Omitted […] are the extracts from the opinion and from Holmes's dissent printed by the paper (units [10]–[13]). “informatino” and “Emil Empohl” stand thus in the print; the US Reports give only “Pohl”, without first name. “Otto F. Walker” is “Otto F. Walter” in the US Reports. The paper's naming of the 1921 Reed–Norval Act as the law struck down is true only of the churches' case (No. 440); Meyer was convicted under the Siman Act of 1919."),
+]
+
+data = {
+    "id": "meyer1923",
+    "nr": 10,
+    "zeit": "1919–1923",
+    "ort": "Hamilton County, Nebraska",
+    "ort_en": "Hamilton County, Nebraska",
+    "titel": "Die verlängerte Mittagspause",
+    "titel_en": "The longer noon recess",
+    "frage": "Gehorcht der Schulvorstand dem Siman-Gesetz, hält er Deutsch in einer verlängerten Mittagspause, klagt er oder stellt er ganz auf Englisch um?",
+    "frage_en": "Does the school board obey the Siman Act, keep German in an extended noon recess, go to court, or switch entirely to English?",
+    "lede": "Das Siman-Gesetz vom 9. April 1919 verbot in Nebraska jeden Unterricht in einer anderen Sprache als Englisch und den Unterricht fremder Sprachen vor dem Abschluss der achten Klasse. Die Schule der Zion-Gemeinde im Hamilton County antwortete mit einer verlängerten Mittagspause: Lehrer Robert T. Meyer las in der letzten halben Stunde mit den Kindern Deutsch, am 25. Mai 1920 mit dem zehnjährigen Raymond Parpart. Er wurde zu 25 Dollar verurteilt; zugleich klagten deutsche, polnische, böhmische und dänische Kirchen gegen das Gesetz, und der Staat schloss die Lücke 1921 mit einem schärferen Gesetz. Der Oberste Gerichtshof Nebraskas bestätigte die Verurteilung am 16. Februar 1922, der Oberste Gerichtshof der Vereinigten Staaten hob sie am 4. Juni 1923 auf: Der Schutz der Verfassung gelte auch denen, die nicht „with English on the tongue“ geboren sind.",
+    "lede_en": "The Siman Act of 9 April 1919 forbade in Nebraska all instruction in any language but English and the teaching of foreign languages before completion of the eighth grade. The school of the Zion congregation in Hamilton County answered with an extended noon recess: teacher Robert T. Meyer read German with the children in the last half hour, on 25 May 1920 with ten-year-old Raymond Parpart. He was fined $25; at the same time German, Polish, Bohemian and Danish churches sued against the law, and in 1921 the state closed the gap with a stricter Act. The Nebraska Supreme Court affirmed the conviction on 16 February 1922; the Supreme Court of the United States reversed it on 4 June 1923: the protection of the Constitution extends also to those not born “with English on the tongue”.",
+    "hinweis": "Alle Einheiten sind am Seitenbild gelesen. Zeitungen: Chronicling America über loc.gov-Ressourcenseiten und Ausschnitte des IIIF-Dienstes von tile.loc.gov. US Reports: die PDFs der Library of Congress auf tile.loc.gov (usrep262390.pdf, usrep262404.pdf), Seiten mit pymupdf gerendert und am Bild mit der Textschicht verglichen; die Textschicht hat kleine Fehler („curice“, „Barter8“, „axe“), die nach dem Bild berichtigt sind. Iowa Reports Bd. 191 am archive.org-Blattbild (Blatt n = Druckseite + 31). Meyer v. Nebraska ist ab dem Beginn der Opinion of the Court vollständig in den Einheiten [7]–[12] enthalten; Holmes' abweichende Meinung vollständig in [13]. Ausgelassen sind die Zusammenfassungen der Schriftsätze (S. 391–396) und aus Bartels v. Iowa alles außer Nr. 440 und Holmes. Fraktur (Tägliche Omaha Tribüne) mit ſ = s, Schreibung des Drucks („Uebertretung“, „Aenderung“) beibehalten. Der Epilog (Immigration Act 1924) ist an den Statutes at Large, Bd. 43, geprüft.",
+    "hinweis_en": "All units were read against the page image. Newspapers: Chronicling America via loc.gov resource pages and crops from the IIIF service on tile.loc.gov. US Reports: the Library of Congress PDFs on tile.loc.gov (usrep262390.pdf, usrep262404.pdf), pages rendered with pymupdf and compared at the image with the text layer; the text layer has small errors (“curice”, “Barter8”, “axe”) corrected from the image. Iowa Reports vol. 191 at the archive.org leaf image (leaf n = printed page + 31). Meyer v. Nebraska is contained in full from the start of the Opinion of the Court in units [7]–[12]; Holmes's dissent in full in [13]. Omitted are the summaries of the briefs (pp. 391–396) and from Bartels v. Iowa everything except No. 440 and Holmes. Fraktur (Tägliche Omaha Tribüne) with ſ = s, the print's spelling (“Uebertretung”, “Aenderung”) kept. The epilogue (Immigration Act 1924) was checked in the Statutes at Large, vol. 43.",
+    "quellen": quellen,
+    "sections": [
+        {"id": "gesetz", "titel": "Das Gesetz und die Gegenwehr, 1919–1921", "titel_en": "The Act and the resistance, 1919–1921",
+         "blurb": "Nebraska verbietet fremdsprachigen Unterricht; die Kirchen klagen gemeinsam über die Sprachgrenzen hinweg; der Staat verschärft 1921. In Iowa steht eine Nachbargemeinde vor derselben Lage.",
+         "blurb_en": "Nebraska bans foreign-language instruction; the churches sue together across language lines; the state tightens the law in 1921. In Iowa a neighbouring congregation faces the same situation.",
+         "units": units_gesetz},
+        {"id": "zion", "titel": "Zion, Hamilton County: die Mittagspause", "titel_en": "Zion, Hamilton County: the noon recess",
+         "blurb": "Der Kunstgriff des Schulvorstands und das Urteil des Obersten Gerichtshofs von Nebraska.",
+         "blurb_en": "The school board's device and the judgment of the Nebraska Supreme Court.",
+         "units": units_zion},
+        {"id": "urteil", "titel": "Meyer v. Nebraska, 4. Juni 1923", "titel_en": "Meyer v. Nebraska, 4 June 1923",
+         "blurb": "Das Urteil des Obersten Gerichtshofs der Vereinigten Staaten, ab der Begründung vollständig, und Holmes' abweichende Meinung.",
+         "blurb_en": "The judgment of the Supreme Court of the United States, complete from the opinion onwards, and Holmes's dissent.",
+         "units": units_urteil},
+        {"id": "presse", "titel": "Die Meldung", "titel_en": "The news",
+         "blurb": "Wie Omaha das Urteil am nächsten Morgen las.",
+         "blurb_en": "How Omaha read the decision the next morning.",
+         "units": units_presse},
+    ],
+    "legenden": [
+        {"behauptung": "Meyer unterrichtete Deutsch als Fach im regulären Unterricht.",
+         "behauptung_en": "Meyer taught German as a subject in regular class time.",
+         "befund": "Er las mit dem Kind biblische Geschichten auf Deutsch, und zwar in der letzten halben Stunde einer auf 13.30 Uhr verlängerten Mittagspause. „As a distinct subject“ ist die Einordnung des Obersten Gerichtshofs von Nebraska, der die Pause als Umgehung wertete.",
+         "befund_en": "He read Bible stories in German with the child, in the last half hour of a noon recess extended to 1:30. “As a distinct subject” is the Nebraska Supreme Court's characterization; it treated the recess as an evasion.",
+         "beleg": "Einheiten [5], [8]"},
+        {"behauptung": "Gegen das Siman-Gesetz wehrten sich nur die Deutschen.",
+         "behauptung_en": "Only the Germans fought the Siman Act.",
+         "befund": "Vor dem Obersten Gerichtshof Nebraskas klagten 1919 deutsche Lutheraner der Missouri- und der Iowa-Synode gemeinsam mit polnischen und böhmischen Katholiken und dänischen Lutheranern. Schon im April 1919 nannte der Abgeordnete Reynolds Polen, Böhmen und Juden als Betroffene.",
+         "befund_en": "Before the Nebraska Supreme Court in 1919, German Lutherans of the Missouri and Iowa Synods sued together with Polish and Bohemian Catholics and Danish Lutherans. Already in April 1919 Representative Reynolds named Poles, Bohemians and Jews as affected.",
+         "beleg": "Einheiten [1], [2]"},
+        {"behauptung": "Meyer v. Nebraska erlaubte deutschen Unterricht an den Schulen und verbot den Staaten, Englisch vorzuschreiben.",
+         "behauptung_en": "Meyer v. Nebraska permitted German-language schooling and barred states from requiring English.",
+         "befund": "Das Gericht stellte ausdrücklich nicht in Frage, dass ein Staat Schulbesuch erzwingen und Unterricht auf Englisch verlangen darf. Verworfen wurde nur das Verbot, Kindern unter der achten Klasse eine neuere Sprache beizubringen.",
+         "befund_en": "The Court expressly did not question a state's power to compel attendance and require instruction in English. It struck down only the ban on teaching a modern language to children below the eighth grade.",
+         "beleg": "Einheit [12]"},
+        {"behauptung": "Die Zion-Schule lag in Hampton, Nebraska.",
+         "behauptung_en": "The Zion school was at Hampton, Nebraska.",
+         "befund": "In den gelesenen gemeinfreien Quellen (US Reports, Omaha Daily Bee 1922, Omaha Morning Bee 1923) steht nur „Hamilton County“ und „Zion Parochial School“ bzw. „Zion Evangelical Lutheran Congregation“. Hampton ist eine Angabe der späteren Literatur und hier nicht belegt.",
+         "befund_en": "The public-domain sources read (US Reports, Omaha Daily Bee 1922, Omaha Morning Bee 1923) give only “Hamilton County” and “Zion Parochial School” or “Zion Evangelical Lutheran Congregation”. Hampton is a statement of later literature and is not documented here.",
+         "beleg": "Einheiten [5], [7], [8], [14]"},
+        {"behauptung": "Holmes stimmte gegen die Deutschen.",
+         "behauptung_en": "Holmes voted against the Germans.",
+         "befund": "Holmes hielt ein allgemeines Englischgebot für die frühen Schuljahre für vertretbar, nannte Polnisch, Französisch und Deutsch gleichrangig und stimmte der Mehrheit zu, soweit Ohio Deutsch eigens verbot.",
+         "befund_en": "Holmes thought a general English requirement for the early school years defensible, named Polish, French and German alike, and agreed with the majority insofar as Ohio singled out German.",
+         "beleg": "Einheit [13]"},
+    ],
+    "spiel": {
+        "optionen": [
+            {"text": "Dem Gesetz gehorchen: allen Unterricht auf Englisch geben und Deutsch erst nach der achten Klasse unterrichten.",
+             "text_en": "Obey the law: give all instruction in English and teach German only after the eighth grade.",
+             "beleg": "Einheiten [1], [7]", "gewaehlt": False},
+            {"text": "Die Mittagspause bis 13.30 Uhr verlängern und die letzte halbe Stunde mit den Kindern Deutsch lesen (Zion-Schule, Hamilton County).",
+             "text_en": "Extend the noon recess to 1:30 and read German with the children in the last half hour (Zion school, Hamilton County).",
+             "beleg": "Einheit [5]", "gewaehlt": True},
+            {"text": "Klagen: als Kirchengemeinschaft gemeinsam mit polnischen, böhmischen und dänischen Gemeinden gegen das Gesetz vor Gericht gehen und die Verurteilung bis zum Obersten Gerichtshof anfechten.",
+             "text_en": "Sue: go to court against the law as a church body together with Polish, Bohemian and Danish congregations, and appeal the conviction up to the Supreme Court.",
+             "beleg": "Einheiten [2], [6], [14]", "gewaehlt": True},
+            {"text": "Ganz zum Englischen wechseln und Deutsch nur noch in der Sonntagsschule mit Religionsunterricht und zu Hause weitergeben, wie es das Gesetz von 1921 zuließ.",
+             "text_en": "Switch entirely to English and pass German on only in Sunday school with religious instruction and at home, as the Act of 1921 allowed.",
+             "beleg": "Einheiten [3], [4]", "gewaehlt": False},
+        ],
+        "folgen": "25. Mai 1920: Meyer liest mit Raymond Parpart Deutsch; Anklage und Verurteilung vor dem District Court des Hamilton County, Geldstrafe 25 Dollar. 14. April 1921: Das Reed-Norval-Gesetz (Laws 1921, c. 61) ersetzt das Siman-Gesetz, um die Umgehung zu schließen. 16. Februar 1922: Der Oberste Gerichtshof Nebraskas bestätigt Meyers Verurteilung (107 Neb. 657), zwei Richter abweichend; am 16. Februar (nach der Omaha Morning Bee 1923; das Jahr 1922 ist erschlossen) hält er auch das Gesetz von 1921 im Kirchenfall aufrecht (187 N. W. 927). 23. Februar 1923: Verhandlung in Washington. 4. Juni 1923: Meyer v. Nebraska, 262 U.S. 390, hebt auf; ebenso Bartels (Iowa), Bohning und Pohl (Ohio) und der Kirchenfall aus Nebraska (262 U.S. 404); Holmes und Sutherland weichen ab. Epilog: Das Immigration Act of 1924 vom 26. Mai 1924 (Ch. 190, 43 Stat. 153) setzte in § 11 (a) die Jahresquote jeder Nationalität auf 2 Prozent der 1890 im Land lebenden Geborenen dieser Nationalität (43 Stat. 159).",
+        "folgen_en": "25 May 1920: Meyer reads German with Raymond Parpart; charge and conviction before the District Court of Hamilton County, fine $25. 14 April 1921: the Reed–Norval Act (Laws 1921, c. 61) replaces the Siman Act to close the evasion. 16 February 1922: the Nebraska Supreme Court affirms Meyer's conviction (107 Neb. 657), two judges dissenting; on 16 February (per the Omaha Morning Bee 1923; the year 1922 is inferred) it also upholds the 1921 Act in the churches' case (187 N. W. 927). 23 February 1923: argument in Washington. 4 June 1923: Meyer v. Nebraska, 262 U.S. 390, reverses; so too Bartels (Iowa), Bohning and Pohl (Ohio) and the Nebraska churches' case (262 U.S. 404); Holmes and Sutherland dissent. Epilogue: the Immigration Act of 1924 of 26 May 1924 (Ch. 190, 43 Stat. 153) set in § 11 (a) the annual quota of each nationality at 2 per cent of the foreign-born of that nationality resident in 1890 (43 Stat. 159)."
+    },
+    "tafeln": [
+        {"motiv": "Omaha Morning Bee, 5. Juni 1923, S. 1: „Nebraska Language Law Held Invalid“", "url": CA + "sn84024326/1923-06-05/ed-1/?sp=1", "lizenz": "PD (Zeitungsdruck 1923, vor 1929)", "geprueft": True},
+        {"motiv": "Omaha Daily Bee, 17. Februar 1922, S. 1: „Siman Law Upheld by High Court“", "url": CA + "sn99021999/1922-02-17/ed-1/?sp=1", "lizenz": "PD (Zeitungsdruck 1922, vor 1929)", "geprueft": True},
+        {"motiv": "Tägliche Omaha Tribüne, 18. November 1919, S. 1: „Der Prozeß gegen das Simangesetz“ (mit Genehmigungsvermerk im Kopf)", "url": CA + "sn83045652/1919-11-18/ed-1/?sp=1", "lizenz": "PD (Zeitungsdruck 1919, vor 1929)", "geprueft": True},
+        {"motiv": "United States Reports, Bd. 262, S. 401 („English on the tongue“)", "url": USR + "usrep262390/usrep262390.pdf", "lizenz": "PD (Werk der US-Bundesregierung)", "geprueft": True},
+        {"motiv": "Howard Chandler Christy, „Americans All!“, Plakat der Victory Liberty Loan 1919 mit Ehrenliste fremd klingender Namen", "url": "https://commons.wikimedia.org/wiki/File:Americans_all!_-_DPLA_-_97b09d2db462624be76ef69e0ded31d3.jpg", "lizenz": "PD (Commons: Public domain; US-Druck 1919). Commons-Datei nur 330 × 500 Pixel, besseres Digitalisat suchen", "geprueft": True},
+    ],
+    "offen": [
+        "„Hampton“ als Ort der Zion-Schule in keiner gelesenen gemeinfreien Quelle belegt. Nebraska Reports Bd. 107 (Meyer v. State, 107 Neb. 657) auf archive.org nicht gefunden (vorhanden nur bis Bd. 106).",
+        "Datum der Verurteilung vor dem District Court des Hamilton County und Wortlaut des Strafurteils nicht eingesehen; die 25 Dollar nur nach der Omaha Daily Bee 1922.",
+        "Ergebnis der Kirchenklage vom November 1919 (Nebraska District of Evangelical Lutheran Synod v. McKelvie, 104 Neb. 93) nicht geprüft.",
+        "Reed-Norval-Gesetz (Laws 1921, c. 61) nur im gekürzten Abdruck der US Reports gelesen; der Name „Reed-Norval“ nur nach der Presse.",
+        "Vorname von Pohl (Ohio): die Omaha Morning Bee druckt „Emil Empohl“, die US Reports nennen keinen Vornamen.",
+        "Der Nordstern (St. Cloud), 14.6.1923, S. 16, und weitere deutschsprachige Meldungen zum Urteil nicht gelesen.",
+        "Für die Zion-Gemeinde selbst (Gründung, Sprache des Gottesdienstes, Schülerzahl) fehlt eine gemeinfreie Quelle; die Zahlen im Spiel lassen sich nur an der Nachbargemeinde in Iowa (Einheit [4]) messen.",
+    ],
+}
+
+out = os.path.join(HERE, "meyer1923.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=1)
+print("geschrieben:", out, "Einheiten:", sum(len(s["units"]) for s in data["sections"]))
