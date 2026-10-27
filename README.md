@@ -1,5 +1,7 @@
 # Bleibt man deutsch? – Staying German?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23708959.svg)](https://doi.org/10.5281/zenodo.23708959)
+
 Ein zweisprachiger Quellenapparat: deutsche Gemeinden in Amerika, 1683–1923. Neun Stationen, an denen eine Gemeinde entschied, wie viel Deutsch sie behält – in der Stadt, an der Wahlurne, in der Kirche, in der Schule, in der Zeitung –, in gemeinfreien Drucken, jedes Original neben einer Übersetzung. Die Oberfläche lässt sich zwischen Deutsch und Englisch umschalten.
 
 *A bilingual documentary apparatus: German communities in America, 1683–1923. Nine stations at which a community decided how much German to keep – in the town, at the polls, in church, in school, in the newspaper – in public-domain prints, each original beside a translation. The interface switches between German and English.*
@@ -37,4 +39,4 @@ Code MIT; redaktionelle Texte CC BY 4.0; Editionen und Übersetzungen CC0 1.0. S
 
 ## Zitieren
 
-Pantaleon Fassbender, *Bleibt man deutsch? – Staying German? Deutsche Gemeinden in Amerika 1683–1923. Ein zweisprachiger Quellenapparat* (2026). Für jede übernommene Stelle bitte auch die gedruckte Quelle zitieren.
+Pantaleon Fassbender, *Bleibt man deutsch? – Staying German? Deutsche Gemeinden in Amerika 1683–1923. Ein zweisprachiger Quellenapparat* (2026), [doi:10.5281/zenodo.23708959](https://doi.org/10.5281/zenodo.23708959) (alle Versionen; Version 1.0.0: [doi:10.5281/zenodo.23708961](https://doi.org/10.5281/zenodo.23708961)). Für jede übernommene Stelle bitte auch die gedruckte Quelle zitieren.

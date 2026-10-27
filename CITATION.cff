@@ -27,5 +27,13 @@ keywords:
   - language policy
   - digital humanities
 license: MIT
+doi: 10.5281/zenodo.23708959
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23708959
+    description: "Concept-DOI (alle Versionen)"
+  - type: doi
+    value: 10.5281/zenodo.23708961
+    description: "Version 1.0.0"
 version: 1.0.0
 date-released: 2026-10-27
